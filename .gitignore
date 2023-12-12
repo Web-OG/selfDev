@@ -1,4 +1,5 @@
 /build
+/client/build
 node_modules
 .idea
 .env
