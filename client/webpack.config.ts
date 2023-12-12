@@ -1,5 +1,5 @@
 import path from 'path';
-import {BuildMode, BuildOptions, BuildPaths, createWebpackConfig} from "./src/app/config/build";
+import {BuildMode, BuildOptions, BuildPaths, createWebpackConfig} from "./config/build";
 
 interface Envs {
     mode: BuildMode,
