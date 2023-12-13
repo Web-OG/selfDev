@@ -1,28 +1,27 @@
-// Main Colors
-$primary-bg-color: #272733;
-$header-bg-color: rgba(16, 16, 29, 0.9);
-$footer-bg-color: #3d4050;
+// Main Color - Backgrounds, main elements
+$main-bg-color: #F4F4FB;
+$main-invert-color: #272733;
 
-// Secondary Colors
-$primary-txt-color: #ffffff;
-$secondary-txt-color: #000;
+// Secondary Color - For 2nd level elements, text
+$secondary-color: #272733;
+$secondary-invert-color: #F4F4FB;
 
-// Accent Colors
-$accent-color: #3e9cdc;
-$successes-color: #31ee31;
+// Accent Color - For CTAs and accent touches
+$accent-color: #161A1D;
+$accent-invert-color: #161A1D;
 
 // Text
 $primary-font-size: 16px;
 $primary-line-height: 1.2;
-$main-font-family: "Lato", "Arial", sans-serif;
-$main-font-color: $primary-txt-color;
+$main-font-family: 'Verdana', 'Geneva', sans-serif;
+$main-font-color: $secondary-color;
 $main-font-weight: 400;
 
 // Sizes
 $page-min-width: 320px;
 
 // Common
-$transition: all 0.3s ease-in;
+$transition: all .3s ease-in;
 
 // Media Queries
 $sm: 576px;

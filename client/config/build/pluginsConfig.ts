@@ -21,7 +21,6 @@ export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): C
         new DefinePlugin({
             __CAPTCHA__: JSON.stringify(captcha)
         }),
-
     ]
 
     if (isDev) {
