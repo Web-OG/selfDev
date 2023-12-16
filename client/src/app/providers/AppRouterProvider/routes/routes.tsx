@@ -1,9 +1,9 @@
 import {Suspense} from 'react';
 import {createBrowserRouter} from 'react-router-dom';
-import {AboutPage} from '../../../../pages/About';
-import {PostsPage} from '../../../../pages/Posts';
+import {AboutPage} from 'pages/About';
+import {PostsPage} from 'pages/Posts';
 import {LayoutAuthorized} from '../layouts/authorized';
-import {ErrorPage} from "../../../../pages/ErrorPage";
+import {ErrorPage} from "pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
