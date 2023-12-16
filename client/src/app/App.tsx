@@ -7,7 +7,7 @@ const App = () => {
 
     return (
         <div className={`app ${theme}`}>
-            <AppRouterProvider />
+            <AppRouterProvider isAuth={true} />
         </div>
     )
 }

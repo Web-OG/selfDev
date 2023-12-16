@@ -5,7 +5,7 @@ import {PostsPage} from 'pages/Posts';
 import {LayoutAuthorized} from '../layouts/authorized';
 import {ErrorPage} from "pages/ErrorPage";
 
-export const router = createBrowserRouter([
+export const authRouter = createBrowserRouter([
     {
         path: '/',
         element: <LayoutAuthorized/>,
@@ -29,18 +29,6 @@ export const router = createBrowserRouter([
                     }
                 ]
             }
-        ]
-    },
-    {
-        path: '/registration',
-        element: <LayoutAuthorized/>,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: 'new-user',
-                index: true,
-                element: <Suspense fallback={<div>Loading...</div>}><AboutPage/></Suspense>,
-            },
         ]
     },
 ]);

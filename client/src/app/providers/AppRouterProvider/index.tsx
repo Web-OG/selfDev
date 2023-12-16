@@ -1,6 +1,11 @@
 import {RouterProvider} from "react-router-dom";
-import {router} from "./routes/routes";
+import {authRouter} from "./routes/authRouter";
+import {unAuthRouter} from "./routes/unAuthRouter";
 
-export const AppRouterProvider = () => {
-    return <RouterProvider router={router}/>
+interface Props {
+    isAuth: boolean
+}
+
+export const AppRouterProvider = ({isAuth}: Props) => {
+    return <RouterProvider router={isAuth ? authRouter : unAuthRouter}/>
 };
