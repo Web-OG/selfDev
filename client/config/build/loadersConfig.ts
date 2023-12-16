@@ -40,6 +40,7 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
                 loader: "css-loader",
                 options: {
                     modules: {
+                        auto: true,
                         localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
                     }
                 },

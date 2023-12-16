@@ -1,8 +1,15 @@
-import './styles/index.scss'
-import { RouterProvider} from "react-router-dom";
-import {router} from "./router";
+import "./App.scss";
+import {AppRouterProvider} from './providers/AppRouterProvider'
+import {useTheme} from "./providers/ThemeProvider";
 
 const App = () => {
-    return <RouterProvider router={router}/>
+    const {theme} = useTheme()
+
+    return (
+        <div className={`app ${theme}`}>
+            <AppRouterProvider />
+        </div>
+    )
 }
+
 export {App};

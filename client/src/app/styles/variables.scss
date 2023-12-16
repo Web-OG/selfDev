@@ -1,27 +1,5 @@
-// Main Color - Backgrounds, main elements
-$main-bg-color: #F4F4FB;
-$main-invert-color: #272733;
-
-// Secondary Color - For 2nd level elements, text
-$secondary-color: #272733;
-$secondary-invert-color: #F4F4FB;
-
-// Accent Color - For CTAs and accent touches
-$accent-color: #161A1D;
-$accent-invert-color: #161A1D;
-
-// Text
-$primary-font-size: 16px;
-$primary-line-height: 1.2;
-$main-font-family: 'Verdana', 'Geneva', sans-serif;
-$main-font-color: $secondary-color;
-$main-font-weight: 400;
-
-// Sizes
-$page-min-width: 320px;
-
 // Common
-$transition: all .3s ease-in;
+$transition: all 0.3s ease-in;
 
 // Media Queries
 $sm: 576px;

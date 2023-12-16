@@ -1,6 +1,8 @@
 import {StrictMode} from "react";
 import {createRoot} from 'react-dom/client';
 import {App} from "./app/App";
+import './app/styles/index.scss'
+import {ThemeProvider} from "./app/providers/ThemeProvider";
 
 const root = document.getElementById('root');
 
@@ -12,6 +14,8 @@ const container = createRoot(root);
 
 container.render(
     <StrictMode>
-        <App />
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
     </StrictMode>
 )

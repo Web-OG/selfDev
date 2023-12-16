@@ -3,7 +3,12 @@ html {
   overflow-x: hidden;
 }
 
-*,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 *::before,
 *::after {
   box-sizing: inherit;
@@ -11,7 +16,7 @@ html {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3d4050 $accent-color;
+  scrollbar-color: #3d4050 var(--accent-color);
 }
 
 *::-webkit-scrollbar {
@@ -22,25 +27,30 @@ html {
   border-radius: 3px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: $accent-color;
+  background-color: #161A1D;
   border-radius: 3px;
 }
 
 body {
   position: relative;
   margin: 0;
-  min-width: $page-min-width;
-  font-family: $main-font-family;
-  font-size: $primary-font-size;
-  line-height: $primary-line-height;
-  font-weight: $main-font-weight;
+  min-width: 320px;
+  font-family: 'Verdana', 'Geneva', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
   font-style: normal;
-  color: $main-font-color;
-  background-color: $main-bg-color;
   overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
