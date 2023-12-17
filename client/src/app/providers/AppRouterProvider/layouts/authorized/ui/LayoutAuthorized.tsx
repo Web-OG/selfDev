@@ -1,15 +1,14 @@
-import {Link, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import cls from './LayoutAuthorized.module.scss';
+import {Header} from "widgets/Header";
 
 const LayoutAuthorized = () => {
-    return (
-        <div className={cls.layout}>
-            Primary Authorized Layout
-            <Link to={'about'}>About</Link>
-            <Link to={'posts'}>Posts</Link>
-            <Outlet/>
-        </div>
-    );
+  return (
+    <div className={cls.layout}>
+      <Header isAuth={true}/>
+      <Outlet/>
+    </div>
+  );
 };
 
 export default LayoutAuthorized;
