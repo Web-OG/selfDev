@@ -3,9 +3,9 @@ import {authRouter} from "./routes/authRouter";
 import {unAuthRouter} from "./routes/unAuthRouter";
 
 interface Props {
-    isAuth: boolean
+  isAuth: boolean
 }
 
 export const AppRouterProvider = ({isAuth}: Props) => {
-    return <RouterProvider router={isAuth ? authRouter : unAuthRouter}/>
+  return <RouterProvider router={isAuth ? authRouter : unAuthRouter}/>
 };

@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.iconLabel {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: var(--box-shadow-on-secondary);
+  }
+}
+
+.icon path {
+  fill: var(--main-color)
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  width: 44px;
+  height: 24px;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 9999px;
+  border: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  transform: translate(4px);
+  transition: var(--transition);
+}
+
+.indicatorChecked {
+  transform: translate(24px);
+}

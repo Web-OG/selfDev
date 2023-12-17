@@ -1,5 +1,6 @@
 .app_dark_theme {
   --main-color: #272733;
   --secondary-color: #F4F4FB;
-  --accent-color: #161A1D;
+  --accent-color: rgba(22, 26, 29, 0.19);
+  --box-shadow-on-secondary: 0 -2px 8px 4px var(--main-color);
 }

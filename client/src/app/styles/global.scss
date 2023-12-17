@@ -22,10 +22,12 @@ html {
 *::-webkit-scrollbar {
   width: 7px;
 }
+
 *::-webkit-scrollbar-track {
   background: #3d4050;
   border-radius: 3px;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: #161A1D;
   border-radius: 3px;
@@ -49,8 +51,10 @@ img {
 }
 
 input,
+a,
 button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }

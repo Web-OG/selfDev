@@ -1,0 +1,9 @@
+.link {
+  display: block;
+  width: fit-content;
+  //color: ;
+
+  &:hover {
+    box-shadow: var(--box-shadow-on-secondary);
+  }
+}

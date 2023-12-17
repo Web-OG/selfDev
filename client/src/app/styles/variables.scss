@@ -1,5 +1,6 @@
-// Common
-$transition: all 0.3s ease-in;
+:root {
+  --transition: all .3s ease-in;
+}
 
 // Media Queries
 $sm: 576px;

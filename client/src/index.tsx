@@ -7,15 +7,15 @@ import {ThemeProvider} from "app/providers/ThemeProvider";
 const root = document.getElementById('root');
 
 if (!root) {
-    throw new Error('root element not found')
+  throw new Error('root element not found')
 }
 
 const container = createRoot(root);
 
 container.render(
-    <StrictMode>
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
-    </StrictMode>
+  <StrictMode>
+    <ThemeProvider>
+      <App/>
+    </ThemeProvider>
+  </StrictMode>
 )
