@@ -1,9 +1,19 @@
 .link {
-  display: block;
-  width: fit-content;
-  //color: ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 89px;
+  transition: var(--transition);
 
   &:hover {
     box-shadow: var(--box-shadow-on-secondary);
   }
+}
+
+.link svg {
+  flex-shrink: 0;
+  width: 100px;
+  height: 99px;
+  object-fit: contain;
 }
