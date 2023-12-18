@@ -1,3 +1,11 @@
 .layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
   background-color: var(--main-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) 9fr;
 }
