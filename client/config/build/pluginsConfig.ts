@@ -24,7 +24,15 @@ export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): C
   ]
 
   if (isDev) {
-    plugins.push(new ForkTsCheckerWebpackPlugin())
+    plugins.push(new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
+    }))
     plugins.push(new ReactRefreshWebpackPlugin())
   }
 
