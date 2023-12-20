@@ -10,7 +10,9 @@ const LayoutAuthorized = () => {
       <Header isAuth={true}/>
       <div className={cls.container}>
         <Sidebar/>
-        <Outlet/>
+        <div className={cls.outlet}>
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>

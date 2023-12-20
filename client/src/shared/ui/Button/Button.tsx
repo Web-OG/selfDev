@@ -4,7 +4,6 @@ import classNames from "classnames";
 
 type ButtonVariant = 'primary' | 'outlined'
 
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;

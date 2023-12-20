@@ -1,10 +1,7 @@
-import {Outlet} from "react-router-dom";
-
 const AboutPage = () => {
   return (
     <div>
       AboutPage
-      <Outlet/>
     </div>
   );
 };

@@ -1,5 +1,11 @@
 .Sidebar {
+  width: 220px;
   background-color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.SidebarCollapsed {
+  width: 100px;
 }
 
 .SidebarItem {
