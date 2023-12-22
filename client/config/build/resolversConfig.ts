@@ -1,5 +1,5 @@
-import {Configuration} from "webpack";
-import {BuildOptions} from "./types";
+import {Configuration} from 'webpack';
+import {BuildOptions} from './types';
 
 export const resolversConfig = ({paths}: BuildOptions): Configuration['resolve'] => ({
   extensions: ['.tsx', '.ts', '.js'],
@@ -7,4 +7,4 @@ export const resolversConfig = ({paths}: BuildOptions): Configuration['resolve']
   modules: [paths.src, 'node_modules'],
   mainFiles: ['index'],
   alias: {}
-})
+});

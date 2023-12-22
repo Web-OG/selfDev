@@ -1,3 +1,3 @@
-import {lazy} from "react";
+import {lazy} from 'react';
 
-export const LayoutUnAuthorizedLazy = lazy(() => import('./LayoutUnAuthorized'))
+export const LayoutUnAuthorizedLazy = lazy(() => import('./LayoutUnAuthorized'));

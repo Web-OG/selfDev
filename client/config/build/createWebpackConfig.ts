@@ -1,9 +1,9 @@
-import webpack from "webpack";
-import {devServerConfig} from "./devServerConfig";
-import {loadersConfig} from "./loadersConfig";
-import {pluginsConfig} from "./pluginsConfig";
-import {resolversConfig} from "./resolversConfig";
-import {BuildOptions} from "./types";
+import webpack from 'webpack';
+import {devServerConfig} from './devServerConfig';
+import {loadersConfig} from './loadersConfig';
+import {pluginsConfig} from './pluginsConfig';
+import {resolversConfig} from './resolversConfig';
+import {BuildOptions} from './types';
 
 export const createWebpackConfig = (options: BuildOptions): webpack.Configuration => {
   const {paths, mode} = options;
@@ -26,4 +26,4 @@ export const createWebpackConfig = (options: BuildOptions): webpack.Configuratio
     devtool: isDev && 'inline-source-map',
     devServer: isDev ? devServerConfig(options) : undefined,
   };
-}
+};

@@ -1,5 +1,5 @@
 import path from 'path';
-import {BuildMode, BuildOptions, BuildPaths, createWebpackConfig} from "./config/build";
+import {BuildMode, BuildOptions, BuildPaths, createWebpackConfig} from './config/build';
 
 interface Envs {
   mode: BuildMode,
@@ -15,7 +15,7 @@ export default ({mode, port, analyzer, captcha}: Envs) => {
     html: path.resolve(__dirname, 'public', 'index.html'),
     public: path.resolve(__dirname, 'public'),
     src: path.resolve(__dirname, 'src'),
-  }
+  };
 
   const options: BuildOptions = {
     port: port ?? 3000,
@@ -23,7 +23,7 @@ export default ({mode, port, analyzer, captcha}: Envs) => {
     paths,
     analyzer,
     captcha: captcha ?? false
-  }
+  };
 
-  return createWebpackConfig(options)
-}
+  return createWebpackConfig(options);
+};

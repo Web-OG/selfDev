@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import cls from './Footer.module.scss'
+import cls from './Footer.module.scss';
 
 const Footer = memo(() => {
   return (

@@ -1,6 +1,6 @@
 import {ModuleOptions} from 'webpack';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./index";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {BuildOptions} from './index';
 
 export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
   const isDev = mode === 'development';
@@ -8,7 +8,7 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
     type: 'asset/resource',
-  }
+  };
 
   const svgLoader = [
     {
@@ -29,14 +29,14 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
         }
       ],
     }
-  ]
+  ];
 
   const stylesheetLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: true,
@@ -44,21 +44,21 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
           }
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
-  }
+  };
 
   const babelLoader = {
     test: /\.tsx?$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: [
           '@babel/preset-env',
-          "@babel/preset-typescript",
+          '@babel/preset-typescript',
           [
-            "@babel/preset-react",
+            '@babel/preset-react',
             {
               runtime: isDev ? 'automatic' : 'classic',
             }
@@ -67,7 +67,7 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
         plugins: [isDev && 'react-refresh/babel'].filter(Boolean)
       }
     }
-  }
+  };
 
 
   return [
@@ -75,5 +75,5 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
     ...svgLoader,
     stylesheetLoader,
     babelLoader
-  ]
-}
+  ];
+};

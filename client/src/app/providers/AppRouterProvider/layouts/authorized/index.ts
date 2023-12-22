@@ -1,2 +1,2 @@
-export {LayoutAuthorizedLazy as LayoutAuthorized} from "./ui/LayoutAuthorized.async";
+export {LayoutAuthorizedLazy as LayoutAuthorized} from './ui/LayoutAuthorized.async';
 

@@ -1,6 +1,6 @@
 import {ButtonHTMLAttributes, memo, ReactNode} from 'react';
 import cls from './Button.module.scss';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 type ButtonVariant = 'primary' | 'outlined'
 

@@ -1,7 +1,7 @@
-import cls from './Header.module.scss'
-import classNames from "classnames";
-import {Logo} from "shared/ui/Logo/Logo";
-import {UserMenu} from "widgets/UserMenu";
+import cls from './Header.module.scss';
+import classNames from 'classnames';
+import {Logo} from 'shared/ui/Logo/Logo';
+import {UserMenu} from 'widgets/UserMenu';
 
 interface Props {
   isAuth: boolean
@@ -16,7 +16,7 @@ export const Header = ({isAuth}: Props) => {
           <UserMenu/>
         </div>
       </div>
-    )
+    );
   }
 
   return (

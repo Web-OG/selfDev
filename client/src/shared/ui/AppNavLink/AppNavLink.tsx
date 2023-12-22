@@ -1,7 +1,7 @@
 import {memo, ReactNode} from 'react';
 import {NavLink, LinkProps} from 'react-router-dom';
 import cls from './AppNavLink.module.scss';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 
 export interface AppLinkProps extends LinkProps {

@@ -1,18 +1,18 @@
 import {Fragment, memo, useCallback, useState} from 'react';
-import cls from './ThemeSwitcher.module.scss'
-import {Switch} from "@headlessui/react";
-import classNames from "classnames";
-import {useTheme} from "app/providers/ThemeProvider";
-import Icon from 'shared/assets/svgs/theme.svg'
+import cls from './ThemeSwitcher.module.scss';
+import {Switch} from '@headlessui/react';
+import classNames from 'classnames';
+import {useTheme} from 'app/providers/ThemeProvider';
+import Icon from 'shared/assets/svgs/theme.svg';
 
 const ThemeSwitcher = memo(() => {
-  const {theme, toggleTheme} = useTheme()
-  const [enabled, setEnabled] = useState(() => theme === 'app_dark_theme')
+  const {theme, toggleTheme} = useTheme();
+  const [enabled, setEnabled] = useState(() => theme === 'app_dark_theme');
 
   const onThemeToggle = useCallback((checked: boolean) => {
     setEnabled(checked);
-    toggleTheme(checked ? 'app_dark_theme' : 'app_light_theme')
-  }, [theme])
+    toggleTheme(checked ? 'app_dark_theme' : 'app_light_theme');
+  }, [theme]);
 
 
   return (
@@ -34,7 +34,7 @@ const ThemeSwitcher = memo(() => {
         </Switch>
       </div>
     </Switch.Group>
-  )
+  );
 });
 
 ThemeSwitcher.displayName = 'ThemeSwitcher';

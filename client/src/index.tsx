@@ -1,14 +1,14 @@
-import {StrictMode} from "react";
+import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
-import {App} from "app/App";
-import './app/styles/index.scss'
+import {App} from 'app/App';
+import './app/styles/index.scss';
 import './app/config/i18n/i18n';
-import {ThemeProvider} from "app/providers/ThemeProvider";
+import {ThemeProvider} from 'app/providers/ThemeProvider';
 
 const root = document.getElementById('root');
 
 if (!root) {
-  throw new Error('root element not found')
+  throw new Error('root element not found');
 }
 
 const container = createRoot(root);
@@ -19,4 +19,4 @@ container.render(
       <App/>
     </ThemeProvider>
   </StrictMode>
-)
+);
