@@ -19,6 +19,7 @@ export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): C
       }
     ),
     new DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
       __CAPTCHA__: JSON.stringify(captcha)
     }),
   ]

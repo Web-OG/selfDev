@@ -26,9 +26,9 @@ const ThemeSwitcher = memo(() => {
             <button
               className={classNames(cls.button)}
             >
-                            <span
-                              className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})}
-                            />
+              <span
+                className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})}
+              />
             </button>
           )}
         </Switch>

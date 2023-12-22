@@ -1,2 +1,2 @@
-export {LazyPostsPage as PostsPage} from "./ui/AboutPage.async";
+export {LazyPostsPage as PostsPage} from "./ui/PostsPage.async";
 
