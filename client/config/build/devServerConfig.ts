@@ -5,5 +5,8 @@ export const devServerConfig = (options: BuildOptions): DevServerConfiguration =
   historyApiFallback: true,
   open: true,
   port: options.port ?? 3000,
-  hot: true
+  hot: true,
+  client: {
+    overlay: false,
+  }
 });

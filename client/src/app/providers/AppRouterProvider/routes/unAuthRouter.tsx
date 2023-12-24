@@ -1,14 +1,16 @@
 import {createBrowserRouter} from 'react-router-dom';
-import {ErrorPage} from 'pages/ErrorPage';
+import {RouteErrorPage} from 'pages/ErrorPage';
 import {LayoutUnAuthorized} from '../layouts/unAuthorized';
+import {ErrorElement} from 'widgets/PageError';
 
 export const unAuthRouter = createBrowserRouter([
   {
     path: '/',
     element: <LayoutUnAuthorized/>,
-    errorElement: <ErrorPage/>,
+    errorElement: <RouteErrorPage/>,
     children: [
       {
+        errorElement: <ErrorElement/>,
         index: true,
         element: <div>registration</div>,
       },

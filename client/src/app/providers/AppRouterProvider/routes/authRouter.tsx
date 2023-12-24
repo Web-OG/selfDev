@@ -3,27 +3,31 @@ import {createBrowserRouter} from 'react-router-dom';
 import {AboutPage} from 'pages/About';
 import {PostsPage} from 'pages/Posts';
 import {LayoutAuthorized} from '../layouts/authorized';
-import {ErrorPage} from 'pages/ErrorPage';
+import {RouteErrorPage} from 'pages/ErrorPage';
+import {ErrorElement} from 'widgets/PageError';
 
 export const authRouter = createBrowserRouter([
   {
     path: '/',
     element: <LayoutAuthorized/>,
-    errorElement: <ErrorPage/>,
+    errorElement: <RouteErrorPage/>,
     children: [
       {
-        errorElement: <ErrorPage/>,
+        errorElement: <RouteErrorPage/>,
         children: [
           {
+            errorElement: <ErrorElement />,
             index: true,
-            element: <div>index component in main</div>,
+            element: <><div>index component in main</div></>,
           },
           {
+            errorElement: <ErrorElement/>,
             path: 'about',
             index: true,
             element: <Suspense fallback={<div>Loading...</div>}><AboutPage/></Suspense>,
           },
           {
+            errorElement: <ErrorElement/>,
             path: 'posts',
             element: <Suspense fallback={<div>Loading...</div>}><PostsPage/></Suspense>
           }

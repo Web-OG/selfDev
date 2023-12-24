@@ -34,7 +34,9 @@ export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): C
         mode: 'write-references',
       },
     }));
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin({
+      overlay: false
+    }));
   }
 
   if (isProd) {
