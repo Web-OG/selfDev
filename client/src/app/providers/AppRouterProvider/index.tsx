@@ -6,6 +6,6 @@ interface Props {
   isAuth: boolean
 }
 
-export const AppRouterProvider = ({isAuth}: Props) => {
+export const AppRouterProvider = ({isAuth = false}: Props) => {
   return <RouterProvider router={isAuth ? authRouter : unAuthRouter}/>;
 };

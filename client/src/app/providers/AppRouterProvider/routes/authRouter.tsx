@@ -3,8 +3,8 @@ import {createBrowserRouter} from 'react-router-dom';
 import {AboutPage} from 'pages/About';
 import {PostsPage} from 'pages/Posts';
 import {LayoutAuthorized} from '../layouts/authorized';
-import {RouteErrorPage} from 'pages/ErrorPage';
-import {ErrorElement} from 'widgets/PageError';
+import {RouteErrorPage} from 'pages/RouteErrorPage';
+import {ErrorElement} from 'widgets/ErrorElement';
 
 export const authRouter = createBrowserRouter([
   {

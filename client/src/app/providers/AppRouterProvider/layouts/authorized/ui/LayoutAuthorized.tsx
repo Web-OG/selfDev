@@ -7,7 +7,7 @@ import {Footer} from 'widgets/Footer';
 const LayoutAuthorized = () => {
   return (
     <div className={cls.layout}>
-      <Header isAuth={true}/>
+      <Header isAuth/>
       <div className={cls.container}>
         <Sidebar/>
         <div className={cls.outlet}>
