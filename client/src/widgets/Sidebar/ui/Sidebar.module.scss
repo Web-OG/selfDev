@@ -1,4 +1,5 @@
 .Sidebar {
+  position: relative;
   width: 220px;
   background-color: var(--secondary-color);
   transition: var(--transition);
@@ -17,4 +18,15 @@
     color: var(--secondary-color);
     background-color: var(--main-color);
   }
+}
+
+.SidebarButton {
+  position: absolute;
+  right: -20px;
+  bottom: 2px;
+  padding: 0;
+  width: 20px;
+  height: 40px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

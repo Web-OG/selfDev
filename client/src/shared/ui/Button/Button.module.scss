@@ -12,7 +12,8 @@
 
 
   &:hover {
-    transform: scale(1.15);
+    color: var(--accent-color);
+    background-color: #fff;
   }
 }
 
