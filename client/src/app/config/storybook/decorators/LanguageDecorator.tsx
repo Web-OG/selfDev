@@ -1,4 +1,4 @@
-import i18n from '../../i18n/i18n';
+import i18n from '../../i18n/i18nForSB';
 import {Decorator} from '@storybook/react';
 import {Suspense, useEffect} from 'react';
 import {I18nextProvider} from 'react-i18next';

@@ -19,7 +19,8 @@ const config: StorybookConfig = {
     defaultName: 'Documentation'
   },
   core: {
-    disableTelemetry: true
+    disableTelemetry: true,
+    builder: '@storybook/builder-webpack5'
   }
 };
 export default config;
