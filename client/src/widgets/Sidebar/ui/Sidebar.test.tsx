@@ -14,9 +14,9 @@ describe('Sidebar', () => {
     const toggleBtn = screen.getByTestId('Sidebar-toggle');
 
     fireEvent.click(toggleBtn);
-    expect(screen.getByTestId('Sidebar-toggle')).toHaveTextContent('Открыть');
+    expect(screen.getByTestId('Sidebar-toggle')).toHaveTextContent('>');
 
     fireEvent.click(toggleBtn);
-    expect(screen.getByTestId('Sidebar-toggle')).toHaveTextContent('Закрыть');
+    expect(screen.getByTestId('Sidebar-toggle')).toHaveTextContent('<');
   });
 });

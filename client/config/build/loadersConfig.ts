@@ -1,6 +1,7 @@
 import {ModuleOptions} from 'webpack';
 import {BuildOptions} from './index';
-import {buildCssLoader} from './loaders/buildCssLoader';
+import {applyCssLoaders} from './loaders/applyCssLoaders';
+import {applySvgLoaders} from './loaders/applySvgLoaders';
 
 export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
   const isDev = mode === 'development';
@@ -10,28 +11,8 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
     type: 'asset/resource',
   };
 
-  const svgLoader = [
-    {
-      test: /\.svg$/i,
-      type: 'asset',
-      resourceQuery: /url/,
-    },
-    {
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            icon: true,
-            typescript: true
-          }
-        }
-      ],
-    }
-  ];
-
-  const stylesheetLoader = buildCssLoader(isDev);
+  const svgLoader = applySvgLoaders();
+  const stylesheetLoader = applyCssLoaders(isDev);
 
   const babelLoader = {
     test: /\.tsx?$/,

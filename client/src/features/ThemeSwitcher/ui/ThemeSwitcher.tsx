@@ -3,7 +3,6 @@ import cls from './ThemeSwitcher.module.scss';
 import {Switch} from '@headlessui/react';
 import classNames from 'classnames';
 import {useTheme} from 'app/providers/ThemeProvider';
-import Icon from 'shared/assets/svgs/theme.svg';
 
 const ThemeSwitcher = memo(() => {
   const {theme, toggleTheme} = useTheme();
@@ -14,26 +13,18 @@ const ThemeSwitcher = memo(() => {
     toggleTheme(checked ? 'app_dark_theme' : 'app_light_theme');
   }, [theme]);
 
-
   return (
-    <Switch.Group>
-      <div className={cls.wrapper}>
-        <Switch.Label className={cls.iconLabel}>
-          <Icon className={cls.icon} width={38} height={38}/>
-        </Switch.Label>
-        <Switch checked={enabled} onChange={onThemeToggle} as={Fragment}>
-          {({checked}) => (
-            <button
-              className={classNames(cls.button)}
-            >
-              <span
-                className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})}
-              />
-            </button>
-          )}
-        </Switch>
-      </div>
-    </Switch.Group>
+    <Switch checked={enabled} onChange={onThemeToggle} as={Fragment}>
+      {({checked}) => (
+        <button
+          className={classNames(cls.button, {[cls.buttonChecked]: checked})}
+        >
+          <span
+            className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})}
+          />
+        </button>
+      )}
+    </Switch>
   );
 });
 

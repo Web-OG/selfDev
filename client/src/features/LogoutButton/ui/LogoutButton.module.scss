@@ -7,7 +7,7 @@
   color: var(--main-color);
   background-color: transparent;
   border: none;
-  border-radius: 2px;
+  border-radius: 50%;
   transition: var(--transition);
   cursor: pointer;
 
@@ -15,15 +15,4 @@
     transform: scale(1.15);
     box-shadow: var(--box-shadow-on-secondary);
   }
-}
-
-.icon {
-  flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-
-.icon path {
-  fill: var(--main-color);
 }

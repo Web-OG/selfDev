@@ -1,18 +1,37 @@
 .Sidebar {
   position: relative;
-  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 190px;
+  padding-bottom: 8px;
   background-color: var(--secondary-color);
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
   transition: var(--transition);
 }
 
 .SidebarCollapsed {
-  width: 100px;
+  width: 70px;
+}
+
+.links {
+  width: 90%;
 }
 
 .SidebarItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 16px 0;
   color: var(--main-color);
-  padding: 16px 24px;
   border-bottom: 1px solid var(--main-color);
+
+  .SidebarCollapsed & {
+    padding: 8px 0;
+  }
 
   &:hover {
     color: var(--secondary-color);
@@ -20,10 +39,23 @@
   }
 }
 
-.SidebarButton {
+.switchers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+
+  .SidebarCollapsed & {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
+
+.SidebarButton,
+button.SidebarButton  {
   position: absolute;
   right: -20px;
-  bottom: 2px;
+  bottom: 0;
   padding: 0;
   width: 20px;
   height: 40px;

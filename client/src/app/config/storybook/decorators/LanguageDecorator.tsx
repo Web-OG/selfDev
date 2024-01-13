@@ -7,7 +7,7 @@ export const LanguageDecorator: Decorator  = (Story, context) => {
   const { locale } = context.globals;
 
   useEffect(() => {
-    i18n.changeLanguage(locale);
+    void i18n.changeLanguage(locale);
   }, [locale]);
 
   return (
