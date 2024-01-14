@@ -3,6 +3,6 @@
 node_modules
 .idea
 .env
-/storybook-static
-.loki/report.html
-.loki/report.json
+/client/storybook-static
+/client/.loki/report.html
+/client/.loki/report.json
