@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "client-ci:init": "cd client && npm install",
     "build:prod": "cd client && npm run build:prod",
     "lint:ts": "cd client && npm run lint:ts",
     "lint:scss": "cd client && npm run lint:scss",
