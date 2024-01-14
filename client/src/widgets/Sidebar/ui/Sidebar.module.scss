@@ -7,8 +7,6 @@
   width: 190px;
   padding-bottom: 8px;
   background-color: var(--secondary-color);
-  border-top: 1px solid var(--main-color);
-  border-bottom: 1px solid var(--main-color);
   transition: var(--transition);
 }
 
@@ -55,7 +53,7 @@
 button.SidebarButton  {
   position: absolute;
   right: -20px;
-  bottom: 0;
+  bottom: 2px;
   padding: 0;
   width: 20px;
   height: 40px;

@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
-  height: 89px;
+  width: 70px;
+  height: 70px;
   transition: var(--transition);
 
   &:hover {
@@ -13,7 +13,5 @@
 
 .link svg {
   flex-shrink: 0;
-  width: 100px;
-  height: 99px;
   object-fit: contain;
 }
