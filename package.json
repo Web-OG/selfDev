@@ -4,12 +4,12 @@
   "description": "",
   "scripts": {
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
-    "npm run build:prod": "cd client && npm run build:prod",
-    "npm run lint:ts": "cd client && npm run lint:ts",
-    "npm run lint:scss": "cd client && npm run lint:scss",
-    "npm run test:unit": "cd client && npm run test:unit",
-    "npm run storybook:build": "cd client && npm run test:unit",
-    "npm run test:ui:ci": "cd client && npm run test:unit"
+    "build:prod": "cd client && npm run build:prod",
+    "lint:ts": "cd client && npm run lint:ts",
+    "lint:scss": "cd client && npm run lint:scss",
+    "test:unit": "cd client && npm run test:unit",
+    "storybook:build": "cd client && npm run test:unit",
+    "test:ui:ci": "cd client && npm run test:unit"
   },
   "keywords": [],
   "author": "",
