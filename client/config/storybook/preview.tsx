@@ -13,20 +13,9 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    theme: 'light'
   },
   globalTypes: {
-    theme: {
-      description: 'Global theme for components',
-      defaultValue: 'app_light_theme',
-      toolbar: {
-        title: 'Theme',
-        items: [
-          {value: 'app_light_theme', icon: 'starhollow', title: 'Light (default)'},
-          {value: 'app_dark_theme', icon: 'star', title: 'Dark'},
-        ],
-        dynamicTitle: true,
-      },
-    },
     locale: {
       defaultValue: 'ru',
       description: 'Internationalization locale',

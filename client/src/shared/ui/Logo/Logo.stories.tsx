@@ -10,5 +10,5 @@ export default meta;
 type Story = StoryObj<typeof Logo>;
 
 export const Primary: Story = {
-  args: null,
+  args: undefined,
 };
