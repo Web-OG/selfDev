@@ -11,7 +11,7 @@ const ThemeSwitcher = memo(() => {
   const onThemeToggle = useCallback((checked: boolean) => {
     setEnabled(checked);
     toggleTheme(checked ? 'app_dark_theme' : 'app_light_theme');
-  }, [theme]);
+  }, [toggleTheme]);
 
   return (
     <Switch checked={enabled} onChange={onThemeToggle} as={Fragment}>
