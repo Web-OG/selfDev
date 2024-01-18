@@ -1,5 +1,5 @@
 import './App.scss';
-import {AppRouterProvider} from './providers/AppRouterProvider';
+import {AppRouter} from './providers/AppRouter';
 import {useTheme} from './providers/ThemeProvider';
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div className={`app ${theme}`}>
-      <AppRouterProvider isAuth={true}/>
+      <AppRouter />
     </div>
   );
 };

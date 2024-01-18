@@ -1,5 +1,6 @@
 import {isRouteErrorResponse, useRouteError} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
+import cls from './RouteErrorPage.module.scss';
 
 interface RouteError {
   statusText: string
@@ -22,7 +23,7 @@ const RouteErrorPage = (props: RouteErrorPageProps) => {
   }
 
   return (
-    <div id="error-page">
+    <div className={cls.page} id="error-page">
       <h1>{t('Опаньки!')}</h1>
       <p>{t('Произошла непредвиденная ошибка')}</p>
       <p>

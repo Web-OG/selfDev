@@ -1,0 +1,25 @@
+.title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
+
+.subTitle {
+  margin-bottom: 30px;
+}
+
+.formsWrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.formWrap {
+  padding: 30px 50px;
+  border: 1px solid var(--secondary-color-30);
+}

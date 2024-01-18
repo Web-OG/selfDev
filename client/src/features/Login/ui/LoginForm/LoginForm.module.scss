@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  background-color: var(--main-color);
+}
+
+.button {
+  margin-top: 30px;
+}
+
+.formFixed {
+  width: 300px;
+}

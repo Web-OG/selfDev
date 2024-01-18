@@ -6,7 +6,7 @@
   height: 32px;
   color: var(--main-color);
   background-color: transparent;
-  border: none;
+  border: var(--secondary-color-border);
   border-radius: 50%;
   transition: var(--transition);
   cursor: pointer;
@@ -14,5 +14,15 @@
   &:hover {
     transform: scale(1.15);
     box-shadow: var(--box-shadow-on-secondary);
+  }
+
+  &:focus {
+    border: var(--focus-color-border);
+  }
+
+  &:active {
+    color: var(--secondary-color) ;
+    background-color: var(--main-color);
+    border: var(--main-color);
   }
 }

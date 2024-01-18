@@ -1,0 +1,16 @@
+.opportunities {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.opportunity {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.title {
+  font-size: var(--font-size-accent);
+  font-weight: 700;
+}

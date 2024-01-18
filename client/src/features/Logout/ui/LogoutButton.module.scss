@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+  border: var(--secondary-color-border);
+  border-radius: 50%;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--box-shadow-on-secondary);
+  }
+
+  &:focus {
+    border: var(--focus-color-border);
+  }
+
+  &:active {
+    color: var(--secondary-color) ;
+    background-color: var(--main-color);
+    border: var(--main-color-border);
+  }
+}

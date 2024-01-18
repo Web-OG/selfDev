@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
 
-export function applyCssLoaders(isDev: boolean) {
+export function applyCssLoaders(isDev: boolean, isNotStorybook: boolean = true) {
   return {
     test: /\.s[ac]ss$/i,
     use: [
@@ -15,6 +16,12 @@ export function applyCssLoaders(isDev: boolean) {
         },
       },
       'sass-loader',
+      isNotStorybook && {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: path.resolve('src', 'app', 'styles', 'variables.scss')
+        }
+      }
     ],
   };
 }
