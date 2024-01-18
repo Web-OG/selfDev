@@ -1,0 +1,73 @@
+.Modal {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  color: var(--secondary-color);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.content {
+  min-width: 30%;
+  max-width: 60%;
+  border-radius: 12px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  transition: var(--transition);
+  transform: scale(0.5);
+}
+
+.sizeS {
+  max-width: 30%;
+}
+
+.sizeM {
+  max-width: 60%;
+}
+
+.sizeL {
+  max-width: 80%;
+}
+
+.opened {
+  z-index: var(--modal-z-index);
+  pointer-events: auto;
+  opacity: 1;
+
+  .content {
+    transform: scale(1);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.2);
+  }
+}
+
+.header {
+  display: flex;
+  padding: 10px 15px;
+  font-size: var(--font-size-subtitle);
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.headerBtn {
+  margin-left: auto;
+}
+
+.body {
+  padding: 15px 20px 30px;
+}

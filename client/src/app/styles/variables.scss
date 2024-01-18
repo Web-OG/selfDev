@@ -1,5 +1,21 @@
 :root {
+  // font-size
+  --font-size-hint: 8px;
+  --font-size-notice: 12px;
+  --font-size-primary: 16px;
+  --font-size-accent: 20px;
+  --font-size-subtitle: 24px;
+  --font-size-title: 32px;
+
+  // colors
+
+
+
+  // other
   --transition: all .3s ease-in;
+
+  // z-indexes
+  --modal-z-index: 10;
 }
 
 // Media Queries
@@ -8,3 +24,7 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+
+.lal {
+  color: #68f668;
+}

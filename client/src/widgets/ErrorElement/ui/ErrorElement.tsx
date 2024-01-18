@@ -1,4 +1,4 @@
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button/Button';
 import cls from './ErrorElement.module.scss';
 import classNames from 'classnames';
 import {useTranslation} from 'react-i18next';

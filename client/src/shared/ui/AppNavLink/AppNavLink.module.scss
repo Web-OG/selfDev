@@ -3,13 +3,24 @@
   color: var(--main-color);
   transition: var(--transition);
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     transform: scale(1.15);
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: var(--focus-color);
   }
 }
 
 .active {
   font-weight: 700;
+  text-decoration: none
 }
 
 

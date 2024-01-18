@@ -16,9 +16,43 @@ export const Primary: Story = {
   args: {},
 };
 
+export const PrimaryHover: Story = {
+  parameters: {
+    pseudo: {
+      hover: true
+    }
+  },
+};
+
+export const PrimaryFocus: Story = {
+  parameters: {
+    pseudo: {
+      focus: true
+    }
+  },
+};
+
 export const PrimaryDark: Story = {
   parameters: {
     theme: 'dark'
+  },
+};
+
+export const PrimaryDarkHover: Story = {
+  parameters: {
+    theme: 'dark',
+    pseudo: {
+      hover: true
+    }
+  },
+};
+
+export const PrimaryDarkFocus: Story = {
+  parameters: {
+    theme: 'dark',
+    pseudo: {
+      focus: true
+    }
   },
 };
 

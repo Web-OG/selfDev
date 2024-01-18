@@ -1,11 +1,20 @@
 import {memo} from 'react';
 import cls from './UserMenu.module.scss';
-import {LogoutButton} from 'features/LogoutButton';
+import {LogoutButton} from 'features/Logout';
+import {LoginButton} from 'features/Login';
+import {LangSwitcher} from 'features/LangSwitcher';
 
-const UserMenu = memo(() => {
+interface UserMenuProps {
+  authed: boolean
+}
+
+const UserMenu = memo((props: UserMenuProps) => {
+  const {authed} = props;
+
   return (
     <div className={cls.wrapper}>
-      <LogoutButton/>
+      {!authed && <LangSwitcher short={true}/>}
+      {authed ? <LogoutButton/> : <LoginButton/>}
     </div>
   );
 });

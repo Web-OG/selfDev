@@ -12,12 +12,30 @@ type Story = StoryObj<typeof Header>;
 
 export const Authorized: Story = {
   args: {
-    isAuth: true
+    authed: true
   },
+};
+
+export const AuthorizedDark: Story = {
+  args: {
+    authed: true
+  },
+  parameters: {
+    theme: 'dark'
+  }
 };
 
 export const NotAuthorized: Story = {
   args: {
-    isAuth: false
+    authed: false
   },
+};
+
+export const NotAuthorizedDark: Story = {
+  args: {
+    authed: false
+  },
+  parameters: {
+    theme: 'dark'
+  }
 };

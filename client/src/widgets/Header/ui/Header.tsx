@@ -4,24 +4,18 @@ import {Logo} from 'shared/ui/Logo/Logo';
 import {UserMenu} from 'widgets/UserMenu';
 
 interface Props {
-  isAuth: boolean
+  authed?: boolean
 }
 
-export const Header = ({isAuth}: Props) => {
-  if (isAuth) {
-    return (
-      <div className={cls.Header}>
-        <div className={classNames(cls.container, 'container')}>
-          <Logo/>
-          <UserMenu/>
-        </div>
-      </div>
-    );
-  }
+export const Header = (props: Props) => {
+  const {authed = false} = props;
 
   return (
-    <div>
-      NoAuth
+    <div className={cls.Header}>
+      <div className={classNames(cls.container, 'container')}>
+        <Logo/>
+        <UserMenu authed={authed}/>
+      </div>
     </div>
   );
 };

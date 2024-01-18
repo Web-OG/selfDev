@@ -12,6 +12,32 @@ export default meta;
 
 type Story = StoryObj<typeof UserMenu>;
 
-export const Primary: Story = {
-  args: {},
+export const Authorized: Story = {
+  args: {
+    authed: true
+  },
+};
+
+export const AuthorizedDark: Story = {
+  parameters: {
+    theme: 'dark'
+  },
+  args: {
+    authed: true
+  },
+};
+
+export const NotAuthorized: Story = {
+  args: {
+    authed: false
+  },
+};
+
+export const NotAuthorizedDark: Story = {
+  parameters: {
+    theme: 'dark'
+  },
+  args: {
+    authed: false
+  },
 };

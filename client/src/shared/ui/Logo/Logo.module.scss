@@ -6,7 +6,9 @@
   height: 70px;
   transition: var(--transition);
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     box-shadow: var(--box-shadow-on-secondary);
   }
 }

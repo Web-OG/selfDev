@@ -5,12 +5,22 @@
   padding: 3px 10px;
   color: var(--secondary-color);
   background-color: var(--main-color);
-  border: none;
+  border: var(--main-color-border);
   border-radius: 30px;
   transition: box-shadow .3s ease-in;
 
   &:hover {
     box-shadow: var(--box-shadow-on-secondary);
+  }
+
+  &:focus {
+    border: var(--focus-color-border);
+  }
+
+  &:active {
+    color: var(--main-color) ;
+    background-color: var(--secondary-color);
+    border: var(--main-color-border);
   }
 }
 
