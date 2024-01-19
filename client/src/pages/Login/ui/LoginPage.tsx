@@ -1,17 +1,20 @@
 import {LoginForm, LoginOpportunities} from 'features/Login';
 import cls from './LoginPage.module.scss';
+import {useTranslation} from 'react-i18next';
+import {RegistrationInvite} from 'features/Registration';
 
 const LoginPage = () => {
+  const {t} = useTranslation();
 
   return (
     <>
       <h1 className={cls.title}>
-      Войти или зарегистрироваться
+        {t('Войти или зарегистрироваться')}
       </h1>
       <div className={cls.page}>
         <div>
           <h2 className={cls.subTitle}>
-            Преимущества аккаунта
+            {t('Преимущества аккаунта')}
           </h2>
           <LoginOpportunities/>
         </div>
@@ -20,7 +23,7 @@ const LoginPage = () => {
             <LoginForm className={cls.form}/>
           </div>
           <div className={cls.formWrap}>
-            Нет аккаунта? <a href="#">Зарегистрироваться.</a>
+            <RegistrationInvite />
           </div>
         </div>
       </div>
