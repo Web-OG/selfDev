@@ -9,6 +9,12 @@
   "Открыть": "Open",
   "Закрыть": "Close",
   "Тест на отлов ошибки": "checking for error forwarding",
-  "Логин": "Логин",
-  "Войти": "Log in"
+  "Логин": "Login",
+  "Войти": "Log in",
+  "Преимущества аккаунта": "Account advantages",
+  "Войти или зарегистрироваться": "Log in or register",
+  "Пароль": "Password",
+  "Условия": "Terms",
+  "Конфиденциальность": "Privacy",
+  "Документы": "Documents"
 }

@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import LoginPage from './LoginPage';
-import {withAuthorizedLayout, withUnauthorizedLayout} from 'app/config/storybook';
+import {withUnauthorizedLayout} from 'app/config/storybook';
 
 const meta: Meta<typeof LoginPage> = {
   title: 'pages/LoginPage',

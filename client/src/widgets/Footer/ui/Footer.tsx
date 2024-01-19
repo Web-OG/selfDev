@@ -7,7 +7,7 @@ const Footer = memo(() => {
   return (
     <div className={cls.Footer}>
       <div className={classNames(cls.container, 'container')}>
-        <span>© 2024 WebThug </span>
+        <span>© 2024 WebThug</span>
         <LegalInfo />
       </div>
     </div>

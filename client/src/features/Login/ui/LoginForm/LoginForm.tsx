@@ -26,8 +26,8 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   return (
     <form className={classNames(cls.form, {[cls.formFixed]: fixed}, className)}>
-      <Input placeholder={'example@mail.com'} label={'Логин'} value={login} onChange={onLoginChange} required/>
-      <Input placeholder={'*****'} label={'Пароль'} value={password} onChange={onPasswordChange} required/>
+      <Input placeholder={'example@mail.com'} label={t('Логин')} value={login} onChange={onLoginChange} required/>
+      <Input placeholder={'*****'} label={t('Пароль')} value={password} onChange={onPasswordChange} required/>
       <Button className={cls.button}>
         {t('Войти')}
       </Button>

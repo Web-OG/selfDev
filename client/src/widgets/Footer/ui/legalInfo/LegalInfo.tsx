@@ -1,22 +1,25 @@
 import {memo} from 'react';
 import cls from '../Footer.module.scss';
+import {useTranslation} from 'react-i18next';
 
 const LegalInfo = memo(() => {
+  const {t} = useTranslation();
+
   return (
     <ul className={cls.legals}>
       <li>
         <a href='#' target='_blank'>
-          Terms
+          {t('Условия')}
         </a>
       </li>
       <li>
         <a href='#' target='_blank'>
-          Privacy
+          {t('Конфиденциальность')}
         </a>
       </li>
       <li>
         <a href='#' target='_blank'>
-          Docs
+          {t('Документы')}
         </a>
       </li>
     </ul>
