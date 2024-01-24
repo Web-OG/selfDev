@@ -1,4 +1,4 @@
-import {LoginForm, LoginOpportunities} from 'features/Login';
+import {LoginForm, LoginOpportunities} from 'features/Authentication';
 import cls from './LoginPage.module.scss';
 import {useTranslation} from 'react-i18next';
 import {RegistrationInvite} from 'features/Registration';
@@ -23,7 +23,7 @@ const LoginPage = () => {
             <LoginForm className={cls.form}/>
           </div>
           <div className={cls.formWrap}>
-            <RegistrationInvite />
+            <RegistrationInvite/>
           </div>
         </div>
       </div>

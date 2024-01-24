@@ -49,6 +49,7 @@ module.exports = {
       'always'
     ],
     'react/react-in-jsx-scope': 'off',
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off'
   }
 };

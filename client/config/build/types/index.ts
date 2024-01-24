@@ -13,5 +13,14 @@ export type BuildOptions = {
   paths: BuildPaths;
   mode: BuildMode;
   analyzer?: boolean,
-  captcha?: boolean
+  captcha?: boolean,
+  apiUrl: string;
+}
+
+export interface BuildEnvs {
+  mode: BuildMode,
+  analyzer?: boolean,
+  port: number,
+  captcha: boolean,
+  apiUrl: string
 }

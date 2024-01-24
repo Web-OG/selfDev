@@ -1,7 +1,6 @@
 import {memo} from 'react';
 import cls from './UserMenu.module.scss';
-import {LogoutButton} from 'features/Logout';
-import {LoginButton} from 'features/Login';
+import {LoginButton, LogoutButton} from 'features/Authentication';
 import {LangSwitcher} from 'features/LangSwitcher';
 
 interface UserMenuProps {

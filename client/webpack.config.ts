@@ -1,14 +1,9 @@
 import path from 'path';
-import {BuildMode, BuildOptions, BuildPaths, createWebpackConfig} from './config/build';
+import {BuildEnvs, BuildOptions, BuildPaths, createWebpackConfig} from './config/build';
 
-interface Envs {
-  mode: BuildMode,
-  analyzer?: boolean,
-  port: number,
-  captcha: boolean
-}
+export default (environments: BuildEnvs) => {
+  const {mode, port, analyzer, captcha, apiUrl} = environments;
 
-export default ({mode, port, analyzer, captcha}: Envs) => {
   const paths: BuildPaths = {
     output: path.resolve(__dirname, 'build'),
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -22,7 +17,8 @@ export default ({mode, port, analyzer, captcha}: Envs) => {
     mode: mode ?? 'development',
     paths,
     analyzer,
-    captcha: captcha ?? false
+    captcha: captcha ?? false,
+    apiUrl: apiUrl || 'http://localhost:8000'
   };
 
   return createWebpackConfig(options);

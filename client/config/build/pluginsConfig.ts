@@ -8,7 +8,8 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 
-export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): Configuration['plugins'] => {
+export const pluginsConfig = (options: BuildOptions): Configuration['plugins'] => {
+  const {paths, analyzer, apiUrl, captcha, mode} = options;
   const isDev = mode === 'development';
   const isProd = mode === 'production';
 
@@ -20,6 +21,7 @@ export const pluginsConfig = ({paths, analyzer, captcha, mode}: BuildOptions): C
     ),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
       __CAPTCHA__: JSON.stringify(captcha)
     }),
   ];

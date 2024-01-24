@@ -4,6 +4,8 @@ import {App} from 'app/App';
 import './app/styles/index.scss';
 import './app/config/i18n/i18n';
 import {ThemeProvider} from 'app/providers/ThemeProvider';
+import ErrorBoundary from './app/providers/ErrorBoundary/ui/ErrorBoundary';
+import {StoreProvider} from 'app/providers/StoreProvider';
 
 const root = document.getElementById('root');
 
@@ -15,8 +17,12 @@ const container = createRoot(root);
 
 container.render(
   <StrictMode>
-    <ThemeProvider>
-      <App/>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <StoreProvider>
+        <ThemeProvider>
+          <App/>
+        </ThemeProvider>
+      </StoreProvider>
+    </ErrorBoundary>
   </StrictMode>
 );
