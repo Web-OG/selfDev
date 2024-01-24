@@ -30,12 +30,12 @@ class UserController {
                 return next(err);
             }
             if (!user) {
-                return res.status(400).json({message: 'Incorrect request !user'})
+                return res.status(400).json({message: 'Пользователь не существует'})
             }
 
             req.login(user, (err) => {
                 if (err) return next(err)
-                return res.json('login успешно')
+                return res.json(user)
             });
         })(req, res, next);
     }
@@ -47,7 +47,7 @@ class UserController {
                     if (err) {
                         return next(err);
                     }
-                    res.status(200).json('logout успешно');
+                    res.status(200).json({message: 'logout успешно'});
                 }
             )
         } catch (e) {
@@ -58,7 +58,7 @@ class UserController {
     auth(req, res) {
         if (req.isAuthenticated()) {
             res.status(200).json('Вы авторизованы')
-        }else  res.status(401).json('Необходима авторизация')
+        } else res.status(401).json('Необходима авторизация')
     }
 }
 

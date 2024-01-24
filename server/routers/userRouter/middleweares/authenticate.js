@@ -9,7 +9,6 @@ export const authenticateMiddleware = () => {
             try {
                 const user = await User.findOne({username});
                 if (!user) return done(null, false, {message: 'Incorrect username.'});
-                console.log("LocalStrategy User is", user)
 
                 const isPasswordValid = await CryptService.compare(password, user.password)
 

@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+import cors from 'cors';
 import fileUpload from 'express-fileupload'
 import passport from 'passport'
 import session from 'express-session'
@@ -20,6 +21,7 @@ const errorHandler = (err, req, res, next) => {
     res.json({error: err});
     next()
 }
+app.use(cors())
 app.use(express.json())
 app.use(logger('dev'))
 app.use(cookieParser());
@@ -29,10 +31,10 @@ app.use(session(
         secret: process.env.SECRET_KEY,
         resave: false,
         saveUninitialized: false,
-        cookie : {
+        cookie: {
             maxAge: ONE_WEEK_IN_MILLISECONDS
         },
-        store : MongoStore.create({ mongoUrl: process.env.DB_URL })
+        store: MongoStore.create({mongoUrl: process.env.DB_URL})
     }));
 app.use(passport.initialize());
 app.use(passport.session());
