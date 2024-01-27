@@ -1,0 +1,38 @@
+.page,
+.section,
+.topic {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-sections);
+}
+
+.section {
+  row-gap: var(--indent-primary);
+}
+
+.heading {
+  text-align: center;
+}
+
+.topic {
+  row-gap: var(--indent-inner-primary);
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: space-between;
+}
+
+.welcome {
+  padding: 20px 40px 60px;
+  color: #fff;
+  background-color: var(--focus-color);
+  border-radius: 16px;
+}
+
+.themes {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: var(--secondary-color-10);
+}

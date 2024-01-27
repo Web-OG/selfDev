@@ -1,0 +1,19 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-inner-primary);
+  text-align: center;
+}
+
+.role {
+  font-size: var(--font-size-accent);
+  font-weight: 700;
+}
+
+.avatar {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background-color: var(--secondary-color-10);
+  border-radius: 50%;
+}

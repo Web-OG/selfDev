@@ -6,7 +6,9 @@ import {LanguageDecorator, ThemeDecorator} from 'app/config/storybook';
 
 const preview: Preview = {
   parameters: {
-    actions: {argTypesRegex: '^on[A-Z].*'},
+    actions: {
+      argTypesRegex: '^on[A-Z].*'
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -23,14 +25,14 @@ const preview: Preview = {
         title: 'Locale',
         icon: 'globe',
         items: [
-          { value: 'ru', title: 'Русский' },
-          { value: 'en', title: 'English' },
+          {value: 'ru', title: 'Русский'},
+          {value: 'en', title: 'English'},
         ],
         dynamicTitle: true,
       },
     },
   },
-  decorators: [withRouter, ThemeDecorator,  LanguageDecorator]
+  decorators: [withRouter, ThemeDecorator, LanguageDecorator]
 };
 
 export default preview;

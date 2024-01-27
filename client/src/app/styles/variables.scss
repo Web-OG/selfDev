@@ -6,13 +6,18 @@
   --font-size-accent: 20px;
   --font-size-subtitle: 24px;
   --font-size-title: 32px;
+  --font-size-promo-title: 48px;
 
-  // colors
-
-
+  // indents
+  --indent-inner-blocks: 8px;
+  --indent-inner-primary: 16px;
+  --indent-primary: 30px;
+  --indent-space: 48px;
+  --indent-sections: 60px;
 
   // other
   --transition: all .3s ease-in;
+  --gradient-primary: linear-gradient(to right, #36d1dc, #5b86e5);
 
   // z-indexes
   --modal-z-index: 10;

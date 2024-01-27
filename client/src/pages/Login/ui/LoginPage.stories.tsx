@@ -1,7 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import LoginPage from './LoginPage';
-import {withUnauthorizedLayout} from 'app/config/storybook';
+import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
+import {LayoutDecorator} from 'app/config/storybook/decorators/LayoutDecorator';
 
 const meta: Meta<typeof LoginPage> = {
   title: 'pages/LoginPage',
@@ -15,18 +16,36 @@ export default meta;
 type Story = StoryObj<typeof LoginPage>;
 
 export const Separate: Story = {
-  args: {}
+  decorators: [StoreDecorator]
 };
+
+export const AuthorizedLayout: Story = {
+  parameters: {
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
+};
+
+export const AuthorizedLayoutDark: Story = {
+  parameters: {
+    theme: 'dark',
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
+};
+
 
 export const UnauthorizedLayout: Story = {
   parameters: {
-    ...withUnauthorizedLayout(<LoginPage/>),
-  }
+    pageLayout: 'unauthorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };
 
 export const UnauthorizedLayoutDark: Story = {
   parameters: {
-    ...withUnauthorizedLayout(<LoginPage/>),
-    theme: 'dark'
-  }
+    theme: 'dark',
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };

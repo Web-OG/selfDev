@@ -2,11 +2,12 @@ import type {Meta, StoryObj} from '@storybook/react';
 
 import {UserMenu} from './UserMenu';
 import {SecondaryElementDecorator} from 'app/config/storybook';
+import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof UserMenu> = {
   title: 'widgets/UserMenu',
   component: UserMenu,
-  decorators: [SecondaryElementDecorator]
+  decorators: [StoreDecorator, SecondaryElementDecorator]
 };
 export default meta;
 

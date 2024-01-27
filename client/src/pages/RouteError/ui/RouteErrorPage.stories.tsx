@@ -1,7 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {RouteErrorPage} from './RouteErrorPage';
-import {withAuthorizedLayout, withUnauthorizedLayout} from 'app/config/storybook';
+import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
+import {LayoutDecorator} from 'app/config/storybook/decorators/LayoutDecorator';
 
 const meta: Meta<typeof RouteErrorPage> = {
   title: 'pages/RouteErrorPage',
@@ -21,32 +22,37 @@ export default meta;
 type Story = StoryObj<typeof RouteErrorPage>;
 
 export const Separate: Story = {
-  args: {}
+  decorators: [StoreDecorator]
 };
 
 export const AuthorizedLayout: Story = {
   parameters: {
-    ...withAuthorizedLayout(<RouteErrorPage/>),
-  }
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };
 
 export const AuthorizedLayoutDark: Story = {
   parameters: {
-    ...withAuthorizedLayout(<RouteErrorPage/>),
-    theme: 'dark'
-  }
+    theme: 'dark',
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };
+
 
 export const UnauthorizedLayout: Story = {
   parameters: {
-    ...withUnauthorizedLayout(<RouteErrorPage/>),
-  }
+    pageLayout: 'unauthorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };
 
 export const UnauthorizedLayoutDark: Story = {
   parameters: {
-    ...withUnauthorizedLayout(<RouteErrorPage/>),
-    theme: 'dark'
-  }
+    theme: 'dark',
+    pageLayout: 'authorized'
+  },
+  decorators: [LayoutDecorator, StoreDecorator]
 };
 
