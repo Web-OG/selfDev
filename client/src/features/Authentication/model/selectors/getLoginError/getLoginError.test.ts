@@ -4,7 +4,7 @@ import {getLoginError} from './getLoginError';
 describe('getLoginError.test', () => {
   test('should return error', () => {
     const state: DeepPartial<StateSchema> = {
-      loginForm: {
+      authentication: {
         sendingError: 'error',
       },
     };

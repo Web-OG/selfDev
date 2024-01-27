@@ -12,8 +12,7 @@ const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <div data-testid="Sidebar" className={classNames(cls.Sidebar, {[cls.SidebarCollapsed]: collapsed},)}>
-
+    <div data-testid="Sidebar" className={classNames(cls.Sidebar, {[cls.SidebarCollapsed]: collapsed})}>
       <div className={cls.links}>
         <Link className={cls.SidebarItem} to={'/about'}>{collapsed ?
           <AboutIcon width={30} height={30}/> : 'About'}</Link>

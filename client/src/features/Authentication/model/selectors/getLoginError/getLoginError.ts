@@ -1,3 +1,3 @@
 import {StateSchema} from 'app/providers/StoreProvider';
 
-export const getLoginError = (state: StateSchema) => state?.loginForm?.sendingError;
+export const getLoginError = (state: StateSchema) => state?.authentication?.sendingError;
