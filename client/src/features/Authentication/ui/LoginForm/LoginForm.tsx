@@ -1,36 +1,49 @@
-import {FormEvent, memo, useCallback, useState} from 'react';
+import {FormEvent, memo, useCallback} from 'react';
 import cls from './LoginForm.module.scss';
 import classNames from 'classnames';
 import {Input} from 'shared/ui/Input';
 import {Button} from 'shared/ui/Button';
 import {useTranslation} from 'react-i18next';
-import {login} from 'features/Authentication/model/services/login/login';
-import {useAppDispatch} from 'shared/hooks/useAppDispatch';
+import {login} from '../../model/services/login/login';
+import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {authenticationActions, authenticationReducer} from '../../model/slices/authenticationSlice';
+import {useSelector} from 'react-redux';
+import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
 
 interface LoginFormProps {
   className?: string;
   fixed?: boolean
 }
 
+const initialReducers: ReducersList = {
+  authentication: authenticationReducer
+};
+
 const LoginForm = memo((props: LoginFormProps) => {
   const {className, fixed = false} = props;
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
+  const {isReducersInit} = useReducerManager(initialReducers);
 
   const onSubmit = useCallback((evt: FormEvent) => {
     evt.preventDefault();
     dispatch(login({username, password}));
-  }, [dispatch, username, password]);
+  }, [dispatch, password, username]);
 
   const onLoginChange = useCallback((str: string) => {
-    setUsername(str);
-  }, []);
+    dispatch(authenticationActions.setUsername(str));
+  }, [dispatch]);
 
   const onPasswordChange = useCallback((str: string) => {
-    setPassword(str);
-  }, []);
+    dispatch(authenticationActions.setPassword(str));
+  }, [dispatch]);
+
+  if (!isReducersInit) {
+    return null;
+  }
 
   return (
     <form onSubmit={onSubmit} className={classNames(cls.form, {[cls.formFixed]: fixed}, className)}>
@@ -43,5 +56,4 @@ const LoginForm = memo((props: LoginFormProps) => {
   );
 });
 
-LoginForm.displayName = 'LoginForm';
-export {LoginForm};
+export default LoginForm;

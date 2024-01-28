@@ -47,6 +47,10 @@ export const Modal = (props: ModalProps) => {
     if (isOpen) {
       setIsMounted(true);
     }
+
+    return () => {
+      setIsMounted(false);
+    };
   }, [isOpen]);
 
   const closeHandler = useCallback(() => {
@@ -90,9 +94,9 @@ export const Modal = (props: ModalProps) => {
   };
 
   const sizes = {
-    [cls.sizeS] : size === 's',
-    [cls.sizeM] : size === 'm',
-    [cls.sizeL] : size === 'l',
+    [cls.sizeS]: size === 's',
+    [cls.sizeM]: size === 'm',
+    [cls.sizeL]: size === 'l',
   };
 
   if (lazy && !isMounted) {

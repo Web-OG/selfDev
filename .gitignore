@@ -6,3 +6,4 @@ node_modules
 /client/storybook-static
 /client/.loki/report.html
 /client/.loki/report.json
+/client/.husky/pre-commit
