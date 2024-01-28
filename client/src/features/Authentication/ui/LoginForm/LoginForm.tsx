@@ -13,7 +13,8 @@ import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginP
 
 interface LoginFormProps {
   className?: string;
-  fixed?: boolean
+  fixed?: boolean;
+  onClose?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -21,17 +22,20 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-  const {className, fixed = false} = props;
+  const {className, onClose, fixed = false} = props;
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
   const {isReducersInit} = useReducerManager(initialReducers);
 
-  const onSubmit = useCallback((evt: FormEvent) => {
+  const onSubmit = useCallback(async (evt: FormEvent) => {
     evt.preventDefault();
-    dispatch(login({username, password}));
-  }, [dispatch, password, username]);
+    const result = await dispatch(login({username, password}));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onClose?.();
+    }
+  }, [dispatch, onClose, password, username]);
 
   const onLoginChange = useCallback((str: string) => {
     dispatch(authenticationActions.setUsername(str));

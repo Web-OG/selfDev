@@ -7,7 +7,7 @@ type LoginModalProps = Omit<ModalProps, 'children'>
 const LoginModal = memo((props: LoginModalProps) => {
   return (
     <Modal title={'Войти'} size={'s'} {...props}>
-      <LazyLoginForm/>
+      <LazyLoginForm onClose={props.onClose}/>
     </Modal>
   );
 });
