@@ -1,6 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {User, userActions} from 'entities/User';
 import {ThunkConfig} from 'app/providers/StoreProvider';
+import {LOCALSTORAGE} from 'shared/constants/localstorage';
 
 
 export const logout = createAsyncThunk<
@@ -16,6 +17,8 @@ export const logout = createAsyncThunk<
       const response = await extra.api.post<User>('/user/logout');
 
       dispatch(userActions.logout());
+      localStorage.removeItem(LOCALSTORAGE.USER_KEY);
+      
       return response.data;
     } catch (e) {
       console.log(e);

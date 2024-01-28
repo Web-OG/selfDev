@@ -3,7 +3,6 @@ import {AsyncThunkAction} from '@reduxjs/toolkit';
 import axios, {AxiosStatic} from 'axios';
 import Mock = jest.Mock;
 
-
 type ActionCreatorType<Return, Arg, RejectedValue>
   = (arg: Arg) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>;
 
@@ -33,11 +32,11 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
 
   async callThunk(arg: Arg) {
     const action = this.actionCreator(arg);
-    
+
     return action(
       this.dispatch,
       this.getState,
-      {api: this.api},
+      {api: this.api,},
     );
   }
 }
