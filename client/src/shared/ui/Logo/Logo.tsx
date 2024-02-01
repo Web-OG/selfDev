@@ -4,7 +4,7 @@ import LightIcon from '../../assets/svgs/web-thug_light.svg';
 import {Link} from 'react-router-dom';
 import cls from './Logo.module.scss';
 import classNames from 'classnames';
-import {useTheme} from 'app/providers/ThemeProvider';
+import {useTheme} from 'shared/providers/ThemeProvider';
 
 interface LogoProps {
   className?: string;

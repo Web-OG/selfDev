@@ -1,6 +1,6 @@
 import './App.scss';
 import {AppRouter} from './providers/AppRouter';
-import {useTheme} from './providers/ThemeProvider';
+import {useTheme} from 'shared/providers/ThemeProvider';
 import {userActions} from 'entities/User';
 import {Suspense, useEffect} from 'react';
 import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';

@@ -1,10 +1,9 @@
 import LocalStorageService from './LocalStorageService';
 
 class StorageApiDispatcher {
-  environment: '' | 'browser' | 'desktop' = 'browser';
+  environment: '' | 'browser' | 'desktop' = '';
 
   defineEnvironment() {
-    console.log('defineEnvironment is call');
     if (window && window.localStorage) {
       this.environment = 'browser';
 
@@ -25,7 +24,6 @@ class StorageApiDispatcher {
   }
 
   getItem(key: string) {
-    console.log('StorageApiDispatcher getItem');
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {

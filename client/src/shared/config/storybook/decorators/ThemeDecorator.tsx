@@ -1,5 +1,5 @@
 import {Decorator} from '@storybook/react';
-import {ThemeProvider} from '../../../../app/providers/ThemeProvider';
+import {ThemeProvider} from '../../../providers/ThemeProvider';
 
 export const ThemeDecorator: Decorator = (Story, context) => {
   const isThemeInParams = 'args' in context && 'theme' in context.parameters,
