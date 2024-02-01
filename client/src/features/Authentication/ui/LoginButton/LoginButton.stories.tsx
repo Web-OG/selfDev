@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {LoginButton} from './LoginButton';
-import {SecondaryElementDecorator} from 'app/config/storybook';
+import {SecondaryElementDecorator} from 'shared/config/storybook';
 
 const meta: Meta<typeof LoginButton> = {
   title: 'features/Authentication/LoginButton',

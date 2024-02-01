@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {Header} from './Header';
-import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
+import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof Header> = {
   title: 'widgets/Header',

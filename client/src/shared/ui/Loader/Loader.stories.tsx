@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {Loader} from './Loader';
-import {SecondaryElementDecorator} from 'app/config/storybook';
+import {SecondaryElementDecorator} from 'shared/config/storybook';
 
 const meta: Meta<typeof Loader> = {
   title: 'shared/Loader',

@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import IndexPage from './IndexPage';
-import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
-import {LayoutDecorator} from 'app/config/storybook/decorators/LayoutDecorator';
+import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
+import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
 
 const meta: Meta<typeof IndexPage> = {
   title: 'pages/IndexPage',

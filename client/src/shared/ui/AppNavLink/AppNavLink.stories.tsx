@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {AppNavLink} from './AppNavLink';
-import {SecondaryElementDecorator} from 'app/config/storybook';
+import {SecondaryElementDecorator} from 'shared/config/storybook';
 import {reactRouterParameters} from 'storybook-addon-react-router-v6';
 
 const meta: Meta<typeof AppNavLink> = {

@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {LoginModal} from './LoginModal';
-import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
+import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof LoginModal> = {
   title: 'features/Authentication/LoginModal',

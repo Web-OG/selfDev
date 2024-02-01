@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import PostsPage from './PostsPage';
-import {StoreDecorator} from 'app/config/storybook/decorators/StoreDecorator';
-import {LayoutDecorator} from 'app/config/storybook/decorators/LayoutDecorator';
+import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
+import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
 
 const meta: Meta<typeof PostsPage> = {
   title: 'pages/PostsPage',
