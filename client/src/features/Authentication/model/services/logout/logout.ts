@@ -18,10 +18,9 @@ export const logout = createAsyncThunk<
 
       dispatch(userActions.logout());
       localStorage.removeItem(LOCALSTORAGE.USER_KEY);
-      
+
       return response.data;
     } catch (e) {
-      console.log(e);
       return rejectWithValue('error');
     }
   },

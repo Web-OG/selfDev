@@ -1,26 +1,23 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {User, userActions} from 'entities/User';
-import {LOCALSTORAGE} from 'shared/constants/localstorage';
 import {ThunkConfig} from 'app/providers/StoreProvider';
-
-interface LoginData {
-  username: string;
-  password: string;
-}
+import {getLoginUsername} from 'features/Authentication/model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginPassword} from 'features/Authentication/model/selectors/getLoginPassword/getLoginPassword';
 
 export const login = createAsyncThunk<
   User,
-  LoginData,
+  undefined,
   ThunkConfig<string>
 >(
   'Authentication/login',
-  async (authData, thunkApi) => {
-    const {extra, dispatch, rejectWithValue} = thunkApi;
+  async (_, thunkApi) => {
+    const {extra, dispatch, rejectWithValue, getState} = thunkApi;
+    const username = getLoginUsername(getState());
+    const password = getLoginPassword(getState());
+    const authData = {username, password};
 
     try {
       const response = await extra.api.post<User>('/user/login', authData);
-
-      localStorage.setItem(LOCALSTORAGE.USER_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
 
       if (response.status === 200) {

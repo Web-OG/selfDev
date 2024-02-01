@@ -10,6 +10,7 @@ import {authenticationActions, authenticationReducer} from '../../model/slices/a
 import {useSelector} from 'react-redux';
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
+import {LOCALSTORAGE} from 'shared/constants/localstorage';
 
 interface LoginFormProps {
   className?: string;
@@ -31,11 +32,14 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   const onSubmit = useCallback(async (evt: FormEvent) => {
     evt.preventDefault();
-    const result = await dispatch(login({username, password}));
+    const result = await dispatch(login());
     if (result.meta.requestStatus === 'fulfilled') {
+      const user = result.payload;
+
+      localStorage.setItem(LOCALSTORAGE.USER_KEY, JSON.stringify(user));
       onClose?.();
     }
-  }, [dispatch, onClose, password, username]);
+  }, [dispatch, onClose]);
 
   const onLoginChange = useCallback((str: string) => {
     dispatch(authenticationActions.setUsername(str));

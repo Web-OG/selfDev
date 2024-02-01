@@ -50,5 +50,7 @@ export const authenticationSlice = createSlice({
   },
 });
 
-export const {actions: authenticationActions} = authenticationSlice;
-export const {reducer: authenticationReducer} = authenticationSlice;
+export const {
+  actions: authenticationActions,
+  reducer: authenticationReducer,
+} = authenticationSlice;

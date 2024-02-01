@@ -1,7 +1,13 @@
 import {UserSchema} from 'entities/User';
 import {AuthenticationSchema} from 'features/Authentication';
 import {AxiosInstance} from 'axios';
-import {EnhancedStore, Reducer, ReducersMapObject, StateFromReducersMapObject, UnknownAction} from '@reduxjs/toolkit';
+import {
+  Action,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
+  StateFromReducersMapObject
+} from '@reduxjs/toolkit';
 
 export interface StateSchema {
   user: UserSchema;
@@ -13,7 +19,7 @@ export type StateSchemaKey = keyof StateSchema;
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
-  reduce: (state: StateSchema, action: UnknownAction) => StateFromReducersMapObject<StateSchema>;
+  reduce: (state: StateSchema, action: Action) => StateFromReducersMapObject<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 }

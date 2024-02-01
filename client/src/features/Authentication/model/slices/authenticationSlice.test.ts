@@ -1,5 +1,7 @@
 import {AuthenticationSchema} from '../types/authenticationSchema';
 import {authenticationActions, authenticationReducer} from './authenticationSlice';
+import {login} from 'features/Authentication/model/services/login/login';
+import {User} from 'entities/User';
 
 describe('authenticationSlice.test', () => {
   test('test set username', () => {
@@ -16,5 +18,51 @@ describe('authenticationSlice.test', () => {
       state as AuthenticationSchema,
       authenticationActions.setPassword('123123'),
     )).toEqual({password: '123123'});
+  });
+
+  test('test login pending', () => {
+    const state: DeepPartial<AuthenticationSchema> = {
+      isSending: false,
+      sendingError: 'error'
+    };
+
+    expect(authenticationReducer(
+      state as AuthenticationSchema,
+      login.pending('', undefined, undefined)
+    )).toEqual({
+      isSending: true,
+      sendingError: undefined,
+    });
+  });
+
+  test('test login fulfilled', () => {
+    const state: DeepPartial<AuthenticationSchema> = {
+      isSending: true,
+    };
+    const responseUser: User = {
+      username: 'Test',
+      id: '1D45E01E'
+    };
+
+    expect(authenticationReducer(
+      state as AuthenticationSchema,
+      login.fulfilled(responseUser, '', undefined)
+    )).toEqual({
+      isSending: false,
+    });
+  });
+
+  test('test login rejected', () => {
+    const state: DeepPartial<AuthenticationSchema> = {
+      isSending: true
+    };
+
+    expect(authenticationReducer(
+      state as AuthenticationSchema,
+      login.rejected(new Error(), '', undefined, 'error')
+    )).toEqual({
+      isSending: false,
+      sendingError: 'error'
+    });
   });
 });
