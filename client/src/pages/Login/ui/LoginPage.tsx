@@ -1,7 +1,6 @@
 import {LoginForm, LoginOpportunities} from 'features/Authentication';
 import cls from './LoginPage.module.scss';
 import {useTranslation} from 'react-i18next';
-import {RegistrationInvite} from 'features/Registration';
 
 const LoginPage = () => {
   const {t} = useTranslation();
@@ -21,9 +20,6 @@ const LoginPage = () => {
         <div className={cls.formsWrap}>
           <div className={cls.formWrap}>
             <LoginForm className={cls.form}/>
-          </div>
-          <div className={cls.formWrap}>
-            <RegistrationInvite/>
           </div>
         </div>
       </div>

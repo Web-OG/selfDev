@@ -1,14 +1,13 @@
 import {useContext} from 'react';
 import {Theme, ThemeContext} from './ThemeContext';
 import {StorageDispatcher} from 'shared/lib/services/StorageService';
-import {STORAGE_KEYS} from 'shared/constants/storage';
 
 export function useTheme() {
   const {theme, setTheme} = useContext(ThemeContext);
 
   const toggleTheme = (theme: Theme) => {
     setTheme?.(theme);
-    StorageDispatcher.setItem(STORAGE_KEYS.THEME_KEY, theme);
+    StorageDispatcher.setItem('theme', theme);
   };
 
   return {

@@ -5,10 +5,12 @@ export type RoutePaths =
   | LoginRoute
   | AboutRoute
   | PostsRoute
+  | ChooseRegistrationTypePageRoute
   | RegistrationRoute
   | RegistrationSuccessRoute;
 type MainRoute = '/';
 type LoginRoute = 'login/';
+type ChooseRegistrationTypePageRoute = 'registration/';
 type RegistrationRoute = 'registration/:type';
 type RegistrationSuccessRoute = 'registration_success';
 type AboutRoute = 'about/';

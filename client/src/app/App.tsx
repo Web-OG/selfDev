@@ -5,7 +5,6 @@ import {userActions} from 'entities/User';
 import {Suspense, useEffect} from 'react';
 import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';
 import {Loader} from 'shared/ui/Loader';
-import {STORAGE_KEYS} from 'shared/constants/storage';
 import {StorageDispatcher} from 'shared/lib/services/StorageService';
 
 const App = () => {
@@ -13,7 +12,7 @@ const App = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const user = StorageDispatcher.getItem(STORAGE_KEYS.USER_KEY);
+    const user = StorageDispatcher.getItem('user');
 
     if (user) {
       dispatch(userActions.initAuthData(user));

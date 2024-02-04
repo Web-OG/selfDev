@@ -1,0 +1,14 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-sections);
+}
+
+.title {
+  text-align: center;
+}
+
+.variants {
+  display: flex;
+  column-gap: var(--indent-space);
+}

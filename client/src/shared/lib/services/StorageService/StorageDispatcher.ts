@@ -1,4 +1,7 @@
 import LocalStorageService from './LocalStorageService';
+import {STORAGE_KEYS} from 'shared/constants/storage';
+
+type StorageKeys = typeof STORAGE_KEYS[keyof typeof STORAGE_KEYS];
 
 export class StorageDispatcher {
   private static environment: '' | 'browser' | 'desktop' = '';
@@ -15,7 +18,7 @@ export class StorageDispatcher {
     }
   }
 
-  static setItem(key: string, value: string | undefined | Array<unknown> | object) {
+  static setItem(key: StorageKeys, value: string | undefined | Array<unknown> | object) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {
@@ -23,7 +26,7 @@ export class StorageDispatcher {
     }
   }
 
-  static getItem(key: string) {
+  static getItem(key: StorageKeys) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {
@@ -31,7 +34,7 @@ export class StorageDispatcher {
     }
   }
 
-  static removeItem(key: string) {
+  static removeItem(key: StorageKeys) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {

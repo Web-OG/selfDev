@@ -1,25 +1,23 @@
-import {memo, useCallback, useState, MouseEvent} from 'react';
+import {memo, useCallback} from 'react';
 import cls from './RegistrationInvite.module.scss';
 import {useTranslation} from 'react-i18next';
-import {RegistrationModal} from 'features/Registration/ui/RegistrationModal/RegistrationModal';
+import {Link} from 'react-router-dom';
 
-const RegistrationInvite = memo(() => {
+interface Props {
+  onExternalClose?: () => void;
+}
+
+const RegistrationInvite = memo((props: Props) => {
+  const {onExternalClose} = props;
   const {t} = useTranslation('registration');
-  const [isOpen, setIsOpen] = useState(false);
 
-  const onClick = useCallback((evt: MouseEvent<HTMLAnchorElement>) => {
-    evt.preventDefault();
-    setIsOpen(true);
-  }, []);
-
-  const onClose = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+  const onClick = useCallback(() => {
+    onExternalClose?.();
+  }, [onExternalClose]);
 
   return (
     <div className={cls.RegistrationInvite}>
-      {t('Нет аккаунта?')} <a href="#" onClick={onClick}>{t('Зарегистрироваться')}.</a>
-      <RegistrationModal isOpen={isOpen} onClose={onClose}/>
+      {t('Нет аккаунта?')} <Link to="/registration" onClick={onClick}>{t('Зарегистрироваться')}.</Link>
     </div>
   );
 });

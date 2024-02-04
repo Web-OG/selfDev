@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {RegistrationModal} from './RegistrationModal';
+import {RegistrationVariant} from './RegistrationVariant';
 import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
-const meta: Meta<typeof RegistrationModal> = {
-  title: 'features/Registration/RegistrationModal',
-  component: RegistrationModal,
+const meta: Meta<typeof RegistrationVariant> = {
+  title: 'features/Registration/RegistrationVariant',
+  component: RegistrationVariant,
   args: {
     isOpen: true
   },
@@ -13,7 +13,7 @@ const meta: Meta<typeof RegistrationModal> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof RegistrationModal>;
+type Story = StoryObj<typeof RegistrationVariant>;
 
 export const Primary: Story = {
   args: {},

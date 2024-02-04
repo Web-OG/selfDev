@@ -3,7 +3,7 @@ import {AboutPage} from 'pages/About';
 import {PostsPage} from 'pages/Posts';
 import {LoginPage} from 'pages/Login';
 import {IndexPage} from 'pages/Index';
-import {RegistrationPage} from 'pages/Registration';
+import {ChooseRegistrationTypePage, RegistrationPage} from 'pages/Registration';
 import {SuccessesRegistrationPage} from 'pages/SuccessesRegistration';
 
 export const routes: AppRoutes = {
@@ -13,6 +13,9 @@ export const routes: AppRoutes = {
   },
   'login/': {
     element: <LoginPage/>,
+  },
+  'registration/': {
+    element: <ChooseRegistrationTypePage/>,
   },
   'registration/:type': {
     element: <RegistrationPage/>,

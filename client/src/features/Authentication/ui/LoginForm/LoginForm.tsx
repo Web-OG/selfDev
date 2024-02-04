@@ -10,8 +10,8 @@ import {authenticationActions, authenticationReducer} from '../../model/slices/a
 import {useSelector} from 'react-redux';
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
-import {STORAGE_KEYS} from 'shared/constants/storage';
 import {StorageDispatcher} from 'shared/lib/services/StorageService';
+import {RegistrationInvite} from 'features/Registration';
 
 interface LoginFormProps {
   className?: string;
@@ -37,7 +37,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     if (result.meta.requestStatus === 'fulfilled') {
       const user = result.payload;
 
-      StorageDispatcher.setItem(STORAGE_KEYS.USER_KEY, user);
+      StorageDispatcher.setItem('user', user);
       onClose?.();
     }
   }, [dispatch, onClose]);
@@ -61,6 +61,7 @@ const LoginForm = memo((props: LoginFormProps) => {
       <Button className={cls.button} type="submit">
         {t('Войти')}
       </Button>
+      <RegistrationInvite onExternalClose={onClose}/>
     </form>
   );
 });
