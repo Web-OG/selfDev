@@ -1,0 +1,105 @@
+.label {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+.hint {
+  font-size: var(--font-size-hint);
+}
+
+.notice {
+  font-size: var(--font-size-notice);
+}
+
+.primary {
+  font-size: var(--font-size-primary);
+}
+
+.accent {
+  font-size: var(--font-size-accent);
+}
+
+.subtitle {
+  font-size: var(--font-size-subtitle);
+}
+
+.title {
+  font-size: var(--font-size-title);
+}
+
+.promo-title {
+  font-size: var(--font-size-promo-title);
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  column-gap: unset;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.center {
+  align-items: center;
+}
+
+.end {
+  align-items: flex-end;
+}
+
+.indicator {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease-in;
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+
+  input:focus + & {
+    background-color: var(--secondary-color-30);
+    border: var(--focus-color-border);
+  }
+
+  input:checked + & {
+    background-color: var(--secondary-color);
+    border: var(--secondary-color);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 9px;
+      display: block;
+      width: 7px;
+      height: 2px;
+      background-color: var(--main-color);
+    }
+
+    &::before {
+      left: 2px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      left: 6px;
+      width: 10px;
+      transform: rotate(-45deg);
+    }
+  }
+}

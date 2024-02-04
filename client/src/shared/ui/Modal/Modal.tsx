@@ -27,7 +27,7 @@ export interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = (props: ModalProps) => {
+const Modal = (props: ModalProps) => {
   const {
     className,
     children,
@@ -63,14 +63,14 @@ export const Modal = (props: ModalProps) => {
     }
   }, [onClose]);
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
+  const onKeyDown = useCallback((evt: KeyboardEvent) => {
+    if (evt.key === 'Escape') {
       closeHandler();
     }
   }, [closeHandler]);
 
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
+  const onContentClick = (evt: MouseEvent) => {
+    evt.stopPropagation();
   };
 
   const onButtonClick = useCallback(() => {
@@ -121,4 +121,7 @@ export const Modal = (props: ModalProps) => {
     </Portal>
   );
 };
+
+Modal.displayName = 'Modal';
+export {Modal};
 

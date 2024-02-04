@@ -6,14 +6,14 @@
   align-items: center;
   color: var(--secondary-color);
   background-color: var(--main-color);
-  border-radius: 9999px;
-  border: var(--main-color-border);
-  transition: var(--transition);
-  cursor: pointer;
   background-repeat: no-repeat;
   background-image: url('../../../shared/assets/svgs/night.svg');
   background-size: 16px;
   background-position: 80% center;
+  border-radius: 9999px;
+  border: var(--main-color-border);
+  transition: var(--transition);
+  cursor: pointer;
 
   &:hover {
     box-shadow: var(--box-shadow-on-secondary);

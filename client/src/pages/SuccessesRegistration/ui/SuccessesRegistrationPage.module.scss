@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-inner-primary);
+}
+
+.email {
+  text-decoration: underline;
+}
+
+

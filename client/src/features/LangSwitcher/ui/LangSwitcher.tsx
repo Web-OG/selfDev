@@ -1,15 +1,15 @@
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import {memo} from 'react';
+import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
 import cls from './LangSwitcher.module.scss';
 
 interface Props {
-    className?: string;
-    short: boolean;
+  className?: string;
+  short: boolean;
 }
 
-export const LangSwitcher = memo(({ className, short }: Props) => {
-  const { t, i18n } = useTranslation();
+const LangSwitcher = memo(({className, short}: Props) => {
+  const {t, i18n} = useTranslation();
 
   const toggle = async () => {
     await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -24,3 +24,6 @@ export const LangSwitcher = memo(({ className, short }: Props) => {
     </button>
   );
 });
+
+LangSwitcher.displayName = 'LangSwitcher';
+export {LangSwitcher};

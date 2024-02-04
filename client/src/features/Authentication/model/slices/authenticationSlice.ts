@@ -6,8 +6,6 @@ import {login} from '../services/login/login';
 const initialState: AuthenticationSchema = {
   username: '',
   password: '',
-  isLoading: false,
-  loadingError: undefined,
   isSending: false,
   sendingError: undefined
 };

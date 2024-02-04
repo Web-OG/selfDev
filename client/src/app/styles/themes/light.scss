@@ -19,12 +19,16 @@
   --secondary-color-30: rgb(39 39 51 / 30%);
   --secondary-color-20: rgb(39 39 51 / 20%);
   --secondary-color-10: rgb(39 39 51 / 10%);
+  --successes-color-160: rgb(36 155 43);
+  --successes-color-130: rgb(9 115 14);
   --successes-color: rgb(87 218 87);
-  --successes-color-60: rgb(36 155 43);
-  --successes-color-30: rgb(9 115 14);
+  --successes-color-60: rgb(87 218 87 / 60%);
+  --successes-color-30: rgb(87 218 87 / 30%);
+  --danger-color-160: rgb(166 1 1);
+  --danger-color-130: rgb(110 0 0);
   --danger-color: rgb(255 18 18);
-  --danger-color-60: rgb(166 1 1);
-  --danger-color-30: rgb(110 0 0);
+  --danger-color-60: rgb(255 18 18 / 60%);
+  --danger-color-30: rgb(255 18 18 / 30%);
   --overlay-color: rgba(0 0 0 / 40%);
   --accent-color: rgb(22 26 29);
   --accent-color-60: rgb(31 33 35);
@@ -39,10 +43,10 @@
   --accent-color-border: 3px solid var(--accent-color);
   --focus-color-border: 3px solid var(--focus-color);
   --successes-color-border: 3px solid var(--successes-color);
-  --successes-color-border-60: 3px solid var(--successes-color-60);
-  --successes-color-border-30: 3px solid var(--successes-color-30);
+  --successes-color-border-160: 3px solid var(--successes-color-160);
+  --successes-color-border-130: 3px solid var(--successes-color-130);
   --danger-color-border: 3px solid var(--danger-color);
-  --danger-color-border-60: 3px solid var(--danger-color-60);
-  --danger-color-border-30: 3px solid var(--danger-color-30);
+  --danger-color-border-160: 3px solid var(--danger-color-160);
+  --danger-color-border-130: 3px solid var(--danger-color-130);
   --box-shadow-on-secondary: 0 0 8px 4px var(--main-color);
 }

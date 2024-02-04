@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
 }
 
-export const Button = memo((props: ButtonProps) => {
+const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
@@ -23,7 +23,7 @@ export const Button = memo((props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={classNames(cls.Button, [cls[variant], className ])}
+      className={classNames(cls.Button, [cls[variant], className])}
       disabled={disabled}
       {...otherProps}
     >
@@ -31,3 +31,6 @@ export const Button = memo((props: ButtonProps) => {
     </button>
   );
 });
+
+Button.displayName = 'Button';
+export {Button};

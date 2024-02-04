@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {Theme, ThemeContext} from './ThemeContext';
-import {StorageDispatcher} from 'shared/services/StorageService';
+import {StorageDispatcher} from 'shared/lib/services/StorageService';
 import {STORAGE_KEYS} from 'shared/constants/storage';
 
 export function useTheme() {

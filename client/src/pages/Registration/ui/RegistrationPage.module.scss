@@ -1,0 +1,31 @@
+.page,
+.form,
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  align-items: center;
+  row-gap: var(--indent-sections);
+  margin: 0 auto;
+  width: 60%;
+}
+
+.heading {
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  row-gap: var(--indent-inner-primary);
+  border-bottom: 1px solid var(--secondary-color-30);
+}
+
+.notice {
+  font-size: var(--font-size-notice);
+}
+
+.form {
+  row-gap: var(--indent-inner-space);
+  width: 60%;
+}
+

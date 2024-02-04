@@ -8,11 +8,14 @@ import {
   ReducersMapObject,
   StateFromReducersMapObject
 } from '@reduxjs/toolkit';
+import {AuthorRegistrationSchema, UserRegistrationSchema} from 'features/Registration';
 
 export interface StateSchema {
   user: UserSchema;
   // async
   authentication?: AuthenticationSchema;
+  userRegistration?: UserRegistrationSchema;
+  authorRegistration?: AuthorRegistrationSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

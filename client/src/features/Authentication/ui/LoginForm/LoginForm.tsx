@@ -11,6 +11,7 @@ import {useSelector} from 'react-redux';
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
 import {STORAGE_KEYS} from 'shared/constants/storage';
+import {StorageDispatcher} from 'shared/lib/services/StorageService';
 
 interface LoginFormProps {
   className?: string;
@@ -36,7 +37,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     if (result.meta.requestStatus === 'fulfilled') {
       const user = result.payload;
 
-      localStorage.setItem(STORAGE_KEYS.USER_KEY, JSON.stringify(user));
+      StorageDispatcher.setItem(STORAGE_KEYS.USER_KEY, user);
       onClose?.();
     }
   }, [dispatch, onClose]);

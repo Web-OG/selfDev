@@ -1,9 +1,9 @@
 import LocalStorageService from './LocalStorageService';
 
-class StorageApiDispatcher {
-  environment: '' | 'browser' | 'desktop' = '';
+export class StorageDispatcher {
+  private static environment: '' | 'browser' | 'desktop' = '';
 
-  defineEnvironment() {
+  static defineEnvironment() {
     if (window && window.localStorage) {
       this.environment = 'browser';
 
@@ -15,7 +15,7 @@ class StorageApiDispatcher {
     }
   }
 
-  setItem(key: string, value: string | Array<unknown> | object) {
+  static setItem(key: string, value: string | undefined | Array<unknown> | object) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {
@@ -23,7 +23,7 @@ class StorageApiDispatcher {
     }
   }
 
-  getItem(key: string) {
+  static getItem(key: string) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {
@@ -31,7 +31,7 @@ class StorageApiDispatcher {
     }
   }
 
-  removeItem(key: string) {
+  static removeItem(key: string) {
     const environment = this.environment === '' ? this.defineEnvironment() : this.environment;
 
     if (environment === 'browser') {
@@ -39,5 +39,3 @@ class StorageApiDispatcher {
     }
   }
 }
-
-export const StorageDispatcher = new StorageApiDispatcher();

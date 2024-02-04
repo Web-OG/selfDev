@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-primary);
+  padding: 20px;
+  text-decoration: none;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+  }
+}
+
+.role {
+  font-size: var(--font-size-accent);
+  text-align: center;
+  font-weight: 700;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-inner-blocks);
+  margin-left: 20px;
+  list-style: circle;
+}

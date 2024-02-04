@@ -1,8 +1,6 @@
-export interface AuthenticationSchema {
+import {SendingSliceFields} from 'shared/types';
+
+export interface AuthenticationSchema extends SendingSliceFields {
   username: string;
   password: string;
-  isLoading: boolean;
-  loadingError?: string;
-  isSending: boolean;
-  sendingError?: string;
 }

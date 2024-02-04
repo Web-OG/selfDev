@@ -1,6 +1,6 @@
 import {ReactNode, useMemo, useState} from 'react';
 import {Theme, ThemeContext} from '../lib/ThemeContext';
-import {StorageDispatcher} from 'shared/services/StorageService';
+import {StorageDispatcher} from 'shared/lib/services/StorageService';
 import {STORAGE_KEYS} from 'shared/constants/storage';
 
 const defaultTheme = StorageDispatcher.getItem(STORAGE_KEYS.THEME_KEY) as Theme || 'app_light_theme';

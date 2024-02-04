@@ -7,6 +7,12 @@
   border-radius: 4px;
   transition: var(--transition);
   cursor: pointer;
+
+  &:disabled {
+    opacity: .6;
+    pointer-events: none;
+    text-decoration: line-through;
+  }
 }
 
 .primary {
@@ -50,8 +56,8 @@
   border: var(--successes-color-border);
 
   &:hover {
-    background-color: var(--successes-color-60);
-    border: var(--successes-color-border-60);
+    background-color: var(--successes-color-160);
+    border: var(--successes-color-border-160);
   }
 
   &:focus {
@@ -59,8 +65,8 @@
   }
 
   &:active {
-    background-color: var(--successes-color-30);
-    border: var(--successes-color-border-30);
+    background-color: var(--successes-color-130);
+    border: var(--successes-color-border-130);
   }
 }
 
@@ -69,8 +75,8 @@
   border: var(--danger-color-border);
 
   &:hover {
-    background-color: var(--danger-color-60);
-    border: var(--danger-color-border-60);
+    background-color: var(--danger-color-160);
+    border: var(--danger-color-border-160);
   }
 
   &:focus {
@@ -78,8 +84,8 @@
   }
 
   &:active {
-    background-color: var(--danger-color-30);
-    border: var(--danger-color-border-30);
+    background-color: var(--danger-color-130);
+    border: var(--danger-color-border-130);
   }
 }
 

@@ -2,8 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import {User, userActions} from 'entities/User';
 import {ThunkConfig} from 'app/providers/StoreProvider';
 import {STORAGE_KEYS} from 'shared/constants/storage';
-import {StorageDispatcher} from 'shared/services/StorageService';
-
+import {StorageDispatcher} from 'shared/lib/services/StorageService';
 
 export const logout = createAsyncThunk<
   User,

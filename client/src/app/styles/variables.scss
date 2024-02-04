@@ -11,6 +11,7 @@
   // indents
   --indent-inner-blocks: 8px;
   --indent-inner-primary: 16px;
+  --indent-inner-space: 24px;
   --indent-primary: 30px;
   --indent-space: 48px;
   --indent-sections: 60px;
@@ -29,7 +30,3 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
-
-.lal {
-  color: #68f668;
-}

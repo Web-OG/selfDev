@@ -6,7 +6,7 @@ interface LoaderProps {
   onSecondary?: boolean
 }
 
-export const Loader = (props: LoaderProps) => {
+const Loader = (props: LoaderProps) => {
   const {className, onSecondary = false} = props;
 
   return (
@@ -17,3 +17,6 @@ export const Loader = (props: LoaderProps) => {
     </div>
   );
 };
+
+Loader.displayName = 'Loader';
+export {Loader};

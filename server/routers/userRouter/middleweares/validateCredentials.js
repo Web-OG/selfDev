@@ -6,6 +6,6 @@ export const validateLoginInputs = [
 ]
 
 export const validateRegistrationInputs = [
-        ...validateLoginInputs,
-    check('email', 'Incorrect email').isEmail(),
+    ...validateLoginInputs,
+    check('email', 'Incorrect isEmail').isEmail(),
 ]

@@ -6,7 +6,7 @@ import {Suspense, useEffect} from 'react';
 import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';
 import {Loader} from 'shared/ui/Loader';
 import {STORAGE_KEYS} from 'shared/constants/storage';
-import {StorageDispatcher} from 'shared/services/StorageService';
+import {StorageDispatcher} from 'shared/lib/services/StorageService';
 
 const App = () => {
   const {theme} = useTheme();

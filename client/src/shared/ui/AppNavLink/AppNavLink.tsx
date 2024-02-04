@@ -8,7 +8,7 @@ export interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 }
 
-export const AppNavLink = memo((props: AppLinkProps) => {
+const AppNavLink = memo((props: AppLinkProps) => {
   const {
     className,
     to,
@@ -26,3 +26,6 @@ export const AppNavLink = memo((props: AppLinkProps) => {
     </NavLink>
   );
 });
+
+AppNavLink.displayName = 'AppNavLink';
+export {AppNavLink};

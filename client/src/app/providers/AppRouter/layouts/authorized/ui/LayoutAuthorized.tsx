@@ -1,4 +1,4 @@
-import {Outlet} from 'react-router-dom';
+import {Outlet, ScrollRestoration} from 'react-router-dom';
 import cls from '../../layout.module.scss';
 import {Header} from 'widgets/Header';
 import {Sidebar} from 'widgets/Sidebar';
@@ -14,6 +14,10 @@ const LayoutAuthorized = () => {
           <Outlet/>
         </div>
       </div>
+      <ScrollRestoration
+        getKey={(location) => {
+          return location.pathname;
+        }}/>
       <Footer/>
     </div>
   );

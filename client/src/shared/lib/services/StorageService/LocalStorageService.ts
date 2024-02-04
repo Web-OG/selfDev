@@ -1,5 +1,5 @@
 class LocalStorageService {
-  setItem(key: string, value: string | Array<unknown> | object) {
+  setItem(key: string, value: string | undefined | Array<unknown> | object) {
     const serializedValue = JSON.stringify(value);
 
     window.localStorage.setItem(key, serializedValue);
@@ -7,7 +7,7 @@ class LocalStorageService {
 
   getItem(key: string) {
     const item = window.localStorage.getItem(key);
-    
+
     return item && JSON.parse(item);
   }
 
