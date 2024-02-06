@@ -12,7 +12,6 @@ import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginU
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
 import {StorageDispatcher} from 'shared/lib/services/StorageService';
 import {RegistrationInvite} from 'features/Registration';
-import {Alert} from 'shared/ui/Alert/Alert';
 
 interface LoginFormProps {
   className?: string;
@@ -63,7 +62,6 @@ const LoginForm = memo((props: LoginFormProps) => {
         {t('Войти')}
       </Button>
       <RegistrationInvite onExternalClose={onClose}/>
-      <Alert>Успех</Alert>
     </form>
   );
 });

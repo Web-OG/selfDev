@@ -13,25 +13,21 @@
 }
 
 .info {
-  color: var(--successes-color-130);
-  background-color: var(--successes-color);
-  border: var(--successes-color-border-160);
+  color: #fff;
+  background-color: var(--info-color);
+  border: var(--info-color-border-160);
 }
 
 .warning {
-  color: var(--successes-color-130);
-  background-color: var(--successes-color);
-  border: var(--successes-color-border-160);
+  color: #fff;
+  background-color: var(--warning-color);
+  border: var(--warning-color-border-160);
 }
 
 .error {
-  color: var(--danger-color-130);
+  color: #fff;
   background-color: var(--danger-color);
   border: var(--danger-color-border-160);
-}
-
-.filled {
-  border: var(--successes-color-border);
 }
 
 .outlined {

@@ -23,7 +23,7 @@ const Alert = memo((props: AlertProps) => {
   const {
     className,
     icon = undefined,
-    opacity = true,
+    opacity = false,
     title,
     variant = 'filled',
     severity = 'success',
@@ -46,15 +46,15 @@ const Alert = memo((props: AlertProps) => {
   return (
     <div className={classNames(cls.alert, mods, className)}>
       {(icon || icon === undefined) && (
-        <div className="MuiAlert-icon">
+        <div>
           {icon || defaultSeverityIcon[severity]}
         </div>
       )}
       <div>
-        <div className="MuiAlert-action">
+        <div>
           {title}
         </div>
-        <div className="MuiAlert-message">{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );
