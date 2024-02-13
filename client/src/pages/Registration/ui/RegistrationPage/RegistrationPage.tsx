@@ -1,9 +1,11 @@
 import cls from './RegistrationPage.module.scss';
 import {Link, Navigate, useParams} from 'react-router-dom';
 import {UserRegistrationForm} from 'features/Registration';
+import {useTranslation} from 'react-i18next';
 
 const RegistrationPage = () => {
-  const {type} = useParams<'type'>();
+  const {type = undefined} = useParams<'type'>();
+  const {t} = useTranslation();
 
   if (type === 'author') {
     return <UserRegistrationForm/>;
@@ -13,12 +15,12 @@ const RegistrationPage = () => {
     return (
       <div className={cls.page}>
         <div className={cls.heading}>
-          <h1>Регистрация</h1>
-          <div className={cls.notice}>Все поля обязательны для заполнения *</div>
+          <h1>{t('Регистрация')}</h1>
+          <div className={cls.notice}>{t('Все поля обязательны для заполнения *')}</div>
         </div>
         <UserRegistrationForm className={cls.form}/>
         <div>
-          Уже зарегистрированы? <Link to={'/login'}>Войти</Link>
+          {t('Уже зарегистрированы?')} <Link to={'/login'}>{t('Войти')}</Link>
         </div>
       </div>
     );

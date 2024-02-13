@@ -1,6 +1,7 @@
 import {userActions} from 'entities/User';
 import {logout} from './logout';
 import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
+import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 
 describe('logout.test', () => {
   test('success logout', async () => {
@@ -27,7 +28,7 @@ describe('logout.test', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.meta.arg).toBe(undefined);
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual('error');
+    expect(result.payload).toEqual(defaultFormSendingErrorMsg);
     expect(result.type).toBe('Authentication/logout/rejected');
   });
 });

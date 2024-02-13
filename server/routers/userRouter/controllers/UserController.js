@@ -8,7 +8,13 @@ class UserController {
         try {
             const errors = validationResult(req)
             if (!errors.isEmpty()) {
-                return res.status(400).json({message: 'Incorrect request', errors})
+                return res.status(400).json({
+                    message: {
+                        en: 'Incorrect request',
+                        ru: 'Неверный запрос',
+                    },
+                    ...errors
+                })
             }
             const {username, email, password} = req.body;
 
@@ -24,20 +30,34 @@ class UserController {
             const errors = validationResult(req)
 
             if (!errors.isEmpty()) {
-                return res.status(400).json({message: 'Incorrect request', errors})
+                return res.status(400).json({
+                    message: {
+                        en: 'Incorrect request',
+                        ru: 'Неверный запрос',
+                    },
+                    ...errors
+                })
             }
             if (err) {
                 return next(err);
             }
             if (!user) {
-                return res.status(400).json({message: 'Пользователь не существует'})
+                return res.status(400).json(
+                    {
+                        message: {
+                            ru: 'Пользователь не существует',
+                            en: 'The user does not exist'
+                        }
+                    }
+                )
             }
 
             req.login(user, (err) => {
                 if (err) return next(err)
                 return res.json({username: user.username, id: user._id})
             });
-        })(req, res, next);
+        })
+        (req, res, next);
     }
 
     async logout(req, res, next) {

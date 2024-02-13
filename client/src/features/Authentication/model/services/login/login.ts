@@ -1,13 +1,17 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {User, userActions} from 'entities/User';
 import {ThunkConfig} from 'app/providers/StoreProvider';
-import {getLoginUsername} from 'features/Authentication/model/selectors/getLoginUsername/getLoginUsername';
-import {getLoginPassword} from 'features/Authentication/model/selectors/getLoginPassword/getLoginPassword';
+import {getLoginUsername} from 'features/Authentication/model/selectors/getLoginUsername';
+import {getLoginPassword} from 'features/Authentication/model/selectors/getLoginPassword';
+import {ServerBadRequestResponse} from 'shared/types';
+import axios from 'axios';
+import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {AuthenticationFields} from '../../types/authenticationSchema';
 
 export const login = createAsyncThunk<
   User,
   undefined,
-  ThunkConfig<string>
+  ThunkConfig<ServerBadRequestResponse<keyof AuthenticationFields>>
 >(
   'Authentication/login',
   async (_, thunkApi) => {
@@ -20,13 +24,12 @@ export const login = createAsyncThunk<
       const response = await extra.api.post<User>('/user/login', authData);
       dispatch(userActions.setAuthData(response.data));
 
-      if (response.status === 200) {
-        return response.data;
-      } else {
-        return rejectWithValue('error');
+      return response.data;
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        return rejectWithValue(err?.response?.data);
       }
-    } catch (e) {
-      return rejectWithValue('error');
+      return rejectWithValue(defaultFormSendingErrorMsg);
     }
   },
 );

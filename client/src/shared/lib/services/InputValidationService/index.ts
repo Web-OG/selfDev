@@ -1,6 +1,8 @@
 import {REGEXP} from 'shared/constants/regexp';
+import {ProjectLanguages} from 'shared/types';
 
 export type InputValidations = 'phone' | 'email' | 'username' | 'light-password' | 'strong-password';
+export type InputValidationErrors = Record<ProjectLanguages, string[]>;
 
 export class InputValidationService {
   static isEmail(str: string) {
@@ -23,34 +25,39 @@ export class InputValidationService {
     return REGEXP.STRONG_PASSWORD.test(str);
   }
 
-  static validate(val: string, validations: InputValidations[]): string[] {
-    const errors: string[] = [];
+  static validate(val: string, validations: InputValidations[]): InputValidationErrors {
+    const errors: InputValidationErrors = {ru: [], en: []};
 
     validations.map((validation) => {
       switch (validation) {
       case 'email':
         if (!this.isEmail(val)) {
-          errors.push('Не верный формат email');
+          errors.ru.push('Не верный формат эл.почты');
+          errors.en.push('Invalid email format');
         }
         break;
       case 'username':
         if (!this.isUsername(val)) {
-          errors.push('Не верный формат username');
+          errors.ru.push('Не верный формат логина');
+          errors.en.push('Invalid username format');
         }
         break;
       case 'light-password':
         if (!this.isLightPassword(val)) {
-          errors.push('Слабый пароль');
+          errors.ru.push('Слабый пароль');
+          errors.en.push('Weak password');
         }
         break;
       case 'strong-password':
         if (!this.isStrongPassword(val)) {
-          errors.push('Слабый пароль');
+          errors.ru.push('Слабый пароль');
+          errors.en.push('Weak password');
         }
         break;
       case 'phone':
         if (!this.isPhone(val)) {
-          errors.push('Не верный формат телефона');
+          errors.ru.push('Не верный формат телефона');
+          errors.en.push('Incorrect phone format');
         }
         break;
       }

@@ -3,14 +3,14 @@ import classNames from 'classnames';
 
 interface LoaderProps {
   className?: string;
-  onSecondary?: boolean
+  onSecondary?: boolean;
 }
 
 const Loader = (props: LoaderProps) => {
   const {className, onSecondary = false} = props;
 
   return (
-    <div className={classNames('lds-ellipsis', {secondary: onSecondary}, [className])}>
+    <div className={classNames('lds-ellipsis', {secondary: onSecondary}, className)}>
       <div/>
       <div/>
       <div/>

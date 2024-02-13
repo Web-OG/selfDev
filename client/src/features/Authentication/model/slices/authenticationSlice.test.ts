@@ -1,7 +1,9 @@
-import {AuthenticationSchema} from '../types/authenticationSchema';
+import {AuthenticationFields, AuthenticationSchema} from '../types/authenticationSchema';
 import {authenticationActions, authenticationReducer} from './authenticationSlice';
 import {login} from 'features/Authentication/model/services/login/login';
 import {User} from 'entities/User';
+import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {ServerBadRequestResponse} from 'shared/types';
 
 describe('authenticationSlice.test', () => {
   test('test set username', () => {
@@ -23,7 +25,7 @@ describe('authenticationSlice.test', () => {
   test('test login pending', () => {
     const state: DeepPartial<AuthenticationSchema> = {
       isSending: false,
-      sendingError: 'error'
+      sendingErrorMsg: defaultFormSendingErrorMsg.message
     };
 
     expect(authenticationReducer(
@@ -31,7 +33,7 @@ describe('authenticationSlice.test', () => {
       login.pending('', undefined, undefined)
     )).toEqual({
       isSending: true,
-      sendingError: undefined,
+      sendingErrorMsg: undefined,
     });
   });
 
@@ -54,15 +56,35 @@ describe('authenticationSlice.test', () => {
 
   test('test login rejected', () => {
     const state: DeepPartial<AuthenticationSchema> = {
-      isSending: true
+      isSending: true,
     };
 
     expect(authenticationReducer(
       state as AuthenticationSchema,
-      login.rejected(new Error(), '', undefined, 'error')
+      login.rejected(new Error(), '', undefined, defaultFormSendingErrorMsg)
     )).toEqual({
       isSending: false,
-      sendingError: 'error'
+      sendingErrorMsg: defaultFormSendingErrorMsg.message,
+    });
+  });
+
+  test('test login rejected with validation errors', () => {
+    const state: DeepPartial<AuthenticationSchema> = {
+      isSending: true,
+    };
+
+    const responseError: ServerBadRequestResponse<keyof AuthenticationFields> = {
+      message: {en: 'error', ru: 'error'},
+      errors: [{path: 'username', msg: {en: 'error', ru: 'error'}, type: 'field', location: 'body', value: 'err'}]
+    };
+
+    expect(authenticationReducer(
+      state as AuthenticationSchema,
+      login.rejected(new Error(), '', undefined, responseError)
+    )).toEqual({
+      isSending: false,
+      sendingErrorMsg: responseError.message,
+      sendingErrorFields: {'username': {en: 'error', ru: 'error'}}
     });
   });
 });

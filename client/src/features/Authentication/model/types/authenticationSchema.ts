@@ -1,6 +1,9 @@
 import {SendingSliceFields} from 'shared/types';
 
-export interface AuthenticationSchema extends SendingSliceFields {
+export interface AuthenticationFields {
   username: string;
   password: string;
 }
+
+export type AuthenticationSchema = AuthenticationFields & SendingSliceFields
+

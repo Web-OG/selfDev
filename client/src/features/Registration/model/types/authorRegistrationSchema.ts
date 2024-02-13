@@ -1,7 +1,9 @@
 import {SendingSliceFields} from 'shared/types';
 
-export interface AuthorRegistrationSchema extends SendingSliceFields {
+interface AuthorRegistrationFields {
   username: string;
   password: string;
   email: string;
 }
+
+export type AuthorRegistrationSchema = AuthorRegistrationFields & SendingSliceFields

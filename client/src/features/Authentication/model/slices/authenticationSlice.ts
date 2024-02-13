@@ -2,12 +2,13 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {AuthenticationSchema} from '../types/authenticationSchema';
 import {logout} from '../services/logout/logout';
 import {login} from '../services/login/login';
+import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: AuthenticationSchema = {
   username: '',
   password: '',
   isSending: false,
-  sendingError: undefined
+  sendingErrorMsg: undefined
 };
 
 export const authenticationSlice = createSlice({
@@ -25,25 +26,33 @@ export const authenticationSlice = createSlice({
     builder
       .addCase(login.pending, (state) => {
         state.isSending = true;
-        state.sendingError = undefined;
+        state.sendingErrorMsg = undefined;
+        state.sendingErrorFields = undefined;
       })
       .addCase(login.fulfilled, (state) => {
         state.isSending = false;
       })
       .addCase(login.rejected, (state, action) => {
         state.isSending = false;
-        state.sendingError = action.payload;
+        state.sendingErrorMsg = action.payload?.message;
+        if (action.payload && Array.isArray(action.payload.errors)) {
+          state.sendingErrorFields = mapServerBadRequestErrors(action.payload.errors);
+        }
       })
       .addCase(logout.pending, (state) => {
         state.isSending = true;
-        state.sendingError = undefined;
+        state.sendingErrorMsg = undefined;
+        state.sendingErrorFields = undefined;
       })
       .addCase(logout.fulfilled, (state) => {
         state.isSending = false;
       })
       .addCase(logout.rejected, (state, action) => {
         state.isSending = false;
-        state.sendingError = action.payload;
+        state.sendingErrorMsg = action.payload?.message;
+        if (action.payload && Array.isArray(action.payload.errors)) {
+          state.sendingErrorFields = mapServerBadRequestErrors(action.payload.errors);
+        }
       });
   },
 });
