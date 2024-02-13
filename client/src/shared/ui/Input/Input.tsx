@@ -1,10 +1,12 @@
-import {ChangeEvent, FocusEvent, memo, ReactNode, useEffect, useRef, useState} from 'react';
+import {memo, ReactNode, useEffect, useRef, useState} from 'react';
 import cls from './Input.module.scss';
 import classNames from 'classnames';
-import {HTMLInputProps} from 'shared/types';
-import {InputValidations, InputValidationService} from 'shared/lib/services/InputValidationService';
+import {HTMLInputProps, MultiLanguageMassage, ProjectLanguages} from 'shared/types';
+import {InputValidationErrors, InputValidations} from 'shared/lib/services/InputValidationService';
+import {useInputErrors} from 'shared/ui/Input/lib/useInputErrors';
+import {useInputHandlers} from 'shared/ui/Input/lib/useInputHandlers';
 
-type InputErrorMassage = undefined | string | string[];
+export type InputExternalErrorMassage = undefined | string | string[] | MultiLanguageMassage;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -13,9 +15,10 @@ interface InputProps extends HTMLInputProps {
   label?: ReactNode,
   autofocus?: boolean;
   readonly?: boolean;
-  errMassage?: InputErrorMassage;
+  externalError?: InputExternalErrorMassage;
   noticeMassage?: string;
-  validations?: InputValidations[]
+  validations?: InputValidations[],
+  currentLanguage?: ProjectLanguages
 }
 
 const Input = memo((props: InputProps) => {
@@ -28,41 +31,27 @@ const Input = memo((props: InputProps) => {
     autofocus,
     readonly,
     validations,
-    errMassage,
+    externalError,
+    currentLanguage = 'ru',
     ...otherProps
   } = props;
 
-  const [validationErrors, setValidationErrors] = useState<InputErrorMassage>(undefined);
+  const [validationErrors, setValidationErrors] = useState<InputValidationErrors | null>(null);
   const ref = useRef<HTMLInputElement>(null);
+  const {ExternalErrors, ValidationErrors} = useInputErrors({externalError, currentLanguage, validationErrors});
+  const {onFocus, onBlur, onChangeHandler} = useInputHandlers({
+    ref,
+    validations,
+    currentLanguage,
+    setValidationErrors,
+    onChange
+  });
 
   useEffect(() => {
     if (autofocus) {
       ref.current?.focus();
     }
   }, [autofocus]);
-
-  const onChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    const value = evt.target.value;
-    onChange?.(value);
-    ref.current?.setCustomValidity('');
-  };
-
-  const onFocus = () => {
-    setValidationErrors(undefined);
-  };
-
-  const onBlur = (evt: FocusEvent<HTMLInputElement>) => {
-    const value = evt.target.value;
-    if (validations) {
-      const errors = InputValidationService.validate(value, validations);
-      if (errors.length) {
-        setValidationErrors(errors);
-        ref.current?.setCustomValidity(errors[0]);
-      } else {
-        ref.current?.setCustomValidity('');
-      }
-    }
-  };
 
   return (
     <div className={classNames(cls.InputWrapper, {[cls.readonly]: readonly}, className)}>
@@ -82,12 +71,8 @@ const Input = memo((props: InputProps) => {
         onBlur={onBlur}
         {...otherProps}
       />
-      {(errMassage || validationErrors) && (
-        <div className={cls.errMassage}>
-          {Array.isArray(errMassage) ? errMassage.join('\n') : errMassage}
-          {Array.isArray(validationErrors) ? validationErrors.join('\n') : validationErrors}
-        </div>
-      )}
+      {ExternalErrors}
+      {ValidationErrors}
     </div>
   );
 });

@@ -1,6 +1,6 @@
 import {FormEvent, memo, useCallback, useMemo, useState} from 'react';
 import {Input} from 'shared/ui/Input';
-import {Button} from 'shared/ui/Button';
+import {ButtonSubmit} from 'shared/ui/Button';
 import {useSelector} from 'react-redux';
 import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
 import {useTranslation} from 'react-i18next';
@@ -12,6 +12,16 @@ import {isPasswordsNotEquals} from 'shared/lib/utils/isPasswordsNotEquals';
 import {Checkbox} from 'shared/ui/Checkbox';
 import {userRegistration} from '../../model/services/userRegistration';
 import {useNavigate} from 'react-router-dom';
+import {Alert} from 'shared/ui/Alert/Alert';
+import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
+import {getUserRegistrationIsSending} from 'features/Registration/model/selectors/getUserRegistrationIsSending';
+import {
+  getUserRegistrationSendingErrorMsg
+} from 'features/Registration/model/selectors/getUserRegistrationSendingErrorMsg';
+import {
+  getUserRegistrationSendingErrorFields
+} from 'features/Registration/model/selectors/getUserRegistrationSendingErrorFields';
+import cls from 'features/Authentication/ui/LoginForm/LoginForm.module.scss';
 
 interface Props {
   className?: string
@@ -27,10 +37,14 @@ const UserRegistrationForm = memo(({className}: Props) => {
   const username = useSelector(getUserRegistrationUsername);
   const password = useSelector(getUserRegistrationPassword);
   const email = useSelector(getUserRegistrationEmail);
+  const isSending = useSelector(getUserRegistrationIsSending);
+  const sendingErrorMsg = useSelector(getUserRegistrationSendingErrorMsg);
+  const sendingErrorFields = useSelector(getUserRegistrationSendingErrorFields);
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
   const {isReducersInit} = useReducerManager(initialReducers);
   const navigate = useNavigate();
+  const currentLanguage = getCurrentLanguage();
 
   const onSubmit = useCallback(async (evt: FormEvent) => {
     evt.preventDefault();
@@ -62,6 +76,12 @@ const UserRegistrationForm = memo(({className}: Props) => {
 
   const passwordsNotEqualsMsg = 'Пароли не совпадают';
 
+  const SendingErrorAlert = useMemo(() => {
+    if (!sendingErrorMsg) return null;
+
+    return <Alert severity='error' title={t('Ошибка отправки формы')}>{sendingErrorMsg[currentLanguage]}</Alert>;
+  }, [t, currentLanguage, sendingErrorMsg]);
+
   if (!isReducersInit) {
     return null;
   }
@@ -73,13 +93,15 @@ const UserRegistrationForm = memo(({className}: Props) => {
         label={t('Логин')}
         value={username}
         onChange={onLoginChange}
+        externalError={sendingErrorFields?.username}
         validations={['username']}
         required
       />
       <Input
         placeholder={'example@mail.com'}
-        label={t('эл.почта')} value={email}
+        label={t('элпочта')} value={email}
         onChange={onEmailChange}
+        externalError={sendingErrorFields?.email}
         validations={['email']}
         required
       />
@@ -88,6 +110,7 @@ const UserRegistrationForm = memo(({className}: Props) => {
         label={t('Пароль')}
         value={password}
         onChange={onPasswordChange}
+        externalError={sendingErrorFields?.password}
         validations={['light-password']}
         required
       />
@@ -96,20 +119,25 @@ const UserRegistrationForm = memo(({className}: Props) => {
         label={t('Повторите пароль')}
         value={passwordRepeat}
         onChange={setPasswordRepeat}
-        errMassage={isWrongPasswords ? passwordsNotEqualsMsg : undefined}
+        externalError={isWrongPasswords ? passwordsNotEqualsMsg : undefined}
         required
       />
       <Checkbox
-        label={'Я согласен на обработку персональных данных'}
+        label={t('Я согласен на обработку персональных данных')}
         name="agree"
         value='lala'
         onChecked={onIsAgreeChange}
         checked={isAgree}
         required={!isAgree}
       />
-      <Button type="submit" disabled={isWrongPasswords}>
+      {sendingErrorMsg && SendingErrorAlert}
+      <ButtonSubmit
+        className={cls.button}
+        isSending={isSending}
+        disabled={isWrongPasswords}
+      >
         {t('Зарегистрироваться')}
-      </Button>
+      </ButtonSubmit>
     </form>
   );
 });

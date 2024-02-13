@@ -7,7 +7,13 @@ class PostController {
             const errors = validationResult(req)
 
             if (!errors.isEmpty()) {
-                return res.status(400).json({message: 'Incorrect request', errors})
+                return res.status(400).json({
+                    message: {
+                        en: 'Incorrect request',
+                        ru: 'Неверный запрос',
+                    },
+                    ...errors
+                })
             }
 
             const author = req.user.id;
@@ -48,7 +54,13 @@ class PostController {
             const errors = validationResult(req)
 
             if (!errors.isEmpty()) {
-                return res.status(400).json({message: 'Incorrect request', errors})
+                return res.status(400).json({
+                    message: {
+                        en: 'Incorrect request',
+                        ru: 'Неверный запрос',
+                    },
+                    ...errors
+                })
             }
 
             const updatedPost = await PostService.update(req.body)

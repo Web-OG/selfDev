@@ -1,13 +1,14 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {UserRegistrationSchema} from '../types/userRegistrationSchema';
 import {userRegistration} from '../services/userRegistration';
+import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: UserRegistrationSchema = {
   username: '',
   password: '',
   email: '',
   isSending: false,
-  sendingError: undefined
+  sendingErrorMsg: undefined
 };
 
 export const userRegistrationSlice = createSlice({
@@ -28,14 +29,18 @@ export const userRegistrationSlice = createSlice({
     builder
       .addCase(userRegistration.pending, (state) => {
         state.isSending = true;
-        state.sendingError = undefined;
+        state.sendingErrorMsg = undefined;
+        state.sendingErrorFields = undefined;
       })
       .addCase(userRegistration.fulfilled, (state) => {
         state.isSending = false;
       })
       .addCase(userRegistration.rejected, (state, action) => {
         state.isSending = false;
-        state.sendingError = action.payload;
+        state.sendingErrorMsg = action.payload?.message;
+        if (action.payload && Array.isArray(action.payload.errors)) {
+          state.sendingErrorFields = mapServerBadRequestErrors(action.payload.errors);
+        }
       });
   },
 });
