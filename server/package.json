@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --experimental-specifier-resolution=node ./index.js"
+    "start": "nodemon --experimental-specifier-resolution=node ./index.js",
+    "lint": "eslint \"**/*.js\"",
+    "lint:fix": "eslint \"**/*.js\" --fix"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.1"
   }
 }
