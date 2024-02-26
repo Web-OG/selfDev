@@ -9,8 +9,7 @@ export const validateLoginInputs = [
     .matches(/^[a-zA-Z0-9_-]+$/).withMessage({
       ru: 'имя пользователя может содержать буквы, цифры, тире и символы подчеркивания',
       en: 'username can contain letters numbers dashes and underscores'
-    }
-    ),
+    }),
   check('password')
     .isLength({min: 3, max: 15}).withMessage({
       ru: 'пароль должен быть длиннее 3 и короче 15',

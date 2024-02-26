@@ -16,18 +16,30 @@
   color: #fff;
   background-color: var(--info-color);
   border: var(--info-color-border-160);
+
+  &.outlined {
+    color: var(--info-color);
+  }
 }
 
 .warning {
   color: #fff;
   background-color: var(--warning-color);
   border: var(--warning-color-border-160);
+
+  &.outlined {
+    color: var(--warning-color);
+  }
 }
 
 .error {
   color: #fff;
   background-color: var(--danger-color);
   border: var(--danger-color-border-160);
+
+  &.outlined {
+    color: var(--danger-color);
+  }
 }
 
 .outlined {

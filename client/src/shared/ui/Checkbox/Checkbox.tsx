@@ -1,6 +1,6 @@
 import {ReactNode, memo, ChangeEvent} from 'react';
 import cls from './Checkbox.module.scss';
-import {FontSizes, HTMLInputProps} from 'shared/types';
+import {FontSize, HTMLInputProps} from 'shared/lib/types';
 import classNames from 'classnames';
 
 type CheckboxHorizontalAlign = 'left' | 'right';
@@ -15,7 +15,7 @@ interface CheckboxProps extends HTMLInputProps {
   variant?: CheckboxVariant;
   className?: string;
   labelClassName?: string;
-  fontSize?: FontSizes;
+  fontSize?: FontSize;
   value?: string | number;
   onChange?: (value: string) => void;
   onChecked?: (value: boolean) => void;

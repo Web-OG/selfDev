@@ -24,5 +24,11 @@
   "Я согласен на обработку персональных данных": "I agree to the processing of personal data",
   "Регистрация": "Registration",
   "Все поля обязательны для заполнения *": "All fields are required *",
-  "Уже зарегистрированы?": "Already registered?"
+  "Уже зарегистрированы?": "Already registered?",
+  "Укажите страну": "Specify the country",
+  "Укажите валюту": "Specify the currency",
+  "Профиль": "Profile",
+  "Сохранить": "Save",
+  "Отменить": "Cancel",
+  "Редактировать": "Edit"
 }

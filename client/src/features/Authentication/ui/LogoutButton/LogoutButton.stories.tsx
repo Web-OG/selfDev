@@ -2,12 +2,11 @@ import type {Meta, StoryObj} from '@storybook/react';
 
 import {LogoutButton} from './LogoutButton';
 import {SecondaryElementDecorator} from 'shared/config/storybook';
-import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof LogoutButton> = {
   title: 'features/LogoutButton',
   component: LogoutButton,
-  decorators: [SecondaryElementDecorator, StoreDecorator]
+  decorators: [SecondaryElementDecorator]
 };
 export default meta;
 

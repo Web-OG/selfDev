@@ -5,7 +5,11 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    color: var(--focus-color);
+  }
+
+  &:active {
+    opacity: .6;
   }
 }
 
@@ -101,5 +105,9 @@
       width: 10px;
       transform: rotate(-45deg);
     }
+  }
+
+  .label:hover & {
+    border: 1px solid var(--focus-color);
   }
 }

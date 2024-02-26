@@ -4,7 +4,7 @@ import {
   InputValidations,
   InputValidationService
 } from 'shared/lib/services/InputValidationService';
-import {ProjectLanguages} from 'shared/types';
+import {ProjectLanguages} from 'shared/lib/types';
 
 interface Props {
   onChange: (value: string) => void;

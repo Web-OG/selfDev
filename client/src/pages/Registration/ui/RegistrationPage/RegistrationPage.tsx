@@ -6,6 +6,7 @@ import {useTranslation} from 'react-i18next';
 const RegistrationPage = () => {
   const {type = undefined} = useParams<'type'>();
   const {t} = useTranslation();
+  console.log('RegistrationPage type is ', type);
 
   if (type === 'author') {
     return <UserRegistrationForm/>;
@@ -27,7 +28,6 @@ const RegistrationPage = () => {
   }
 
   return <Navigate to={'*'}/>;
-
 };
 
 export default RegistrationPage;

@@ -1,7 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {RegistrationVariant} from './RegistrationVariant';
-import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof RegistrationVariant> = {
   title: 'features/Registration/RegistrationVariant',
@@ -9,7 +8,6 @@ const meta: Meta<typeof RegistrationVariant> = {
   args: {
     isOpen: true
   },
-  decorators: [StoreDecorator]
 };
 export default meta;
 

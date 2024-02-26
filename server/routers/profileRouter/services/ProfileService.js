@@ -28,7 +28,6 @@ class ProfileService {
   }
 
   async update(id, payload) {
-    console.log('ProfileService payload is ', payload);
     return Profile.findByIdAndUpdate({_id: id}, payload, {new: true});
   }
 }

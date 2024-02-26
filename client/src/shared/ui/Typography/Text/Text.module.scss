@@ -1,0 +1,69 @@
+.text {
+  font-size: 16px;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.primary {
+  color: var(--secondary-color)
+}
+
+.secondary {
+  color: var(--main-color);
+}
+
+.focus {
+  color: var(--focus-color);
+}
+
+.success {
+  color: var(--successes-color);
+}
+
+.warning {
+  color: var(--warning-color);
+}
+
+.danger {
+  color: var(--danger-color);
+}
+
+.disabled {
+  color: rgb(0 0 0 / 25%);
+}
+
+.deleted {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.code {
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  background-color: rgb(150 150 150 / 10%)
+}
+
+.keyboard {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  background-color: rgb(150 150 150 / 6%)
+}
+
+.mark {
+  background-color: var(--focus-color);
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
+}

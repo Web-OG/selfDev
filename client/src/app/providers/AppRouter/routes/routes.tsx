@@ -5,6 +5,7 @@ import {LoginPage} from 'pages/Login';
 import {IndexPage} from 'pages/Index';
 import {ChooseRegistrationTypePage, RegistrationPage} from 'pages/Registration';
 import {SuccessesRegistrationPage} from 'pages/SuccessesRegistration';
+import {ProfilePage} from 'pages/Profile';
 
 export const routes: AppRoutes = {
   '/': {
@@ -25,6 +26,10 @@ export const routes: AppRoutes = {
   },
   'about/': {
     element: <AboutPage/>,
+    authOnly: true
+  },
+  'profile/:id': {
+    element: <ProfilePage/>,
     authOnly: true
   },
   'posts/': {

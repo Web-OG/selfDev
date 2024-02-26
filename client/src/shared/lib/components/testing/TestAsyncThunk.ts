@@ -18,6 +18,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
   actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
   api: jest.MockedFunctionDeep<AxiosStatic>;
+  isAxiosError: (arg: unknown) => boolean;
 
   constructor(
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,
@@ -28,6 +29,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     this.getState = jest.fn(() => state as StateSchema);
 
     this.api = mockedAxios;
+    this.isAxiosError = axios.isAxiosError;
   }
 
   async callThunk(arg: Arg) {
@@ -36,7 +38,10 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     return action(
       this.dispatch,
       this.getState,
-      {api: this.api,},
+      {
+        api: this.api,
+        isAxiosError: this.isAxiosError
+      },
     );
   }
 }

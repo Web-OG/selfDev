@@ -1,23 +1,29 @@
-import {memo, useState} from 'react';
+import {memo, useMemo, useState} from 'react';
 import cls from './Sidebar.module.scss';
 import classNames from 'classnames';
 import {Button} from 'shared/ui/Button/Button/Button';
-import {Link} from 'react-router-dom';
 import {LangSwitcher} from 'features/LangSwitcher';
 import {ThemeSwitcher} from 'features/ThemeSwitcher';
-import AboutIcon from 'shared/assets/svgs/about.svg';
-import PostsIcon from 'shared/assets/svgs/posts.svg';
+import {getSidebarItems} from 'widgets/Sidebar/model/selectors/getSidebarItems';
+import {useSelector} from 'react-redux';
+import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
+import {SideBarItem} from 'widgets/Sidebar/ui/SideBarItem/SideBarItem';
 
 const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(true);
+  const currentLanguage = getCurrentLanguage();
+  const items = useSelector(getSidebarItems);
+
+  const SidebarItems = useMemo(() => {
+    return items.map((item, i) => (
+      <SideBarItem key={i} item={item} currentLanguage={currentLanguage} collapsed={collapsed}/>
+    ));
+  }, [collapsed, currentLanguage, items]);
 
   return (
     <div data-testid="Sidebar" className={classNames(cls.Sidebar, {[cls.SidebarCollapsed]: collapsed})}>
       <div className={cls.links}>
-        <Link className={cls.SidebarItem} to={'/about'}>{collapsed ?
-          <AboutIcon width={30} height={30}/> : 'About'}</Link>
-        <Link className={cls.SidebarItem} to={'/posts'}>{collapsed ?
-          <PostsIcon width={40} height={40}/> : 'Posts'}</Link>
+        {SidebarItems}
       </div>
       <div className={cls.switchers}>
         <LangSwitcher short={collapsed}/>

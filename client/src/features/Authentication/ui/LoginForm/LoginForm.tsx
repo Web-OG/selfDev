@@ -1,22 +1,22 @@
-import {FormEvent, memo, useCallback, useMemo} from 'react';
+import {FormEvent, memo, useCallback} from 'react';
 import cls from './LoginForm.module.scss';
 import classNames from 'classnames';
 import {Input} from 'shared/ui/Input';
 import {ButtonSubmit} from 'shared/ui/Button';
 import {useTranslation} from 'react-i18next';
-import {login} from '../../model/services/login/login';
+import {postLogin} from '../../model/services/postLogin';
 import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
 import {authenticationActions, authenticationReducer} from '../../model/slices/authenticationSlice';
 import {useSelector} from 'react-redux';
-import {getLoginUsername} from '../../model/selectors/getLoginUsername';
-import {getLoginPassword} from '../../model/selectors/getLoginPassword';
+import {selectUsername} from '../../model/selectors/selectUsername';
+import {selectPassword} from '../../model/selectors/selectPassword';
 import {StorageDispatcher} from 'shared/lib/services/StorageService';
 import {RegistrationInvite} from 'features/Registration';
-import {getLoginIsSending} from '../../model/selectors/getLoginIsSending';
-import {getLoginErrorMsg} from '../../model/selectors/getLoginErrorMsg';
-import {Alert} from 'shared/ui/Alert/Alert';
+import {selectIsSending} from '../../model/selectors/selectIsSending';
+import {selectErrorMsg} from '../../model/selectors/selectErrorMsg';
 import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
-import {getLoginErrorFields} from '../../model/selectors/getLoginErrorFields';
+import {selectErrorFields} from '../../model/selectors/selectErrorFields';
+import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
 
 interface LoginFormProps {
   className?: string;
@@ -30,11 +30,11 @@ const initialReducers: ReducersList = {
 
 const LoginForm = memo((props: LoginFormProps) => {
   const {className, onClose, fixed = false} = props;
-  const username = useSelector(getLoginUsername);
-  const password = useSelector(getLoginPassword);
-  const isSending = useSelector(getLoginIsSending);
-  const sendingErrorMsg = useSelector(getLoginErrorMsg);
-  const sendingErrorFields = useSelector(getLoginErrorFields);
+  const username = useSelector(selectUsername);
+  const password = useSelector(selectPassword);
+  const isSending = useSelector(selectIsSending);
+  const sendingErrorMsg = useSelector(selectErrorMsg);
+  const sendingErrorFields = useSelector(selectErrorFields);
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
   const {isReducersInit} = useReducerManager(initialReducers);
@@ -42,7 +42,7 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   const onSubmit = useCallback(async (evt: FormEvent) => {
     evt.preventDefault();
-    const result = await dispatch(login());
+    const result = await dispatch(postLogin());
     if (result.meta.requestStatus === 'fulfilled') {
       const user = result.payload;
 
@@ -58,12 +58,6 @@ const LoginForm = memo((props: LoginFormProps) => {
   const onPasswordChange = useCallback((str: string) => {
     dispatch(authenticationActions.setPassword(str));
   }, [dispatch]);
-
-  const SendingErrorAlert = useMemo(() => {
-    if (!sendingErrorMsg) return null;
-
-    return <Alert severity='error' title={t('Ошибка отправки формы')}>{sendingErrorMsg[currentLanguage]}</Alert>;
-  }, [currentLanguage, sendingErrorMsg, t]);
 
   if (!isReducersInit) {
     return null;
@@ -90,7 +84,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         currentLanguage={currentLanguage}
         required
       />
-      {sendingErrorMsg && SendingErrorAlert}
+      {sendingErrorMsg && <AlertSendingError sendingErrorMsg={sendingErrorMsg}/>}
       <ButtonSubmit className={cls.button} isSending={isSending}>{t('Войти')}</ButtonSubmit>
       <RegistrationInvite onExternalClose={onClose}/>
     </form>

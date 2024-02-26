@@ -1,8 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
-
 import LoginPage from './LoginPage';
-import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
+import {mockUserSlice} from 'shared/config/storybook';
 
 const meta: Meta<typeof LoginPage> = {
   title: 'pages/LoginPage',
@@ -16,22 +15,26 @@ export default meta;
 type Story = StoryObj<typeof LoginPage>;
 
 export const Separate: Story = {
-  decorators: [StoreDecorator]
+  parameters: {
+    state: {...mockUserSlice}
+  }
 };
 
 export const AuthorizedLayout: Story = {
   parameters: {
-    pageLayout: 'authorized'
+    pageLayout: 'authorized',
+    state: {...mockUserSlice}
   },
-  decorators: [LayoutDecorator, StoreDecorator]
+  decorators: [LayoutDecorator]
 };
 
 export const AuthorizedLayoutDark: Story = {
   parameters: {
     theme: 'dark',
-    pageLayout: 'authorized'
+    pageLayout: 'authorized',
+    state: {...mockUserSlice}
   },
-  decorators: [LayoutDecorator, StoreDecorator]
+  decorators: [LayoutDecorator]
 };
 
 
@@ -39,13 +42,13 @@ export const UnauthorizedLayout: Story = {
   parameters: {
     pageLayout: 'unauthorized'
   },
-  decorators: [LayoutDecorator, StoreDecorator]
+  decorators: [LayoutDecorator]
 };
 
 export const UnauthorizedLayoutDark: Story = {
   parameters: {
     theme: 'dark',
-    pageLayout: 'authorized'
+    pageLayout: 'unauthorized'
   },
-  decorators: [LayoutDecorator, StoreDecorator]
+  decorators: [LayoutDecorator]
 };

@@ -1,9 +1,9 @@
 import {AuthenticationFields, AuthenticationSchema} from '../types/authenticationSchema';
 import {authenticationActions, authenticationReducer} from './authenticationSlice';
-import {login} from 'features/Authentication/model/services/login/login';
+import {postLogin} from 'features/Authentication/model/services/postLogin';
 import {User} from 'entities/User';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
-import {ServerBadRequestResponse} from 'shared/types';
+import {ServerBadRequestResponse} from 'shared/lib/types';
 
 describe('authenticationSlice.test', () => {
   test('test set username', () => {
@@ -30,7 +30,7 @@ describe('authenticationSlice.test', () => {
 
     expect(authenticationReducer(
       state as AuthenticationSchema,
-      login.pending('', undefined, undefined)
+      postLogin.pending('', undefined, undefined)
     )).toEqual({
       isSending: true,
       sendingErrorMsg: undefined,
@@ -48,7 +48,7 @@ describe('authenticationSlice.test', () => {
 
     expect(authenticationReducer(
       state as AuthenticationSchema,
-      login.fulfilled(responseUser, '', undefined)
+      postLogin.fulfilled(responseUser, '', undefined)
     )).toEqual({
       isSending: false,
     });
@@ -61,7 +61,7 @@ describe('authenticationSlice.test', () => {
 
     expect(authenticationReducer(
       state as AuthenticationSchema,
-      login.rejected(new Error(), '', undefined, defaultFormSendingErrorMsg)
+      postLogin.rejected(new Error(), '', undefined, defaultFormSendingErrorMsg)
     )).toEqual({
       isSending: false,
       sendingErrorMsg: defaultFormSendingErrorMsg.message,
@@ -80,7 +80,7 @@ describe('authenticationSlice.test', () => {
 
     expect(authenticationReducer(
       state as AuthenticationSchema,
-      login.rejected(new Error(), '', undefined, responseError)
+      postLogin.rejected(new Error(), '', undefined, responseError)
     )).toEqual({
       isSending: false,
       sendingErrorMsg: responseError.message,

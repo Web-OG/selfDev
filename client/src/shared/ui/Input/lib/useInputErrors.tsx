@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import cls from 'shared/ui/Input/Input.module.scss';
 import {InputValidationErrors} from 'shared/lib/services/InputValidationService';
-import {ProjectLanguages} from 'shared/types';
+import {ProjectLanguages} from 'shared/lib/types';
 import {InputExternalErrorMassage} from 'shared/ui/Input/Input';
 
 interface Props {

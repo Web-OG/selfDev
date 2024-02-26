@@ -1,7 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-
 import LoginForm from './LoginForm';
-import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 
 const meta: Meta<typeof LoginForm> = {
   title: 'features/Authentication/LoginForm',
@@ -9,7 +7,6 @@ const meta: Meta<typeof LoginForm> = {
   args: {
     fixed: true
   },
-  decorators: [StoreDecorator]
 };
 export default meta;
 
