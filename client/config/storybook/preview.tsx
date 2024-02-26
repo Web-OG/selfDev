@@ -2,7 +2,7 @@ import type {Preview} from '@storybook/react';
 import {withRouter} from 'storybook-addon-react-router-v6';
 import '../../src/app/styles/index.scss';
 import '../../src/app/App.scss';
-import {LanguageDecorator, ThemeDecorator} from 'shared/config/storybook';
+import {LanguageDecorator, ThemeDecorator, StoreDecorator} from 'shared/config/storybook';
 
 const preview: Preview = {
   parameters: {
@@ -32,7 +32,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withRouter, ThemeDecorator, LanguageDecorator]
+  decorators: [withRouter, StoreDecorator, ThemeDecorator, LanguageDecorator]
 };
 
 export default preview;

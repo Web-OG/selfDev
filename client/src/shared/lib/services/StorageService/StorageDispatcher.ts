@@ -1,5 +1,5 @@
 import LocalStorageService from './LocalStorageService';
-import {STORAGE_KEYS} from 'shared/constants/storage';
+import {STORAGE_KEYS} from 'shared/lib/constants/storage';
 
 type StorageKeys = typeof STORAGE_KEYS[keyof typeof STORAGE_KEYS];
 

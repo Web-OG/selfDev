@@ -43,7 +43,7 @@
   --accent-color: rgb(22 26 29);
   --accent-color-60: rgb(31 33 35);
   --accent-color-30: rgb(63 63 63);
-  --focus-color: #3ba6fd;
+  --focus-color: rgb(59 166 253);
   --main-color-border: 3px solid var(--main-color);
   --main-color-border-60: 3px solid var(--main-color-60);
   --main-color-border-30: 3px solid var(--main-color-30);
@@ -55,6 +55,12 @@
   --successes-color-border: 3px solid var(--successes-color);
   --successes-color-border-160: 3px solid var(--successes-color-160);
   --successes-color-border-130: 3px solid var(--successes-color-130);
+  --info-color-border: 3px solid var(--info-color);
+  --info-color-border-160: 3px solid var(--info-color-160);
+  --info-color-border-130: 3px solid var(--info-color-130);
+  --warning-color-border: 3px solid var(--warning-color);
+  --warning-color-border-160: 3px solid var(--warning-color-160);
+  --warning-color-border-130: 3px solid var(--warning-color-130);
   --danger-color-border: 3px solid var(--danger-color);
   --danger-color-border-160: 3px solid var(--danger-color-160);
   --danger-color-border-130: 3px solid var(--danger-color-130);

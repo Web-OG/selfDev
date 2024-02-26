@@ -1,0 +1,19 @@
+.SidebarItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 16px 0;
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  transition: var(--transition);
+
+  .SidebarCollapsed & {
+    padding: 8px 0;
+  }
+
+  &:hover {
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+  }
+}

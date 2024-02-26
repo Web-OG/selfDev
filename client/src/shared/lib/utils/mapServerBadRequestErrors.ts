@@ -1,4 +1,4 @@
-import {MappedServerBadRequestErrors, ServerBadRequestError} from 'shared/types';
+import {MappedServerBadRequestErrors, ServerBadRequestError} from 'shared/lib/types';
 
 export const mapServerBadRequestErrors = <T>(errs: ServerBadRequestError<T>[]): MappedServerBadRequestErrors => {
   return errs.reduce((acc, err) => (

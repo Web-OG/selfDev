@@ -1,4 +1,4 @@
-import {SendingSliceFields} from 'shared/types';
+import {SendingSliceFields} from 'shared/lib/types';
 
 interface AuthorRegistrationFields {
   username: string;

@@ -1,0 +1,35 @@
+.ProfileCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 20px;
+  border-top: 2px solid var(--secondary-color);
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.avatar,
+.avatarStopper {
+  width: 200px;
+  height: 200px;
+  background-color: var(--secondary-color-30);
+  border-radius: 50%;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 40px;
+  padding: 50px 100px;
+  border: var(--secondary-color-border-60);
+  border-radius: 40px;
+}
+
+.editing {
+  border: var(--focus-color-border);
+}

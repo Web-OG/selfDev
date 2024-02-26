@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {UserRegistrationSchema} from '../types/userRegistrationSchema';
-import {userRegistration} from '../services/userRegistration';
+import {postRegistration} from '../services/postRegistration';
 import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: UserRegistrationSchema = {
@@ -27,15 +27,15 @@ export const userRegistrationSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(userRegistration.pending, (state) => {
+      .addCase(postRegistration.pending, (state) => {
         state.isSending = true;
         state.sendingErrorMsg = undefined;
         state.sendingErrorFields = undefined;
       })
-      .addCase(userRegistration.fulfilled, (state) => {
+      .addCase(postRegistration.fulfilled, (state) => {
         state.isSending = false;
       })
-      .addCase(userRegistration.rejected, (state, action) => {
+      .addCase(postRegistration.rejected, (state, action) => {
         state.isSending = false;
         state.sendingErrorMsg = action.payload?.message;
         if (action.payload && Array.isArray(action.payload.errors)) {

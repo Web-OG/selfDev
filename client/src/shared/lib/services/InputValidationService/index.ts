@@ -1,5 +1,5 @@
-import {REGEXP} from 'shared/constants/regexp';
-import {ProjectLanguages} from 'shared/types';
+import {REGEXP} from 'shared/lib/constants/regexp';
+import {ProjectLanguages} from 'shared/lib/types';
 
 export type InputValidations = 'phone' | 'email' | 'username' | 'light-password' | 'strong-password';
 export type InputValidationErrors = Record<ProjectLanguages, string[]>;

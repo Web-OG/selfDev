@@ -1,8 +1,8 @@
 import {UserRegistrationFields, UserRegistrationSchema} from '../types/userRegistrationSchema';
 import {userRegistrationActions, userRegistrationReducer} from './userRegistrationSlice';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
-import {userRegistration} from '../services/userRegistration';
-import {ServerBadRequestResponse} from 'shared/types';
+import {postRegistration} from '../services/postRegistration';
+import {ServerBadRequestResponse} from 'shared/lib/types';
 
 describe('userRegistrationSlice.test', () => {
   test('test set username', () => {
@@ -37,7 +37,7 @@ describe('userRegistrationSlice.test', () => {
 
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
-      userRegistration.pending('', undefined, undefined)
+      postRegistration.pending('', undefined, undefined)
     )).toEqual({
       isSending: true,
       sendingErrorMsg: undefined,
@@ -55,7 +55,7 @@ describe('userRegistrationSlice.test', () => {
 
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
-      userRegistration.fulfilled(massage, '', undefined)
+      postRegistration.fulfilled(massage, '', undefined)
     )).toEqual({
       isSending: false,
     });
@@ -68,7 +68,7 @@ describe('userRegistrationSlice.test', () => {
 
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
-      userRegistration.rejected(new Error(), '', undefined, defaultFormSendingErrorMsg)
+      postRegistration.rejected(new Error(), '', undefined, defaultFormSendingErrorMsg)
     )).toEqual({
       isSending: false,
       sendingErrorMsg: defaultFormSendingErrorMsg.message,
@@ -87,7 +87,7 @@ describe('userRegistrationSlice.test', () => {
 
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
-      userRegistration.rejected(new Error(), '', undefined, responseError)
+      postRegistration.rejected(new Error(), '', undefined, responseError)
     )).toEqual({
       isSending: false,
       sendingErrorMsg: responseError.message,

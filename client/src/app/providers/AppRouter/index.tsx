@@ -1,1 +1,2 @@
-export {AppRouter} from 'app/providers/AppRouter/AppRouter';
+export type {RoutePaths} from './types/RouteTypes';
+export {AppRouter} from './AppRouter';

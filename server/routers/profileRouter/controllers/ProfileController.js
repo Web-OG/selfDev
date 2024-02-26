@@ -74,8 +74,6 @@ class ProfileController {
       if (id !== userId) {
         return res.status(404).json({message: 'Вы не можете изменять данные не своего профиля'});
       }
-      console.log('ProfileController req.user', req.user);
-      console.log('ProfileController req.body', req.body);
 
       const updatedProfile = await ProfileService.update(id, req.body);
       return res.json(updatedProfile);

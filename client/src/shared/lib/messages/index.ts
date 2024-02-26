@@ -4,3 +4,8 @@ export const defaultFormSendingErrorMsg = {
     en: 'Sending error'
   }
 };
+
+export const defaultLoadingErrorMsg = {
+  ru: 'Ошибка загрузки данных',
+  en: 'Data loading error'
+};

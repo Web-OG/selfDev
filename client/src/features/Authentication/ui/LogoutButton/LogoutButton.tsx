@@ -2,13 +2,13 @@ import {memo, useCallback} from 'react';
 import cls from './LogoutButton.module.scss';
 import Icon from 'shared/assets/svgs/logout.svg';
 import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';
-import {logout} from 'features/Authentication/model/services/logout/logout';
+import {postLogout} from 'features/Authentication/model/services/postLogout';
 
 const LogoutButton = memo(() => {
   const dispatch = useAppDispatch();
 
   const onClick = useCallback(() => {
-    dispatch(logout());
+    dispatch(postLogout());
   }, [dispatch]);
 
   return (

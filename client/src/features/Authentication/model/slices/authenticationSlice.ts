@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {AuthenticationSchema} from '../types/authenticationSchema';
-import {logout} from '../services/logout/logout';
-import {login} from '../services/login/login';
+import {postLogout} from '../services/postLogout';
+import {postLogin} from '../services/postLogin';
 import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: AuthenticationSchema = {
@@ -24,30 +24,30 @@ export const authenticationSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(login.pending, (state) => {
+      .addCase(postLogin.pending, (state) => {
         state.isSending = true;
         state.sendingErrorMsg = undefined;
         state.sendingErrorFields = undefined;
       })
-      .addCase(login.fulfilled, (state) => {
+      .addCase(postLogin.fulfilled, (state) => {
         state.isSending = false;
       })
-      .addCase(login.rejected, (state, action) => {
+      .addCase(postLogin.rejected, (state, action) => {
         state.isSending = false;
         state.sendingErrorMsg = action.payload?.message;
         if (action.payload && Array.isArray(action.payload.errors)) {
           state.sendingErrorFields = mapServerBadRequestErrors(action.payload.errors);
         }
       })
-      .addCase(logout.pending, (state) => {
+      .addCase(postLogout.pending, (state) => {
         state.isSending = true;
         state.sendingErrorMsg = undefined;
         state.sendingErrorFields = undefined;
       })
-      .addCase(logout.fulfilled, (state) => {
+      .addCase(postLogout.fulfilled, (state) => {
         state.isSending = false;
       })
-      .addCase(logout.rejected, (state, action) => {
+      .addCase(postLogout.rejected, (state, action) => {
         state.isSending = false;
         state.sendingErrorMsg = action.payload?.message;
         if (action.payload && Array.isArray(action.payload.errors)) {

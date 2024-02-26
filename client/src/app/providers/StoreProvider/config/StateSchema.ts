@@ -1,6 +1,6 @@
 import {UserSchema} from 'entities/User';
 import {AuthenticationSchema} from 'features/Authentication';
-import {AxiosInstance} from 'axios';
+import {AxiosError, AxiosInstance} from 'axios';
 import {
   Action,
   EnhancedStore,
@@ -9,10 +9,12 @@ import {
   StateFromReducersMapObject
 } from '@reduxjs/toolkit';
 import {AuthorRegistrationSchema, UserRegistrationSchema} from 'features/Registration';
+import {ProfileSchema} from 'features/EditableProfile';
 
 export interface StateSchema {
   user: UserSchema;
   // async
+  profile?: ProfileSchema;
   authentication?: AuthenticationSchema;
   userRegistration?: UserRegistrationSchema;
   authorRegistration?: AuthorRegistrationSchema;
@@ -37,6 +39,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
+  isAxiosError: (payload: unknown) => payload is AxiosError;
 }
 
 export interface ThunkConfig<T> {

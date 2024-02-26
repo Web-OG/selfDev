@@ -5,23 +5,22 @@ import {useSelector} from 'react-redux';
 import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
 import {useTranslation} from 'react-i18next';
 import {userRegistrationActions, userRegistrationReducer} from '../../model/slices/userRegistrationSlice';
-import {getUserRegistrationUsername} from '../../model/selectors/getUserRegistrationUsername';
-import {getUserRegistrationPassword} from '../../model/selectors/getUserRegistrationPassword';
-import {getUserRegistrationEmail} from '../../model/selectors/getUserRegistrationEmail';
+import {selectUsername} from '../../model/selectors/selectUsername';
+import {selectPassword} from '../../model/selectors/selectPassword';
+import {selectEmail} from '../../model/selectors/selectEmail';
 import {isPasswordsNotEquals} from 'shared/lib/utils/isPasswordsNotEquals';
 import {Checkbox} from 'shared/ui/Checkbox';
-import {userRegistration} from '../../model/services/userRegistration';
+import {postRegistration} from '../../model/services/postRegistration';
 import {useNavigate} from 'react-router-dom';
-import {Alert} from 'shared/ui/Alert/Alert';
-import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
-import {getUserRegistrationIsSending} from 'features/Registration/model/selectors/getUserRegistrationIsSending';
+import {selectIsSending} from 'features/Registration/model/selectors/selectIsSending';
 import {
-  getUserRegistrationSendingErrorMsg
-} from 'features/Registration/model/selectors/getUserRegistrationSendingErrorMsg';
+  selectSendingErrorMsg
+} from 'features/Registration/model/selectors/selectSendingErrorMsg';
 import {
-  getUserRegistrationSendingErrorFields
-} from 'features/Registration/model/selectors/getUserRegistrationSendingErrorFields';
+  selectSendingErrorFields
+} from 'features/Registration/model/selectors/selectSendingErrorFields';
 import cls from 'features/Authentication/ui/LoginForm/LoginForm.module.scss';
+import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
 
 interface Props {
   className?: string
@@ -34,22 +33,21 @@ const initialReducers: ReducersList = {
 const UserRegistrationForm = memo(({className}: Props) => {
   const [passwordRepeat, setPasswordRepeat] = useState('');
   const [isAgree, setIsAgree] = useState(false);
-  const username = useSelector(getUserRegistrationUsername);
-  const password = useSelector(getUserRegistrationPassword);
-  const email = useSelector(getUserRegistrationEmail);
-  const isSending = useSelector(getUserRegistrationIsSending);
-  const sendingErrorMsg = useSelector(getUserRegistrationSendingErrorMsg);
-  const sendingErrorFields = useSelector(getUserRegistrationSendingErrorFields);
+  const username = useSelector(selectUsername);
+  const password = useSelector(selectPassword);
+  const email = useSelector(selectEmail);
+  const isSending = useSelector(selectIsSending);
+  const sendingErrorMsg = useSelector(selectSendingErrorMsg);
+  const sendingErrorFields = useSelector(selectSendingErrorFields);
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
   const {isReducersInit} = useReducerManager(initialReducers);
   const navigate = useNavigate();
-  const currentLanguage = getCurrentLanguage();
 
   const onSubmit = useCallback(async (evt: FormEvent) => {
     evt.preventDefault();
 
-    const result = await dispatch(userRegistration());
+    const result = await dispatch(postRegistration());
 
     if (result.meta.requestStatus === 'fulfilled') {
       navigate('/registration_success', {state: {email}});
@@ -75,12 +73,6 @@ const UserRegistrationForm = memo(({className}: Props) => {
   const isWrongPasswords = useMemo(() => isPasswordsNotEquals(password, passwordRepeat), [password, passwordRepeat]);
 
   const passwordsNotEqualsMsg = 'Пароли не совпадают';
-
-  const SendingErrorAlert = useMemo(() => {
-    if (!sendingErrorMsg) return null;
-
-    return <Alert severity='error' title={t('Ошибка отправки формы')}>{sendingErrorMsg[currentLanguage]}</Alert>;
-  }, [t, currentLanguage, sendingErrorMsg]);
 
   if (!isReducersInit) {
     return null;
@@ -130,7 +122,7 @@ const UserRegistrationForm = memo(({className}: Props) => {
         checked={isAgree}
         required={!isAgree}
       />
-      {sendingErrorMsg && SendingErrorAlert}
+      {sendingErrorMsg && <AlertSendingError sendingErrorMsg={sendingErrorMsg}/>}
       <ButtonSubmit
         className={cls.button}
         isSending={isSending}
