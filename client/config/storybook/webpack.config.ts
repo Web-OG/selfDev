@@ -24,7 +24,7 @@ export default ({config}: { config: webpack.Configuration }) => {
   config!.module!.rules!.push(...applySvgLoaders());
   config!.module!.rules!.push(applyCssLoaders(true, false));
 
-  config!.plugins! .push(new DefinePlugin({
+  config!.plugins!.push(new DefinePlugin({
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify(''),
     __PROJECT__: JSON.stringify('storybook'),

@@ -24,11 +24,11 @@ describe('mapServerBadRequestErrors.test', () => {
     path: 'path3',
     location: 'string',
   };
-  test('with one error object', () => {
+  it('with one error object', () => {
     expect(mapServerBadRequestErrors([firstError])).toEqual({path1: {ru: 'ошибка 1', en: 'error 1'}});
   });
 
-  test('with several objects', () => {
+  it('with several objects', () => {
     expect(mapServerBadRequestErrors([firstError, secondError, thirdError])).toEqual({
       path1: {ru: 'ошибка 1', en: 'error 1'},
       path2: {ru: 'ошибка 2', en: 'error 2'},

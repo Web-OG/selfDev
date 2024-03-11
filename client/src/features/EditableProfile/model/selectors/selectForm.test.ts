@@ -2,7 +2,7 @@ import {StateSchema} from 'app/providers/StoreProvider';
 import {selectForm} from './selectForm';
 
 describe('selectForm.test', () => {
-  test('should return value', () => {
+  it('should return value', () => {
     const data = {
       avatar: 'test',
       country: 'Russia',
@@ -20,7 +20,7 @@ describe('selectForm.test', () => {
 
     expect(selectForm(state as StateSchema)).toEqual(data);
   });
-  test('should work with empty state', () => {
+  it('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
     const emptyFields = {
       city: '',

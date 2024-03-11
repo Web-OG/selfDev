@@ -3,7 +3,7 @@ import {selectErrorMsg} from './selectErrorMsg';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 
 describe('selectErrorMsg.test', () => {
-  test('should return error', () => {
+  it('should return error', () => {
     const state: DeepPartial<StateSchema> = {
       authentication: {
         sendingErrorMsg: defaultFormSendingErrorMsg.message,
@@ -11,7 +11,8 @@ describe('selectErrorMsg.test', () => {
     };
     expect(selectErrorMsg(state as StateSchema)).toEqual(defaultFormSendingErrorMsg.message);
   });
-  test('should work with empty state', () => {
+
+  it('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(selectErrorMsg(state as StateSchema)).toEqual(undefined);

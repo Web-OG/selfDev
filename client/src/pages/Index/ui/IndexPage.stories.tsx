@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 
 import IndexPage from './IndexPage';
 import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
-import {mockUserSlice} from 'shared/config/storybook';
+import {mockUserSlice} from 'shared/lib/mocks/slices';
 
 const meta: Meta<typeof IndexPage> = {
   title: 'pages/IndexPage',

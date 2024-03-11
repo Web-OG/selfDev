@@ -1,5 +1,29 @@
-.text {
-  font-size: 16px;
+.fs-hint {
+  font-size: var(--font-size-hint);
+}
+
+.fs-notice {
+  font-size: var(--font-size-notice);
+}
+
+.fs-primary {
+  font-size: var(--font-size-primary);
+}
+
+.fs-accent {
+  font-size: var(--font-size-accent);
+}
+
+.fs-subtitle {
+  font-size: var(--font-size-subtitle);
+}
+
+.fs-title {
+  font-size: var(--font-size-title);
+}
+
+.fs-promo-title {
+  font-size: var(--font-size-promo-title);
 }
 
 .block {

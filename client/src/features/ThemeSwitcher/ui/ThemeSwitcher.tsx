@@ -17,10 +17,10 @@ const ThemeSwitcher = memo(() => {
     <Switch checked={enabled} onChange={onThemeToggle} as={Fragment}>
       {({checked}) => (
         <button
-          className={classNames(cls.button, {[cls.buttonChecked]: checked})}
+          className={classNames(cls.button, {[cls.buttonChecked]: checked})} data-testid="toggle"
         >
           <span
-            className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})}
+            className={classNames(cls.indicator, {[cls.indicatorChecked]: checked})} data-testid="indicator"
           />
         </button>
       )}

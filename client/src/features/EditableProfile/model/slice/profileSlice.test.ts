@@ -7,7 +7,7 @@ import {Profile} from 'entities/Profile';
 import {getProfileData} from 'features/EditableProfile/model/services/getProfileData';
 
 describe('profileSlice.test', () => {
-  test('test set value', () => {
+  it('test set value', () => {
     const state: DeepPartial<ProfileSchema> = {form: {}};
     const payload = {username: '123123'};
 
@@ -17,7 +17,7 @@ describe('profileSlice.test', () => {
     )).toEqual({form: payload});
   });
 
-  test('test set a value with existing values', () => {
+  it('test set a value with existing values', () => {
     const state: DeepPartial<ProfileSchema> = {form: {city: 'Moscow'}};
     const payload = {username: '123123'};
 
@@ -27,7 +27,7 @@ describe('profileSlice.test', () => {
     )).toEqual({form: {city: 'Moscow', username: '123123'}});
   });
 
-  test('test getProfileData pending', () => {
+  it('test getProfileData pending', () => {
     const state: DeepPartial<ProfileSchema> = {
       isLoading: false,
       loadingError: defaultLoadingErrorMsg
@@ -42,7 +42,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test getProfileData fulfilled', () => {
+  it('test getProfileData fulfilled', () => {
     const state: DeepPartial<ProfileSchema> = {
       isLoading: true,
     };
@@ -67,7 +67,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test getProfileData rejected', () => {
+  it('test getProfileData rejected', () => {
     const state: DeepPartial<ProfileSchema> = {
       isLoading: true,
     };
@@ -81,7 +81,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test putProfile pending', () => {
+  it('test putProfile pending', () => {
     const state: DeepPartial<ProfileSchema> = {
       isSending: false,
       sendingErrorMsg: defaultFormSendingErrorMsg.message
@@ -96,7 +96,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test putProfile fulfilled', () => {
+  it('test putProfile fulfilled', () => {
     const state: DeepPartial<ProfileSchema> = {
       isSending: true,
     };
@@ -124,7 +124,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test putProfile rejected', () => {
+  it('test putProfile rejected', () => {
     const state: DeepPartial<ProfileSchema> = {
       isSending: true,
     };
@@ -138,7 +138,7 @@ describe('profileSlice.test', () => {
     });
   });
 
-  test('test putProfile rejected with validation errors', () => {
+  it('test putProfile rejected with validation errors', () => {
     const state: DeepPartial<ProfileSchema> = {
       isSending: true,
     };

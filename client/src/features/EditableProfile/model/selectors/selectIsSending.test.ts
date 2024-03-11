@@ -2,7 +2,7 @@ import {StateSchema} from 'app/providers/StoreProvider';
 import {selectIsSending} from './selectIsSending';
 
 describe('selectIsSending.test', () => {
-  test('should return value', () => {
+  it('should return value', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         isSending: true
@@ -10,7 +10,7 @@ describe('selectIsSending.test', () => {
     };
     expect(selectIsSending(state as StateSchema)).toBe(true);
   });
-  test('should work with empty state', () => {
+  it('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(selectIsSending(state as StateSchema)).toEqual(false);

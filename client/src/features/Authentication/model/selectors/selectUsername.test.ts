@@ -2,7 +2,7 @@ import {StateSchema} from 'app/providers/StoreProvider';
 import {selectUsername} from './selectUsername';
 
 describe('selectUsername.test', () => {
-  test('should return value', () => {
+  it('should return value', () => {
     const state: DeepPartial<StateSchema> = {
       authentication: {
         username: '123123',
@@ -10,7 +10,7 @@ describe('selectUsername.test', () => {
     };
     expect(selectUsername(state as StateSchema)).toEqual('123123');
   });
-  test('should work with empty state', () => {
+  it('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
     expect(selectUsername(state as StateSchema)).toEqual('');
   });

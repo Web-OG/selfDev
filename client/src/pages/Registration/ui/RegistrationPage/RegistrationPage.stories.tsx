@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import RegistrationPage from './RegistrationPage';
 import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
-import {mockUserSlice} from 'shared/config/storybook';
+import {mockUserSlice} from 'shared/lib/mocks/slices';
 import {reactRouterParameters} from 'storybook-addon-react-router-v6';
 
 const meta: Meta<typeof RegistrationPage> = {

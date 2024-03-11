@@ -7,7 +7,7 @@ describe('getUserAuthData.test', () => {
     username: 'Gendalf'
   };
 
-  test('should return data', () => {
+  it('should return data', () => {
     const state: DeepPartial<StateSchema> = {
       user: {
         authData: mockUser
@@ -15,7 +15,7 @@ describe('getUserAuthData.test', () => {
     };
     expect(getUserAuthData(state as StateSchema)).toEqual(mockUser);
   });
-  test('should return undefined with empty state', () => {
+  it('should return undefined with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(getUserAuthData(state as StateSchema)).toEqual(undefined);

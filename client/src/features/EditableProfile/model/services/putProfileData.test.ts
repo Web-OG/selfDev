@@ -5,7 +5,7 @@ import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 const initialState = {profile: {form: {username: 'test', _id: '123'}}};
 
 describe('putProfileData.test', () => {
-  test('success putProfileData', async () => {
+  it('success putProfileData', async () => {
     const thunk = new TestAsyncThunk(putProfileData, initialState);
     thunk.api.put.mockReturnValue(Promise.resolve({status: 200, data: initialState.profile.form}));
     const result = await thunk.callThunk(undefined);
@@ -17,7 +17,7 @@ describe('putProfileData.test', () => {
     expect(result.payload).toEqual(initialState.profile.form);
   });
 
-  test('error putProfileData', async () => {
+  it('error putProfileData', async () => {
     const thunk = new TestAsyncThunk(putProfileData, initialState);
     thunk.api.put.mockReturnValue(Promise.reject({status: 403, data: defaultFormSendingErrorMsg}));
     const result = await thunk.callThunk(undefined);

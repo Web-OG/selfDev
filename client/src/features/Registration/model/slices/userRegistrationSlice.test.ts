@@ -5,7 +5,7 @@ import {postRegistration} from '../services/postRegistration';
 import {ServerBadRequestResponse} from 'shared/lib/types';
 
 describe('userRegistrationSlice.test', () => {
-  test('test set username', () => {
+  it('test set username', () => {
     const state: DeepPartial<UserRegistrationSchema> = {username: '123'};
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
@@ -13,7 +13,7 @@ describe('userRegistrationSlice.test', () => {
     )).toEqual({username: '123123'});
   });
 
-  test('test set email', () => {
+  it('test set email', () => {
     const state: DeepPartial<UserRegistrationSchema> = {email: 'mail@example.com'};
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
@@ -21,7 +21,7 @@ describe('userRegistrationSlice.test', () => {
     )).toEqual({email: 'mail@example.com'});
   });
 
-  test('test set password', () => {
+  it('test set password', () => {
     const state: DeepPartial<UserRegistrationSchema> = {password: '123'};
     expect(userRegistrationReducer(
       state as UserRegistrationSchema,
@@ -29,7 +29,7 @@ describe('userRegistrationSlice.test', () => {
     )).toEqual({password: '123123'});
   });
 
-  test('test userRegistration pending', () => {
+  it('test userRegistration pending', () => {
     const state: DeepPartial<UserRegistrationSchema> = {
       isSending: false,
       sendingErrorMsg: defaultFormSendingErrorMsg.message
@@ -44,7 +44,7 @@ describe('userRegistrationSlice.test', () => {
     });
   });
 
-  test('test userRegistration fulfilled', () => {
+  it('test userRegistration fulfilled', () => {
     const state: DeepPartial<UserRegistrationSchema> = {
       isSending: true,
     };
@@ -61,7 +61,7 @@ describe('userRegistrationSlice.test', () => {
     });
   });
 
-  test('test userRegistration rejected', () => {
+  it('test userRegistration rejected', () => {
     const state: DeepPartial<UserRegistrationSchema> = {
       isSending: true,
     };
@@ -75,7 +75,7 @@ describe('userRegistrationSlice.test', () => {
     });
   });
 
-  test('test userRegistration rejected with validation errors', () => {
+  it('test userRegistration rejected with validation errors', () => {
     const state: DeepPartial<UserRegistrationSchema> = {
       isSending: true,
     };

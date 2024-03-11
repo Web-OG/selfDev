@@ -1,7 +1,8 @@
 import {ReactNode, memo, ChangeEvent} from 'react';
 import cls from './Checkbox.module.scss';
-import {FontSize, HTMLInputProps} from 'shared/lib/types';
+import {FontColor, FontSize, HTMLInputProps} from 'shared/lib/types';
 import classNames from 'classnames';
+import {Typography} from 'shared/ui/Typography';
 
 type CheckboxHorizontalAlign = 'left' | 'right';
 type CheckboxVerticalAlign = 'start' | 'center' | 'end';
@@ -15,7 +16,8 @@ interface CheckboxProps extends HTMLInputProps {
   variant?: CheckboxVariant;
   className?: string;
   labelClassName?: string;
-  fontSize?: FontSize;
+  labelFontSize?: FontSize;
+  labelFontColor?: FontColor;
   value?: string | number;
   onChange?: (value: string) => void;
   onChecked?: (value: boolean) => void;
@@ -35,7 +37,8 @@ const Checkbox = memo((props: CheckboxProps) => {
     horizontalAlign = 'left',
     verticalAlign = 'center',
     variant = 'primary',
-    fontSize = 'accent',
+    labelFontSize = 'fs-accent',
+    labelFontColor,
     ...otherProps
   } = props;
 
@@ -47,27 +50,31 @@ const Checkbox = memo((props: CheckboxProps) => {
   const labelMods = {
     [cls[horizontalAlign]]: true,
     [cls[verticalAlign]]: true,
-    [cls[fontSize]]: true,
   };
 
   return (
     <label
       className={classNames(cls.label, {labelClassName}, labelMods)}
+      data-testid='label'
     >
       <input
-        type="checkbox"
+        type='checkbox'
         value={value}
         onChange={onChangeHandler}
         className={classNames('visually-hidden', className)}
         readOnly={readonly}
         name={name}
         tabIndex={0}
+        data-testid='input'
         {...otherProps}
       />
       <div
         className={classNames(cls.indicator, {[cls[variant]]: true})}
+        data-testid='indicator'
       />
-      {label}
+      <Typography.Text fontSize={labelFontSize} type={labelFontColor} data-testid='label-text'>
+        {label}
+      </Typography.Text>
     </label>
   );
 });

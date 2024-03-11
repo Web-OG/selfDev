@@ -4,7 +4,7 @@ import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 
 describe('postLogout.test', () => {
-  test('success postLogout', async () => {
+  it('success postLogout', async () => {
 
     const thunk = new TestAsyncThunk(postLogout);
     thunk.api.post.mockReturnValue(Promise.resolve({status: 200}));
@@ -18,7 +18,7 @@ describe('postLogout.test', () => {
     expect(result.payload).toEqual(undefined);
   });
 
-  test('error postLogout', async () => {
+  it('error postLogout', async () => {
     const thunk = new TestAsyncThunk(postLogout);
     thunk.api.post.mockReturnValue(Promise.reject({status: 400}));
     const result = await thunk.callThunk(undefined);

@@ -12,14 +12,10 @@ import {isPasswordsNotEquals} from 'shared/lib/utils/isPasswordsNotEquals';
 import {Checkbox} from 'shared/ui/Checkbox';
 import {postRegistration} from '../../model/services/postRegistration';
 import {useNavigate} from 'react-router-dom';
-import {selectIsSending} from 'features/Registration/model/selectors/selectIsSending';
-import {
-  selectSendingErrorMsg
-} from 'features/Registration/model/selectors/selectSendingErrorMsg';
-import {
-  selectSendingErrorFields
-} from 'features/Registration/model/selectors/selectSendingErrorFields';
-import cls from 'features/Authentication/ui/LoginForm/LoginForm.module.scss';
+import {selectIsSending} from '../../model/selectors/selectIsSending';
+import {selectSendingErrorMsg} from '../../model/selectors/selectSendingErrorMsg';
+import {selectSendingErrorFields} from '../../model/selectors/selectSendingErrorFields';
+import cls from './UserRegistrationForm.module.scss';
 import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
 
 interface Props {
@@ -87,6 +83,7 @@ const UserRegistrationForm = memo(({className}: Props) => {
         onChange={onLoginChange}
         externalError={sendingErrorFields?.username}
         validations={['username']}
+        data-testid="username"
         required
       />
       <Input
@@ -95,6 +92,7 @@ const UserRegistrationForm = memo(({className}: Props) => {
         onChange={onEmailChange}
         externalError={sendingErrorFields?.email}
         validations={['email']}
+        data-testid="email"
         required
       />
       <Input
@@ -104,6 +102,7 @@ const UserRegistrationForm = memo(({className}: Props) => {
         onChange={onPasswordChange}
         externalError={sendingErrorFields?.password}
         validations={['light-password']}
+        data-testid="password"
         required
       />
       <Input
@@ -112,21 +111,24 @@ const UserRegistrationForm = memo(({className}: Props) => {
         value={passwordRepeat}
         onChange={setPasswordRepeat}
         externalError={isWrongPasswords ? passwordsNotEqualsMsg : undefined}
+        data-testid="password-repeat"
         required
       />
       <Checkbox
         label={t('Я согласен на обработку персональных данных')}
         name="agree"
-        value='lala'
+        value='processing data'
         onChecked={onIsAgreeChange}
         checked={isAgree}
         required={!isAgree}
+        data-testid="agree"
       />
-      {sendingErrorMsg && <AlertSendingError sendingErrorMsg={sendingErrorMsg}/>}
+      {sendingErrorMsg && <AlertSendingError sendingErrorMsg={sendingErrorMsg} data-testid="username"/>}
       <ButtonSubmit
         className={cls.button}
         isSending={isSending}
         disabled={isWrongPasswords}
+        data-testid="button"
       >
         {t('Зарегистрироваться')}
       </ButtonSubmit>

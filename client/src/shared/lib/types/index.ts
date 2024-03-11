@@ -2,7 +2,14 @@ import {InputHTMLAttributes} from 'react';
 
 export type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 export type FontColor = 'primary' | 'secondary' | 'focus' | 'success' | 'warning' | 'danger';
-export type FontSize = 'hint' | 'notice' | 'primary' | 'accent' | 'subtitle' | 'title' | 'promo-title'
+export type FontSize =
+  'fs-hint'
+  | 'fs-notice'
+  | 'fs-primary'
+  | 'fs-accent'
+  | 'fs-subtitle'
+  | 'fs-title'
+  | 'fs-promo-title'
 export type ProjectLanguages = 'ru' | 'en'
 
 export interface LoadingSliceFields {

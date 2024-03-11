@@ -7,7 +7,7 @@ import {
 import {ProjectLanguages} from 'shared/lib/types';
 
 interface Props {
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   setValidationErrors: Dispatch<SetStateAction<InputValidationErrors | null>>;
   currentLanguage: ProjectLanguages;
   validations?: InputValidations[];

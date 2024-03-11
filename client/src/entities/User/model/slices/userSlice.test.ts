@@ -2,7 +2,7 @@ import {UserSchema} from '../types/user';
 import {userReducer, userActions} from './userSlice';
 
 describe('userSlice.test', () => {
-  test('set authData', () => {
+  it('set authData', () => {
     const mockUser = {
       id: '1',
       username: 'Gendalf'
@@ -15,7 +15,7 @@ describe('userSlice.test', () => {
     )).toEqual({authData: mockUser});
   });
 
-  test('init authData with user payload', () => {
+  it('init authData with user payload', () => {
     const mockUser = {
       id: '1',
       username: 'Gendalf'
@@ -28,7 +28,7 @@ describe('userSlice.test', () => {
     )).toEqual({authData: mockUser, _initialized: true});
   });
 
-  test('init authData without user payload', () => {
+  it('init authData without user payload', () => {
     const mockUser = null;
 
     const state: DeepPartial<UserSchema> = {_initialized: false};
@@ -38,7 +38,7 @@ describe('userSlice.test', () => {
     )).toEqual({_initialized: true});
   });
 
-  test('logout', () => {
+  it('logout', () => {
     const state: DeepPartial<UserSchema> = {
       _initialized: true,
       authData: {

@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {EditableProfile} from './EditableProfile';
 import {profileReducer} from 'features/EditableProfile/model/slice/profileSlice';
-import {mockUserSlice} from 'shared/config/storybook';
+import {mockUserSlice} from 'shared/lib/mocks/slices';
 
 const meta: Meta<typeof EditableProfile> = {
   title: 'features/EditableProfile/EditableProfile',

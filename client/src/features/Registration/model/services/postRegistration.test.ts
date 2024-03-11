@@ -7,7 +7,7 @@ import {selectEmail} from 'features/Registration/model/selectors/selectEmail';
 import {selectPassword} from 'features/Registration/model/selectors/selectPassword';
 
 describe('postRegistration.test', () => {
-  test('success postRegistration', async () => {
+  it('success postRegistration', async () => {
     const state: DeepPartial<StateSchema> = {
       userRegistration: {
         username: 'username',
@@ -36,7 +36,7 @@ describe('postRegistration.test', () => {
     expect(result.payload).toEqual(successMsg);
   });
 
-  test('error userRegistration', async () => {
+  it('error userRegistration', async () => {
     const thunk = new TestAsyncThunk(postRegistration);
     thunk.api.post.mockReturnValue(Promise.reject({status: 404}));
     const result = await thunk.callThunk(undefined);

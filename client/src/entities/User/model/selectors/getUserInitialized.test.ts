@@ -2,7 +2,7 @@ import {getUserInitialized} from './getUserInitialized';
 import type {StateSchema} from 'app/providers/StoreProvider';
 
 describe('getUserInitialized.test', () => {
-  test('should return value', () => {
+  it('should return value', () => {
     const state: DeepPartial<StateSchema> = {
       user: {
         _initialized: false

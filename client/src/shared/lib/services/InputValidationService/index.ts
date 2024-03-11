@@ -1,7 +1,13 @@
 import {REGEXP} from 'shared/lib/constants/regexp';
 import {ProjectLanguages} from 'shared/lib/types';
 
-export type InputValidations = 'phone' | 'email' | 'username' | 'light-password' | 'strong-password';
+export type InputValidations =
+  'phone'
+  | 'email'
+  | 'username'
+  | 'light-password'
+  | 'strong-password'
+  | 'without-indents';
 export type InputValidationErrors = Record<ProjectLanguages, string[]>;
 
 export class InputValidationService {
@@ -23,6 +29,10 @@ export class InputValidationService {
 
   static isStrongPassword(str: string) {
     return REGEXP.STRONG_PASSWORD.test(str);
+  }
+
+  static isOnlyIndents(str: string) {
+    return REGEXP.ONLY_INDENTS.test(str);
   }
 
   static validate(val: string, validations: InputValidations[]): InputValidationErrors {
@@ -58,6 +68,12 @@ export class InputValidationService {
         if (!this.isPhone(val)) {
           errors.ru.push('Не верный формат телефона');
           errors.en.push('Incorrect phone format');
+        }
+        break;
+      case 'without-indents':
+        if (this.isOnlyIndents(val)) {
+          errors.ru.push('Значение не должно содержать пробельные символы');
+          errors.en.push('The value must not contain spaces');
         }
         break;
       }

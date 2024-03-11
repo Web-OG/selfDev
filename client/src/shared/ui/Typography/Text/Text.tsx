@@ -6,6 +6,7 @@ import {TextAndLinkProps} from '../types';
 const Text = memo((props: TextAndLinkProps) => {
   const {
     type = 'primary',
+    fontSize = 'fs-primary',
     display = 'block',
     deleted,
     italic,
@@ -21,6 +22,7 @@ const Text = memo((props: TextAndLinkProps) => {
 
   const mods = {
     [cls[type]]: true,
+    [cls[fontSize]]: true,
     [cls[display]]: true,
     [cls.italic]: italic,
     [cls.code]: code,

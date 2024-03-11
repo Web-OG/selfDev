@@ -1,8 +1,9 @@
-import {FontColor} from 'shared/lib/types';
+import {FontColor, FontSize} from 'shared/lib/types';
 import {MouseEventHandler, ReactNode} from 'react';
 
 export interface TextAndLinkProps {
   rootClassName?: string;
+  fontSize?: FontSize;
   code?: boolean;
   deleted?: boolean;
   disabled?: boolean;

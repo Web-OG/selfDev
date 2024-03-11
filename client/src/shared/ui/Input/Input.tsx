@@ -10,15 +10,15 @@ export type InputExternalErrorMassage = undefined | string | string[] | MultiLan
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value: string | number;
-  onChange: (value: string) => void;
+  value?: string | number;
+  onChange?: (value: string) => void;
   label?: ReactNode,
   autofocus?: boolean;
   readonly?: boolean;
   externalError?: InputExternalErrorMassage;
   noticeMassage?: string;
   validations?: InputValidations[],
-  currentLanguage?: ProjectLanguages
+  currentLanguage?: ProjectLanguages,
 }
 
 const Input = memo((props: InputProps) => {
@@ -54,9 +54,9 @@ const Input = memo((props: InputProps) => {
   }, [autofocus]);
 
   return (
-    <div className={classNames(cls.InputWrapper, {[cls.readonly]: readonly}, className)}>
+    <div className={classNames(cls.InputWrapper, {[cls.readonly]: readonly}, className)} data-testid='input-wrapper'>
       {label && (
-        <div className={cls.label}>
+        <div className={cls.label} data-testid='input-label'>
           {label}
         </div>
       )}
@@ -69,6 +69,7 @@ const Input = memo((props: InputProps) => {
         readOnly={readonly}
         onFocus={onFocus}
         onBlur={onBlur}
+        data-testid="input"
         {...otherProps}
       />
       {ExternalErrors}

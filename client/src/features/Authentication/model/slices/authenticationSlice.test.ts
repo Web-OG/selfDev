@@ -6,7 +6,7 @@ import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 import {ServerBadRequestResponse} from 'shared/lib/types';
 
 describe('authenticationSlice.test', () => {
-  test('test set username', () => {
+  it('test set username', () => {
     const state: DeepPartial<AuthenticationSchema> = {username: '123'};
     expect(authenticationReducer(
       state as AuthenticationSchema,
@@ -14,7 +14,7 @@ describe('authenticationSlice.test', () => {
     )).toEqual({username: '123123'});
   });
 
-  test('test set password', () => {
+  it('test set password', () => {
     const state: DeepPartial<AuthenticationSchema> = {password: '123'};
     expect(authenticationReducer(
       state as AuthenticationSchema,
@@ -22,7 +22,7 @@ describe('authenticationSlice.test', () => {
     )).toEqual({password: '123123'});
   });
 
-  test('test login pending', () => {
+  it('test login pending', () => {
     const state: DeepPartial<AuthenticationSchema> = {
       isSending: false,
       sendingErrorMsg: defaultFormSendingErrorMsg.message
@@ -37,7 +37,7 @@ describe('authenticationSlice.test', () => {
     });
   });
 
-  test('test login fulfilled', () => {
+  it('test login fulfilled', () => {
     const state: DeepPartial<AuthenticationSchema> = {
       isSending: true,
     };
@@ -54,7 +54,7 @@ describe('authenticationSlice.test', () => {
     });
   });
 
-  test('test login rejected', () => {
+  it('test login rejected', () => {
     const state: DeepPartial<AuthenticationSchema> = {
       isSending: true,
     };
@@ -68,7 +68,7 @@ describe('authenticationSlice.test', () => {
     });
   });
 
-  test('test login rejected with validation errors', () => {
+  it('test login rejected with validation errors', () => {
     const state: DeepPartial<AuthenticationSchema> = {
       isSending: true,
     };

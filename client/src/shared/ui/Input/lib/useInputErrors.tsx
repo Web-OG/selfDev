@@ -14,7 +14,7 @@ export const useInputErrors = (props: Props) => {
   const {validationErrors, externalError, currentLanguage} = props;
   const ValidationErrors = useMemo(() => {
     return validationErrors && validationErrors[currentLanguage].length
-      ? <div className={cls.errMassage}>
+      ? <div className={cls.errMassage} data-testid="errMassage">
         {Array.isArray(validationErrors[currentLanguage]) ? validationErrors?.[currentLanguage]?.join('\n') : '!'}
       </div>
       : null;
@@ -23,15 +23,15 @@ export const useInputErrors = (props: Props) => {
   const ExternalErrors = useMemo(() => {
     if (externalError) {
       if (typeof externalError === 'string') {
-        return <div className={cls.errMassage}>
+        return <div className={cls.errMassage} data-testid="errMassage">
           {externalError}
         </div>;
       } else if (Array.isArray(externalError)) {
-        return <div className={cls.errMassage}>
+        return <div className={cls.errMassage} data-testid="errMassage">
           {externalError.join('\n')}
         </div>;
       } else if (typeof externalError === 'object' && !Array.isArray(externalError)) {
-        return <div className={cls.errMassage}>
+        return <div className={cls.errMassage} data-testid="errMassage">
           {externalError[currentLanguage]}
         </div>;
       } else return null;

@@ -2,7 +2,7 @@ import {StateSchema} from 'app/providers/StoreProvider';
 import {selectLoadingError} from './selectLoadingError';
 
 describe('selectLoadingError.test', () => {
-  test('should return value', () => {
+  it('should return value', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         loadingError: {ru: 'test', en: 'test'}
@@ -10,7 +10,7 @@ describe('selectLoadingError.test', () => {
     };
     expect(selectLoadingError(state as StateSchema)).toEqual({ru: 'test', en: 'test'});
   });
-  test('should work with empty state', () => {
+  it('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(selectLoadingError(state as StateSchema)).toEqual(undefined);

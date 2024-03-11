@@ -14,7 +14,7 @@ export const useReducerManager = (reducers: ReducersList, removeAfterUnmount: bo
   useEffect(() => {
     if (isReducersInit) {
       Object.entries(reducers).forEach(([name, reducer]) => {
-        store.reducerManager.add(name as StateSchemaKey, reducer);
+        store?.reducerManager?.add(name as StateSchemaKey, reducer);
         dispatch({type: `@INIT ${name} reducer`});
       });
     }
@@ -22,7 +22,7 @@ export const useReducerManager = (reducers: ReducersList, removeAfterUnmount: bo
     return () => {
       if (removeAfterUnmount && isReducersInit) {
         Object.entries(reducers).forEach(([name]) => {
-          store.reducerManager.remove(name as StateSchemaKey);
+          store?.reducerManager?.remove(name as StateSchemaKey);
           dispatch({type: `@DESTROY ${name} reducer`});
         });
       }
