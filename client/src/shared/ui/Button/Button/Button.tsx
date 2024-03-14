@@ -2,7 +2,7 @@ import {ButtonHTMLAttributes, memo, ReactNode} from 'react';
 import cls from './Button.module.scss';
 import classNames from 'classnames';
 
-type ButtonVariant = 'primary' | 'outlined' | 'success' | 'danger'
+type ButtonVariant = 'primary' | 'outlined' | 'clear' | 'success' | 'danger'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

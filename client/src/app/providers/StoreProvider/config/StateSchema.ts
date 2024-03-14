@@ -10,6 +10,7 @@ import {
 } from '@reduxjs/toolkit';
 import {AuthorRegistrationSchema, UserRegistrationSchema} from 'features/Registration';
 import {ProfileSchema} from 'features/EditableProfile';
+import {InfinityPostListSchema} from 'widgets/InfinityPostList';
 
 export interface StateSchema {
   user: UserSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
   authentication?: AuthenticationSchema;
   userRegistration?: UserRegistrationSchema;
   authorRegistration?: AuthorRegistrationSchema;
+  postList?: InfinityPostListSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

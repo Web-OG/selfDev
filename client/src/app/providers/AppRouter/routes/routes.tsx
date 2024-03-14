@@ -1,6 +1,6 @@
 import {AppRoutes} from '../types/RouteTypes';
 import {AboutPage} from 'pages/About';
-import {PostsPage} from 'pages/Posts';
+import {PostsPage, PostPage} from 'pages/Posts';
 import {LoginPage} from 'pages/Login';
 import {IndexPage} from 'pages/Index';
 import {ChooseRegistrationTypePage, RegistrationPage} from 'pages/Registration';
@@ -34,6 +34,10 @@ export const routes: AppRoutes = {
   },
   'posts/': {
     element: <PostsPage/>,
+    authOnly: true
+  },
+  'posts/:id': {
+    element: <PostPage/>,
     authOnly: true
   }
 };

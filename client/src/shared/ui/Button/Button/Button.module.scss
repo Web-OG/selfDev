@@ -51,6 +51,12 @@
   }
 }
 
+.clear {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
 .success {
   background-color: var(--successes-color);
   border: var(--successes-color-border);

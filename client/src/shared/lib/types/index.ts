@@ -1,4 +1,4 @@
-import {InputHTMLAttributes} from 'react';
+import {FunctionComponent, InputHTMLAttributes, SVGProps} from 'react';
 
 export type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 export type FontColor = 'primary' | 'secondary' | 'focus' | 'success' | 'warning' | 'danger';
@@ -44,3 +44,5 @@ export interface ServerBadRequestResponse<SchemaKeys> {
   message: MultiLanguageMassage,
   errors?: ServerBadRequestError<SchemaKeys>[]
 }
+
+export type SvgReactComponent = FunctionComponent<SVGProps<SVGElement>>

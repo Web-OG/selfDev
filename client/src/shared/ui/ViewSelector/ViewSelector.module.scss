@@ -1,0 +1,12 @@
+.ViewSelector {
+  display: flex;
+  gap: var(--indent-inner-blocks)
+}
+
+.icon {
+  fill: var(--secondary-color)
+}
+
+.notSelected {
+  fill: var(--secondary-color-30);
+}
