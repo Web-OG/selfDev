@@ -1,5 +1,5 @@
-const {Schema, model} = require('mongoose');
-const {USER_ROLES} = require('../../../shared/constants/roles.js');
+import {Schema, model} from 'mongoose';
+import {USER_ROLES} from '../shared/constants/roles.js';
 
 const Role = new Schema({
   value: {type: String, unique: true, default: USER_ROLES.USER},

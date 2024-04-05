@@ -1,28 +1,44 @@
-import {createEntityAdapter, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction
+} from '@reduxjs/toolkit';
 import {StateSchema} from 'app/providers/StoreProvider';
 import {Post, PostView} from 'entities/Post';
 import {getPostList} from 'widgets/InfinityPostList/model/services/getPostList/getPostList';
-import {InfinityPostListSchema} from '../types/infinityPostListSchema';
+import {PostListSchema, PostListWithPagination} from '../types/infinityPostListSchema';
 import {STORAGE_KEYS} from 'shared/lib/constants/storage';
 
 const postsAdapter = createEntityAdapter<Post, string>({
-  selectId: (post) => post.id,
+  selectId: (post) => post._id,
 });
 
 export const getPosts = postsAdapter.getSelectors<StateSchema>(
-  (state) => state.postList || postsAdapter.getInitialState(),
+  (state) => {
+    console.log('state.postList  is ', state.postList);
+    console.log('postsAdapter.getInitialState()  is ', postsAdapter.getInitialState());
+    return state.postList || {ids: [], entities: {}};
+  }
 );
 
 const postListSlice = createSlice({
   name: 'postListSlice',
-  initialState: postsAdapter.getInitialState<InfinityPostListSchema>({
+  initialState: postsAdapter.getInitialState<PostListSchema>({
     isLoading: false,
     error: undefined,
-    ids: [],
-    entities: {},
-    view: 'small',
+    limit: 4,
     page: 1,
-    hasMore: true,
+    hasMore: false,
+    count: 1,
+    view: 'small',
+    pagination: {
+      totalPages: 1,
+      next: null,
+      prev: null,
+      currentPage: 1
+    },
+    entities: {},
+    ids: []
   }),
   reducers: {
     setView: (state, action: PayloadAction<PostView>) => {
@@ -46,11 +62,14 @@ const postListSlice = createSlice({
       })
       .addCase(getPostList.fulfilled, (
         state,
-        action: PayloadAction<Post[]>,
+        action: PayloadAction<PostListWithPagination>,
       ) => {
+        const {count, data, hasMore, pagination} = action.payload;
         state.isLoading = false;
-        postsAdapter.addMany(state, action.payload);
-        state.hasMore = action.payload.length > 0;
+        postsAdapter.setAll(state, data);
+        state.hasMore = hasMore;
+        state.count = count;
+        state.pagination = pagination;
       })
       .addCase(getPostList.rejected, (state, action) => {
         state.isLoading = false;

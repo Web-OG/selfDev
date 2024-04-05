@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 interface Props {
   className?: string;
-  posts: Post[]
+  posts: Post[];
   isLoading: boolean;
   view: PostView;
 }
@@ -32,7 +32,7 @@ export const PostList = memo((props: Props) => {
         post={post}
         view={view}
         className={cls.card}
-        key={post.id}
+        key={post._id}
       />
     );
 
@@ -42,7 +42,7 @@ export const PostList = memo((props: Props) => {
   }, [posts, view]);
 
   return (
-    <div className={classNames(className, cls[view])}>
+    <div className={classNames(cls.list, cls[view], className)}>
       {PostList}
       {isLoading && getSkeletons(view)}
     </div>

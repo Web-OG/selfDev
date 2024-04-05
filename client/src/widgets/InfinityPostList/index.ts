@@ -1,5 +1,7 @@
-export type {InfinityPostListSchema} from './model/types/infinityPostListSchema';
+export type {PostListSchema} from './model/types/infinityPostListSchema';
 
-export {InfinityPostList} from 'widgets/InfinityPostList/ui/InfinityPostList/InfinityPostList';
+export {
+  InfinityPostListWithViewModes
+} from 'widgets/InfinityPostList/ui/InfinityPostListWithViewModes/InfinityPostListWithViewModes';
 
 

@@ -1,6 +1,6 @@
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
-import User from '../models/User.js';
+import User from '../../../models/User.js';
 import CryptService from '../../../services/CryptService.js';
 
 export const authenticateMiddleware = () => {

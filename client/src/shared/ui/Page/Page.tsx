@@ -28,7 +28,7 @@ export const Page = memo((props: PageProps) => {
       className={classNames(cls.Page, className)}
     >
       {children}
-      <div ref={triggerRef}/>
+      <div ref={triggerRef} style={{border: '2px solid red'}}/>
     </div>
   );
 });

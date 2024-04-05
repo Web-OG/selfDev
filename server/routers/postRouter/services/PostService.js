@@ -1,12 +1,13 @@
-import Post from '../models/Post.js';
+import Post from '../../../models/Post.js';
 import FileService from '../../../services/FileService.js';
+import PaginateService from '../../../services/PaginateService.js';
 
 class PostService {
   async create(post, picture) {
     try {
       let fileName;
 
-      if(picture) {
+      if (picture) {
         fileName = FileService.saveFile(picture.file);
       } else {
         fileName = null;
@@ -14,17 +15,22 @@ class PostService {
 
       return await Post.create({...post, picture: fileName});
 
-    } catch (e) {
-      console.log('PostService create err ',e);
+    } catch (err) {
+      throw new Error(err);
     }
   }
 
-  async getAll() {
+  async getAll(pagination) {
+    if (pagination.page && pagination.limit) {
+      const modelWithPagination = new PaginateService(pagination.page, pagination.limit, Post);
+
+      return modelWithPagination.paginate();
+    }
     return Post.find();
   }
 
   async getOne(id) {
-    if(!id) {
+    if (!id) {
       throw new Error('Не указан ID');
     }
     return Post.findOne(id);
@@ -35,7 +41,7 @@ class PostService {
   }
 
   async delete(id) {
-    if(!id) {
+    if (!id) {
       throw new Error('Не указан ID');
     }
     return Post.findByIdAndDelete(id);

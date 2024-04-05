@@ -1,4 +1,4 @@
-import Profile from '../models/Profile.js';
+import Profile from '../../../models/Profile.js';
 import {HttpError} from '../../../shared/utils/HttpErrorUtil.js';
 
 class ProfileService {

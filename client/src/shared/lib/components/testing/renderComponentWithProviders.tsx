@@ -8,9 +8,11 @@ import {Theme, ThemeProvider} from 'shared/providers/ThemeProvider';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {userReducer} from 'entities/User';
 import {userRegistrationReducer} from 'features/Registration/model/slices/userRegistrationSlice';
+import {postListReducer} from 'widgets/InfinityPostList/model/slices/postListSlice';
 
 const rootReducerForTests = combineReducers({
   user: userReducer,
+  postList: postListReducer,
   userRegistration: userRegistrationReducer
 });
 

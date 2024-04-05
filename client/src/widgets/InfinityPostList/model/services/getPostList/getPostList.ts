@@ -1,14 +1,14 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from 'app/providers/StoreProvider';
-import {Post} from 'entities/Post';
 import {selectLimit} from '../../selectors';
+import {PostListWithPagination} from 'widgets/InfinityPostList/model/types/infinityPostListSchema';
 
 interface Props {
   page?: number;
 }
 
 export const getPostList = createAsyncThunk<
-  Post[],
+  PostListWithPagination,
   Props,
   ThunkConfig<string>
 >(
@@ -19,11 +19,10 @@ export const getPostList = createAsyncThunk<
     const limit = selectLimit(getState());
 
     try {
-      const response = await extra.api.get<Post[]>('/posts', {
+      const response = await extra.api.get<PostListWithPagination>('/posts', {
         params: {
-          _expand: 'user',
-          _limit: limit,
-          _page: page,
+          limit,
+          page,
         },
       });
 

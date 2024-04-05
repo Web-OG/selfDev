@@ -31,7 +31,9 @@ class PostController {
 
   async getAll(req, res) {
     try {
-      const posts = await PostService.getAll();
+      const page = parseInt(req.query.page);
+      const limit = parseInt(req.query.limit);
+      const posts = await PostService.getAll({page, limit});
 
       res.json(posts);
     } catch (e) {

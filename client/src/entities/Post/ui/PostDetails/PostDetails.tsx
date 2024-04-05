@@ -28,7 +28,7 @@ export const PostDetails = memo((props: Props) => {
     case 'code':
       return (
         <CodeBlock
-          key={block.id}
+          key={block._id}
           block={block}
           className={cls.block}
         />
@@ -36,7 +36,7 @@ export const PostDetails = memo((props: Props) => {
     case 'image':
       return (
         <ImageBlock
-          key={block.id}
+          key={block._id}
           block={block}
           className={cls.block}
         />
@@ -44,7 +44,7 @@ export const PostDetails = memo((props: Props) => {
     case 'text':
       return (
         <TextBlock
-          key={block.id}
+          key={block._id}
           className={cls.block}
           block={block}
         />

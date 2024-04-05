@@ -22,10 +22,10 @@ export const PostListItem = memo((props: Props) => {
   const navigate = useNavigate();
 
   const onOpen = useCallback(() => {
-    navigate('posts' + post.id);
-  }, [post.id, navigate]);
+    navigate('posts' + post._id);
+  }, [post._id, navigate]);
 
-  const types = <Typography.Text rootClassName={cls.types}>{post.type.join(', ')}</Typography.Text>;
+  const types = <Typography.Text rootClassName={cls.types}>{post?.type?.join(', ')}</Typography.Text>;
   const views = (
     <>
       <Typography.Text rootClassName={cls.views}>{String(post.views)}</Typography.Text>
@@ -42,8 +42,8 @@ export const PostListItem = memo((props: Props) => {
       <div className={classNames(className, cls[view])}>
         <div className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} src={post.user.avatar}/>
-            <Typography.Text rootClassName={cls.username}>{post.user.username}</Typography.Text>
+            <Avatar size={30} src={post.author.avatar}/>
+            <Typography.Text rootClassName={cls.username}>{post.author.username}</Typography.Text>
             <Typography.Text rootClassName={cls.date}>{post.createdAt}</Typography.Text>
           </div>
           <Typography.Text rootClassName={cls.title}>{post.title}</Typography.Text>

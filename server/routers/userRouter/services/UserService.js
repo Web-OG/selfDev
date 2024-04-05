@@ -1,4 +1,4 @@
-import User from '../models/User.js';
+import User from '../../../models/User.js';
 import CryptService from '../../../services/CryptService.js';
 import {HttpError} from '../../../shared/utils/HttpErrorUtil.js';
 

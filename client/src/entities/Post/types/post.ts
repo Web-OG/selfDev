@@ -3,8 +3,9 @@ import {User} from 'entities/User';
 export type PostBlockType = 'code' | 'image' | 'text'
 
 interface PostBlockBase {
-  id: string;
+  _id: string;
   type: PostBlockType;
+  enum?: string[],
 }
 
 export interface PostCodeBlock extends PostBlockBase {
@@ -31,9 +32,9 @@ type PostType = 'IT' | 'SCIENCE' | 'ECONOMICS'
 export type PostView = 'big' | 'small'
 
 export interface Post {
-  id: string;
+  _id: string;
   title: string;
-  user: User;
+  author: User;
   subtitle: string;
   img: string;
   views: number;
