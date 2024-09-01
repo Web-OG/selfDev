@@ -1,4 +1,4 @@
-import {useCallback, useEffect} from 'react';
+import {memo, useCallback, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {getPostList} from '../../model/services/getPostList/getPostList';
 import {postListActions, postListReducer} from '../../model/slices/postListSlice';
@@ -7,13 +7,13 @@ import {selectView} from '../../model/selectors';
 import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
 import {PostView} from 'entities/Post/types/post';
 import {PostViewSelector} from 'features/PostViewSelector';
-import {InfinityPostList} from 'widgets/InfinityPostList/ui/InfinityPostList/InfinityPostList';
+import {InfinityPostList} from '../InfinityPostList/InfinityPostList';
 
 const reducers: ReducersList = {
   postList: postListReducer,
 };
 
-export const InfinityPostListWithViewModes = () => {
+export const InfinityPostListWithViewModes = memo(() => {
   const dispatch = useAppDispatch();
   const view = useSelector(selectView);
   const {isReducersInit} = useReducerManager(reducers);
@@ -42,4 +42,4 @@ export const InfinityPostListWithViewModes = () => {
       <InfinityPostList/>
     </div>
   );
-};
+});

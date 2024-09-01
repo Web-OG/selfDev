@@ -1,5 +1,5 @@
 import {EntityState} from '@reduxjs/toolkit';
-import {Post, PostView} from 'entities/Post/types/post';
+import {PostEntity, PostView} from 'entities/Post/types/post';
 
 export interface PostListWithPagination {
   count: number,
@@ -10,7 +10,7 @@ export interface PostListWithPagination {
     prev: null | number
   },
   hasMore: boolean;
-  data: Post[]
+  data: PostEntity[]
 }
 
 interface PostListSearchParams {
@@ -18,7 +18,7 @@ interface PostListSearchParams {
   limit?: number;
 }
 
-export interface PostListSchema extends EntityState<Post, string>, PostListSearchParams, Omit<PostListWithPagination, 'data'> {
+export interface PostListSchema extends EntityState<PostEntity, string>, PostListSearchParams, Omit<PostListWithPagination, 'data'> {
   isLoading?: boolean;
   error?: string;
   view: PostView;

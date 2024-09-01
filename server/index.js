@@ -11,6 +11,7 @@ import cookieParser from 'cookie-parser';
 import UserRouter from './routers/userRouter/index.js';
 import PostRouter from './routers/postRouter/index.js';
 import ProfileRouter from './routers/profileRouter/index.js';
+import CommentRouter from './routers/commentRouter/index.js';
 
 const ONE_WEEK_IN_MILLISECONDS = 604800000;
 
@@ -48,6 +49,7 @@ app.use(fileUpload({}));
 app.use('/user', UserRouter);
 app.use('/posts', PostRouter);
 app.use('/profile', ProfileRouter);
+app.use('/comments', CommentRouter);
 
 app.use(errorHandler);
 

@@ -43,7 +43,7 @@ describe('authenticationSlice.test', () => {
     };
     const responseUser: User = {
       username: 'Test',
-      id: '1D45E01E'
+      _id: '1D45E01E'
     };
 
     expect(authenticationReducer(

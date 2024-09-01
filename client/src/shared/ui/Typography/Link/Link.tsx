@@ -2,10 +2,20 @@ import {HTMLAttributes, memo} from 'react';
 import cls from '../Text/Text.module.scss';
 import {TextAndLinkProps} from 'shared/ui/Typography/types';
 import classNames from 'classnames';
+import {RoutePaths} from 'app/providers/AppRouter';
+import {Link as RRDLink} from 'react-router-dom';
 
-interface LinkProps extends Omit<HTMLAttributes<HTMLAnchorElement>, 'children' | 'onClick'>, TextAndLinkProps {
-  href?: string
+interface RRDLinkProps extends Omit<HTMLAttributes<HTMLAnchorElement>, 'children' | 'onClick'>, TextAndLinkProps {
+  to: RoutePaths | `/${RoutePaths}`
+  href?: undefined
 }
+
+interface NativeLinkProps extends Omit<HTMLAttributes<HTMLAnchorElement>, 'children' | 'onClick'>, TextAndLinkProps {
+  href: string
+  to?: undefined
+}
+
+type LinkProps = NativeLinkProps | RRDLinkProps;
 
 const Link = memo((props: LinkProps) => {
   const {
@@ -23,6 +33,7 @@ const Link = memo((props: LinkProps) => {
     rootClassName,
     disabled,
     href = '',
+    to,
     children
   } = props;
 
@@ -40,9 +51,13 @@ const Link = memo((props: LinkProps) => {
   };
 
   return (
-    <a href={href} className={classNames(cls.text, mods, rootClassName)} onClick={onClick}>
-      {children}
-    </a>
+    to
+      ? <RRDLink to={to} className={classNames(cls.text, mods, rootClassName)} onClick={onClick}>
+        {children}
+      </RRDLink>
+      : <a href={href} className={classNames(cls.text, mods, rootClassName)} onClick={onClick}>
+        {children}
+      </a>
   );
 });
 

@@ -1,3 +1,3 @@
-export {PostDetails} from './ui/PostDetails/PostDetails';
-export {PostList} from './ui/PostList/PostList';
-export type {Post, PostView} from './types/post';
+export {Post} from 'entities/Post/ui/Post/Post';
+export {List} from './ui/List/List';
+export type {PostEntity, PostView} from './types/post';

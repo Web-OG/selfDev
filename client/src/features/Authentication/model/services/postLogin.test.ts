@@ -5,7 +5,7 @@ import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 
 describe('postLogin.test', () => {
   it('success postLogin', async () => {
-    const userValue = {username: '123', id: '1', avatar: 'lal'};
+    const userValue = {username: '123', _id: '1', avatar: 'lal'};
 
     const thunk = new TestAsyncThunk(postLogin);
     thunk.api.post.mockReturnValue(Promise.resolve({status: 200, data: userValue}));

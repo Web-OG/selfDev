@@ -1,0 +1,40 @@
+.postDetails {
+  min-height: 100%;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 100%;
+  max-height: 300px;
+  justify-content: center;
+}
+
+.avatar {
+  object-fit: contain;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.subtitle {
+  margin-top: 10px;
+}
+
+.skeleton {
+  margin-top: 15px;
+}
+
+.postInfo {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+
+.block {
+  margin-top: 16px;
+}

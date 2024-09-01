@@ -22,7 +22,7 @@ export const getSidebarItems = createSelector(
           text: {ru: 'О сайте', en: 'About'},
         },
         {
-          path: `profile/${userData.id}`,
+          path: `profile/${userData._id}`,
           Icon: ProfileIcon,
           text: {ru: 'Профиль', en: 'Profile'},
         },

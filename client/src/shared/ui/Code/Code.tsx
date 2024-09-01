@@ -17,13 +17,13 @@ export const Code = memo((props: CodeProps) => {
   }, [text]);
 
   return (
-    <pre className={classNames(cls.Code, {}, [className])}>
-      <Button onClick={onCopy} className={cls.copyBtn} variant={'outlined'}>
-        <CopyIcon className={cls.copyIcon}/>
-      </Button>
+    <pre className={classNames(cls.Code, className)}>
       <code>
         {text}
       </code>
+      <Button onClick={onCopy} className={cls.copyBtn} variant='outlined'>
+        <CopyIcon className={cls.copyIcon}/>
+      </Button>
     </pre>
   );
 });

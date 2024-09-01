@@ -1,8 +1,11 @@
 import type {Preview} from '@storybook/react';
 import {withRouter} from 'storybook-addon-react-router-v6';
+import {initialize, mswLoader} from 'msw-storybook-addon';
 import '../../src/app/styles/index.scss';
 import '../../src/app/App.scss';
 import {LanguageDecorator, ThemeDecorator, StoreDecorator} from 'shared/config/storybook';
+
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -17,6 +20,7 @@ const preview: Preview = {
     },
     theme: 'light'
   },
+  loaders: [mswLoader],
   globalTypes: {
     locale: {
       defaultValue: 'ru',

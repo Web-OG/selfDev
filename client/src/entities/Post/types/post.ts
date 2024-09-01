@@ -31,7 +31,7 @@ type PostType = 'IT' | 'SCIENCE' | 'ECONOMICS'
 
 export type PostView = 'big' | 'small'
 
-export interface Post {
+export interface PostEntity {
   _id: string;
   title: string;
   author: User;

@@ -9,11 +9,11 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "strict": true,
     "paths": {
       "*": [
-        "./src/*"
+        "./*"
       ]
     }
   },

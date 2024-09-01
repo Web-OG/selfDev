@@ -1,2 +1,2 @@
-export type {RoutePaths} from './types/RouteTypes';
+export type {RoutePaths, ProfileRoutes} from './types/RouteTypes';
 export {AppRouter} from './AppRouter';

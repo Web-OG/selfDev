@@ -1,17 +1,21 @@
 .Code {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  gap: 20px;
   position: relative;
   padding: 20px;
-  background: var(--code-bg);
-  border: var(--main-color-border);
+  background-color: var(--secondary-color-30);
+  border: var(--secondary-color-border-60);
   overflow: auto;
 }
 
 .copyBtn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--secondary-color-border);
 
-.copyIcon path {
-  stroke: var(--main-color);
+  &:hover .copyIcon path {
+    stroke: #fff;
+  }
 }

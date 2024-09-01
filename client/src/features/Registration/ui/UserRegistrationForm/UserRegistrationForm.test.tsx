@@ -5,14 +5,15 @@ import {
   renderComponentWithProviders,
   RootReducerType
 } from 'shared/lib/components/testing/renderComponentWithProviders';
-import {initialUserRegistrationSlice, mockUserSlice} from 'shared/lib/mocks/slices';
+import {initialUserRegistrationSlice, mockUserSlice, postListSlice} from 'shared/lib/mocks/slices';
 import {userRegistrationActions} from '../../model/slices/userRegistrationSlice';
 
 const initialState = {
   ...mockUserSlice,
+  ...postListSlice,
   userRegistration: {
     ...initialUserRegistrationSlice
-  }
+  },
 } as Partial<RootReducerType>;
 
 describe('UserRegistrationForm', () => {

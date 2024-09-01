@@ -29,8 +29,8 @@ export const useReducerManager = (reducers: ReducersList, removeAfterUnmount: bo
         });
       }
     };
-
-  }, [dispatch, isMount, isReducersInit, reducers, removeAfterUnmount, store?.reducerManager]);
+    //eslint-disable-next-line
+  }, [dispatch, isMount]);
 
   return {isReducersInit};
 };

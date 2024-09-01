@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {PostList} from 'entities/Post';
+import {List} from 'entities/Post';
 import {useSelector} from 'react-redux';
 import {getPosts} from 'widgets/InfinityPostList/model/slices/postListSlice';
 import {selectIsLoading, selectView} from 'widgets/InfinityPostList/model/selectors';
@@ -10,7 +10,7 @@ const InfinityPostList = memo(() => {
   const posts = useSelector(getPosts.selectAll);
 
   return (
-    <PostList
+    <List
       view={view}
       posts={posts}
       isLoading={isLoading}

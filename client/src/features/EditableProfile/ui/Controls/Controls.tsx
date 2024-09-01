@@ -22,7 +22,7 @@ const Controls = memo((props: ProfilePageHeaderProps) => {
   const {t} = useTranslation();
   const authData = useSelector(getUserAuthData);
   const profileId = useSelector(selectId);
-  const canEdit = (authData?.id && profileId) && authData?.id === profileId;
+  const canEdit = (authData?._id && profileId) && authData?._id === profileId;
   const readonly = useSelector(selectReadonly);
   const isSending = useSelector(selectIsSending);
   const dispatch = useAppDispatch();

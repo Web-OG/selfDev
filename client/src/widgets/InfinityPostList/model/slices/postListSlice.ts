@@ -4,19 +4,17 @@ import {
   PayloadAction
 } from '@reduxjs/toolkit';
 import {StateSchema} from 'app/providers/StoreProvider';
-import {Post, PostView} from 'entities/Post';
+import {PostEntity, PostView} from 'entities/Post';
 import {getPostList} from 'widgets/InfinityPostList/model/services/getPostList/getPostList';
 import {PostListSchema, PostListWithPagination} from '../types/infinityPostListSchema';
 import {STORAGE_KEYS} from 'shared/lib/constants/storage';
 
-const postsAdapter = createEntityAdapter<Post, string>({
+const postsAdapter = createEntityAdapter<PostEntity, string>({
   selectId: (post) => post._id,
 });
 
 export const getPosts = postsAdapter.getSelectors<StateSchema>(
   (state) => {
-    console.log('state.postList  is ', state.postList);
-    console.log('postsAdapter.getInitialState()  is ', postsAdapter.getInitialState());
     return state.postList || {ids: [], entities: {}};
   }
 );

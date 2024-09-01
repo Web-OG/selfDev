@@ -4,7 +4,7 @@ import {userReducer, userActions} from './userSlice';
 describe('userSlice.test', () => {
   it('set authData', () => {
     const mockUser = {
-      id: '1',
+      _id: '1',
       username: 'Gendalf'
     };
 
@@ -17,7 +17,7 @@ describe('userSlice.test', () => {
 
   it('init authData with user payload', () => {
     const mockUser = {
-      id: '1',
+      _id: '1',
       username: 'Gendalf'
     };
 
@@ -42,7 +42,7 @@ describe('userSlice.test', () => {
     const state: DeepPartial<UserSchema> = {
       _initialized: true,
       authData: {
-        id: '1',
+        _id: '1',
         username: 'Gendalf'
       }
     };

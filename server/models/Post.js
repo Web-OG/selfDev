@@ -25,7 +25,7 @@ const Post = new Schema({
   blocks: {
     type: [Block],
     required: true
-  }
+  },
 });
 
 export default model('Post', Post);

@@ -60,6 +60,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "graphql": "^16.9.0",
     "html-webpack-plugin": "^5.5.4",
     "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
@@ -67,6 +68,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "msw": "^2.4.1",
+    "msw-storybook-addon": "^2.0.3",
     "react-refresh": "^0.14.0",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.14.1",
@@ -97,5 +100,10 @@
     "react-i18next": "^13.5.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.20.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

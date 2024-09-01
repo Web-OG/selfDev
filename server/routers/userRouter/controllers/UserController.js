@@ -68,7 +68,7 @@ class UserController {
 
       req.login(user, (err) => {
         if (err) return next(err);
-        return res.json({username: user.username, id: user._id});
+        return res.json({username: user.username, _id: user._id});
       });
     })(req, res, next);
   }
