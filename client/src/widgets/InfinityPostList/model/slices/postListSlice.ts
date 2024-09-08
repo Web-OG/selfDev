@@ -64,7 +64,7 @@ const postListSlice = createSlice({
       ) => {
         const {count, data, hasMore, pagination} = action.payload;
         state.isLoading = false;
-        postsAdapter.setAll(state, data);
+        postsAdapter.setMany(state, data);
         state.hasMore = hasMore;
         state.count = count;
         state.pagination = pagination;

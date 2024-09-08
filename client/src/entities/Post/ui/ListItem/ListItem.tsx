@@ -42,8 +42,9 @@ export const ListItem = memo((props: Props) => {
       <div className={classNames(className, cls[view])}>
         <div className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} src={post.author.avatar}/>
-            <Typography.Text rootClassName={cls.username}>{post.author.username}</Typography.Text>
+            {post?.author?.avatar ? <Avatar size={30} src={post.author.avatar}/> : <div/>}
+            {post?.author?.username &&
+              <Typography.Text rootClassName={cls.username}>{post.author.username}</Typography.Text>}
             <Typography.Text rootClassName={cls.date}>{post.createdAt}</Typography.Text>
           </div>
           <Typography.Text rootClassName={cls.title}>{post.title}</Typography.Text>

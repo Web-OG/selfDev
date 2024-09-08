@@ -3,10 +3,10 @@ import {ThunkConfig} from 'app/providers/StoreProvider';
 import {
   selectHasMore,
   selectIsLoading,
-  selectNum,
+  selectCurrentPage,
 } from '../../selectors';
 import {postListActions} from '../../slices/postListSlice';
-import {getPostList} from '../../services/getPostList/getPostList';
+import {getPostList} from '../getPostList/getPostList';
 
 export const getPostListNextPage = createAsyncThunk<
   void,
@@ -17,7 +17,7 @@ export const getPostListNextPage = createAsyncThunk<
   async (_, thunkApi) => {
     const {getState, dispatch} = thunkApi;
     const hasMore = selectHasMore(getState());
-    const page = selectNum(getState());
+    const page = selectCurrentPage(getState());
     const isLoading = selectIsLoading(getState());
 
     if (hasMore && !isLoading) {
