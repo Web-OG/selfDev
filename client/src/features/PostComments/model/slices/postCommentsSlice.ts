@@ -3,7 +3,7 @@ import {getPostCommentsById} from '../services/getPostCommentsById';
 import {PostCommentsSchema} from '../types/postCommentsSchema';
 import {Comment} from 'entities/Comment';
 
-const initialState: PostCommentsSchema = {
+export const initialState: PostCommentsSchema = {
   isLoading: false,
   comments: [],
   loadingError: undefined

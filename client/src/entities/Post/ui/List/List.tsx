@@ -4,14 +4,12 @@ import {ListItem} from '../ListItem/ListItem';
 import cls from './List.module.scss';
 import {PostEntity, PostView} from '../../types/post';
 import classNames from 'classnames';
-import {Typography} from 'shared/ui/Typography';
 
 interface Props {
   className?: string;
   posts: PostEntity[];
   isLoading: boolean;
   view: PostView;
-  isHasMore: boolean;
 }
 
 const getSkeletons = (view: PostView) => new Array(view === 'small' ? 9 : 3)
@@ -25,8 +23,7 @@ export const List = memo((props: Props) => {
     className,
     posts,
     view = 'small',
-    isLoading = false,
-    isHasMore,
+    isLoading = false
   } = props;
 
   const PostList = useMemo(() => {
@@ -48,9 +45,6 @@ export const List = memo((props: Props) => {
     <div className={classNames(cls.list, cls[view], className)}>
       {PostList}
       {isLoading && getSkeletons(view)}
-      {isHasMore && <Typography.Text fontSize='fs-accent'>
-        Показать еще...
-      </Typography.Text>}
     </div>
   );
 });

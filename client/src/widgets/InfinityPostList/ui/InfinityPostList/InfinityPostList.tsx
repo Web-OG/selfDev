@@ -23,6 +23,7 @@ const InfinityPostList = memo(() => {
   useInfiniteScroll({
     triggerRef,
     callback: onScrollEnd,
+    skipCallback: !isHasMore
   });
 
   return (
@@ -31,7 +32,6 @@ const InfinityPostList = memo(() => {
         view={view}
         posts={posts}
         isLoading={isLoading}
-        isHasMore={isHasMore}
       />
       <div className={cls.triggerEl} ref={triggerRef}/>
     </>

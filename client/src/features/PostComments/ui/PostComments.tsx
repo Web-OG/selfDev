@@ -19,7 +19,6 @@ const PostComments = memo((props: PostCommentsProps) => {
   const dispatch = useAppDispatch();
   const comments = useSelector(selectComments);
   const {isReducersInit} = useReducerManager(initialReducers);
-  console.log('PostComments comments is ', comments);
 
   useEffect(() => {
     if (postId) {
@@ -32,7 +31,6 @@ const PostComments = memo((props: PostCommentsProps) => {
       <CommentList comments={comments}/>
     );
   } else return null;
-
 });
 
 PostComments.displayName = 'PostComments';

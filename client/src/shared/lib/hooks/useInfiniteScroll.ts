@@ -1,12 +1,27 @@
-import {MutableRefObject, useEffect, useRef} from 'react';
+import {MutableRefObject, useEffect, useRef, useState} from 'react';
+import {useThrottle} from './useThrottle';
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void;
+  skipCallback?: boolean;
   triggerRef: MutableRefObject<HTMLElement>;
 }
 
-export function useInfiniteScroll({callback, triggerRef}: UseInfiniteScrollOptions) {
+export function useInfiniteScroll({callback, triggerRef, skipCallback = false}: UseInfiniteScrollOptions) {
   const observer = useRef<IntersectionObserver | null>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const onScroll = useThrottle(() => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    setScrollPosition(scrollTop);
+  }, 500);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [onScroll]);
 
   useEffect(() => {
     const triggerElement = triggerRef.current;
@@ -19,8 +34,9 @@ export function useInfiniteScroll({callback, triggerRef}: UseInfiniteScrollOptio
       };
 
       observer.current = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !skipCallback) {
           callback();
+          window.scrollTo({top: scrollPosition});
         }
       }, options);
 
@@ -34,5 +50,5 @@ export function useInfiniteScroll({callback, triggerRef}: UseInfiniteScrollOptio
         observer.current.unobserve(triggerElement);
       }
     };
-  }, [callback, triggerRef]);
+  }, [callback, scrollPosition, skipCallback, triggerRef]);
 }

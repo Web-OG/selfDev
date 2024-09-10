@@ -14,10 +14,7 @@ const LayoutAuthorized = () => {
           <Outlet/>
         </div>
       </div>
-      <ScrollRestoration
-        getKey={(location) => {
-          return location.pathname;
-        }}/>
+      <ScrollRestoration/>
       <Footer/>
     </div>
   );
