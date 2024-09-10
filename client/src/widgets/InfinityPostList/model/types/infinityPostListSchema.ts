@@ -22,4 +22,5 @@ export interface PostListSchema extends EntityState<PostEntity, string>, PostLis
   isLoading?: boolean;
   error?: string;
   view: PostView;
+  _inited?: boolean;
 }

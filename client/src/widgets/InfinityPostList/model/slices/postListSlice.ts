@@ -29,6 +29,7 @@ const postListSlice = createSlice({
     hasMore: false,
     count: 1,
     view: 'small',
+    _inited: false,
     pagination: {
       totalPages: 1,
       next: null,
@@ -36,7 +37,7 @@ const postListSlice = createSlice({
       currentPage: 1
     },
     entities: {},
-    ids: []
+    ids: [],
   }),
   reducers: {
     setView: (state, action: PayloadAction<PostView>) => {
@@ -50,6 +51,7 @@ const postListSlice = createSlice({
       const view = localStorage.getItem(STORAGE_KEYS.POST_VIEW) as PostView;
       state.view = view;
       state.limit = view === 'big' ? 4 : 9;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {
