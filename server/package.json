@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --experimental-specifier-resolution=node ./index.js",
+    "prod:start": " pm2 start ./index.js",
+    "prod:stop": " pm2 stop ./index.js",
+    "prod:restart": " pm2 restart ./index.js",
     "lint": "eslint \"**/*.js\"",
     "lint:fix": "eslint \"**/*.js\" --fix"
   },
@@ -27,6 +30,7 @@
     "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "pm2": "^5.4.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
