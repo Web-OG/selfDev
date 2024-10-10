@@ -26,7 +26,7 @@ export const loadersConfig = ({mode}: BuildOptions): ModuleOptions['rules'] => {
           [
             '@babel/preset-react',
             {
-              runtime: isDev ? 'automatic' : 'classic',
+              runtime: 'automatic',
             }
           ]
         ],
