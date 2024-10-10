@@ -1,4 +1,6 @@
 import './App.scss';
+import React from 'react';
+import ReactDOM from 'react-dom'; // eslint-disable-line
 import {AppRouter} from './providers/AppRouter';
 import {useTheme} from 'shared/providers/ThemeProvider';
 import {userActions} from 'entities/User';
