@@ -16,7 +16,7 @@ import CommentRouter from './routers/commentRouter/index.js';
 const ONE_WEEK_IN_MILLISECONDS = 604800000;
 
 const app = express();
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 8000;
 
 const errorHandler = (err, req, res, next) => {
   res.status(500);
