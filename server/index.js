@@ -43,6 +43,17 @@ app.use(passport.session());
 app.use(express.static('static'));
 app.use(fileUpload({}));
 
+function sendJsonResponse(res, statusCode, data) {
+  res.status(statusCode).json(data);
+}
+
+// Настройка маршрута для /api
+app.use('/api', (req, res) => {
+  const data = {message: 'Hello from API!'};
+  sendJsonResponse(res, 200, data);
+});
+
+
 app.use('/user', UserRouter);
 app.use('/posts', PostRouter);
 app.use('/profile', ProfileRouter);
