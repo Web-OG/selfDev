@@ -42,23 +42,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('static'));
 app.use(fileUpload({}));
-
-function sendJsonResponse(res, statusCode, data) {
-  res.status(statusCode).json(data);
-}
-
-// Настройка маршрута для /api
-app.use('/api', (req, res) => {
-  const data = {message: 'Hello from API!'};
-  sendJsonResponse(res, 200, data);
-});
-
-
-app.use('/user', UserRouter);
-app.use('/posts', PostRouter);
-app.use('/profile', ProfileRouter);
-app.use('/comments', CommentRouter);
-
+app.use('/api/user', UserRouter);
+app.use('/api/posts', PostRouter);
+app.use('/api/profile', ProfileRouter);
+app.use('/api/comments', CommentRouter);
 app.use(errorHandler);
 
 const startServer = async () => {
