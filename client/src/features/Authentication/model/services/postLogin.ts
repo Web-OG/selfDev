@@ -20,7 +20,7 @@ export const postLogin = createAsyncThunk<
     const authData = {username, password};
 
     try {
-      const response = await extra.api.post<User>('/user/login', authData);
+      const response = await extra.api.post<User>('/api/user/login', authData);
       dispatch(userActions.setAuthData(response.data));
 
       return response.data;

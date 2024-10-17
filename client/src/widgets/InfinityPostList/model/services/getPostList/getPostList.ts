@@ -19,7 +19,7 @@ export const getPostList = createAsyncThunk<
     const limit = selectLimit(getState());
 
     try {
-      const response = await extra.api.get<PostListWithPagination>('/posts', {
+      const response = await extra.api.get<PostListWithPagination>('/api/posts', {
         params: {
           limit,
           page,

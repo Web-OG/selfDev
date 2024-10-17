@@ -12,7 +12,7 @@ export const getPostById = createAsyncThunk<
     const {extra, rejectWithValue} = thunkApi;
 
     try {
-      const response = await extra.api.get<PostEntity>(`/posts/${articleId}`);
+      const response = await extra.api.get<PostEntity>(`/api/posts/${articleId}`);
 
       return response.data;
     } catch (evt) {

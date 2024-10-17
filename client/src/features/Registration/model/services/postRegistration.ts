@@ -22,7 +22,7 @@ export const postRegistration = createAsyncThunk<
     const authData = {username, email, password};
 
     try {
-      const response = await extra.api.post('/user/registration', authData);
+      const response = await extra.api.post('/api/user/registration', authData);
 
       return response.data;
     } catch (err: unknown) {

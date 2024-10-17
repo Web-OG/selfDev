@@ -14,7 +14,7 @@ export const getPostCommentsById = createAsyncThunk<
     const {extra, rejectWithValue} = thunkApi;
 
     try {
-      const response = await extra.api.get<Comment[]>(`/comments/${articleId}`);
+      const response = await extra.api.get<Comment[]>(`/api/comments/${articleId}`);
 
       return response.data;
     } catch (err: unknown) {

@@ -17,7 +17,7 @@ export const postLogout = createAsyncThunk<
     const {extra, dispatch, rejectWithValue} = thunkApi;
 
     try {
-      const response = await extra.api.post<User>('/user/logout');
+      const response = await extra.api.post<User>('/api/user/logout');
 
       dispatch(userActions.logout());
       StorageDispatcher.removeItem('user');

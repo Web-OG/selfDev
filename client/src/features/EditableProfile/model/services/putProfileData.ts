@@ -19,7 +19,7 @@ export const putProfileData = createAsyncThunk<
 
     try {
       const response = await extra.api.put<Profile>(
-        `/profile/${formData?._id}`,
+        `/api/profile/${formData?._id}`,
         formData,
       );
 
