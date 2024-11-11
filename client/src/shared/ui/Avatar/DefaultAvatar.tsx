@@ -1,4 +1,4 @@
-import {Avatar} from 'shared/ui/Avatar/Avatar';
+import {Avatar} from './Avatar';
 import {memo} from 'react';
 
 interface Props {

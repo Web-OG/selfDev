@@ -1,6 +1,6 @@
 import {memo} from 'react';
 import cls from './Footer.module.scss';
-import {LegalInfo} from 'widgets/Footer/ui/legalInfo/LegalInfo';
+import {LegalInfo} from './legalInfo/LegalInfo';
 import classNames from 'classnames';
 
 const Footer = memo(() => {

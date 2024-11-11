@@ -11,7 +11,7 @@ describe('getProfileData.test', () => {
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/profile/123');
+    expect(thunk.api.get).toHaveBeenCalledWith('/api/profile/123');
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(mockValue);
   });
@@ -23,7 +23,7 @@ describe('getProfileData.test', () => {
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/profile/123');
+    expect(thunk.api.get).toHaveBeenCalledWith('/api/profile/123');
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toEqual(defaultLoadingErrorMsg);
   });

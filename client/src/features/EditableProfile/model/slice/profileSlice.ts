@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {ProfileSchema} from '../types/profile';
-import {getProfileData} from 'features/EditableProfile/model/services/getProfileData';
-import {putProfileData} from 'features/EditableProfile/model/services/putProfileData';
+import {getProfileData} from '../services/getProfileData';
+import {putProfileData} from '../services/putProfileData';
 import {Profile} from 'entities/Profile';
 import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
 

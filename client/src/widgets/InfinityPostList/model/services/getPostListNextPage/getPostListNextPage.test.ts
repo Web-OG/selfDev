@@ -1,5 +1,5 @@
 import {getPostListNextPage} from './getPostListNextPage';
-import {getPostList} from 'widgets/InfinityPostList/model/services/getPostList/getPostList';
+import {getPostList} from '../getPostList/getPostList';
 import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
 
 jest.mock('widgets/InfinityPostList/model/services/getPostList/getPostList');

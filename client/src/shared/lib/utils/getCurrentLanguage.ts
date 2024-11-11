@@ -1,6 +1,6 @@
 import i18n from 'i18next';
-import {StorageDispatcher} from 'shared/lib/services/StorageService';
-import {ProjectLanguages} from 'shared/lib/types';
+import {StorageDispatcher} from '../services/StorageService';
+import {ProjectLanguages} from '../types';
 
 export const getCurrentLanguage = (): ProjectLanguages => {
   return i18n.language

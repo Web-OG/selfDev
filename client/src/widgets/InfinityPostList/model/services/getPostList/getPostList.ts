@@ -1,7 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from 'app/providers/StoreProvider';
 import {selectLimit} from '../../selectors';
-import {PostListWithPagination} from 'widgets/InfinityPostList/model/types/infinityPostListSchema';
+import {PostListWithPagination} from '../../types/infinityPostListSchema';
 
 interface Props {
   page?: number;

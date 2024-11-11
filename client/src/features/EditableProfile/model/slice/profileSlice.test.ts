@@ -4,7 +4,7 @@ import {defaultFormSendingErrorMsg, defaultLoadingErrorMsg} from 'shared/lib/mes
 import {ServerBadRequestResponse} from 'shared/lib/types';
 import {putProfileData} from '../services/putProfileData';
 import {Profile} from 'entities/Profile';
-import {getProfileData} from 'features/EditableProfile/model/services/getProfileData';
+import {getProfileData} from '../services/getProfileData';
 
 describe('profileSlice.test', () => {
   it('test set value', () => {

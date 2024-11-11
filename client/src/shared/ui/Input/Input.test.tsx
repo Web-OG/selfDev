@@ -1,5 +1,5 @@
 import {cleanup, fireEvent, render, screen} from '@testing-library/react';
-import {Input} from 'shared/ui/Input/Input';
+import {Input} from './Input';
 
 describe('Input', () => {
   afterEach(() => cleanup());

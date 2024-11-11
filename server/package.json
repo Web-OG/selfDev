@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --experimental-specifier-resolution=node ./index.js",
+    "start": "NODE_ENV=development nodemon --experimental-specifier-resolution=node ./index.js",
     "prod:start": "NODE_ENV=production pm2 start ./index.js",
     "prod:stop": "pm2 stop ./index.js",
     "prod:restart": "pm2 restart ./index.js --update-env",

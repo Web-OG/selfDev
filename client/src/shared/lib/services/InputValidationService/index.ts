@@ -1,5 +1,5 @@
-import {REGEXP} from 'shared/lib/constants/regexp';
-import {ProjectLanguages} from 'shared/lib/types';
+import {REGEXP} from '../../constants/regexp';
+import {ProjectLanguages} from '../../types';
 
 export type InputValidations =
   'phone'

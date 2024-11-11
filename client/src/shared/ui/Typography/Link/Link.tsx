@@ -1,6 +1,6 @@
 import {HTMLAttributes, memo} from 'react';
 import cls from '../Text/Text.module.scss';
-import {TextAndLinkProps} from 'shared/ui/Typography/types';
+import {TextAndLinkProps} from '../types';
 import classNames from 'classnames';
 import {RoutePaths} from 'app/providers/AppRouter';
 import {Link as RRDLink} from 'react-router-dom';

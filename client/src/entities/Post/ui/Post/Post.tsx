@@ -3,12 +3,12 @@ import {memo, useCallback} from 'react';
 import {Typography} from 'shared/ui/Typography';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
 import cls from './Post.module.scss';
-import {CodeBlock} from 'entities/Post/ui/Post/blocks/Code/CodeBlock';
-import {PostEntity, PostBlock} from 'entities/Post/types/post';
-import {ImageBlock} from 'entities/Post/ui/Post/blocks/Image/ImageBlock';
-import {TextBlock} from 'entities/Post/ui/Post/blocks/Text/TextBlock';
+import {CodeBlock} from './blocks/Code/CodeBlock';
+import {PostEntity, PostBlock} from '../../types/post';
+import {ImageBlock} from './blocks/Image/ImageBlock';
+import {TextBlock} from './blocks/Text/TextBlock';
 import classNames from 'classnames';
-import {Header} from 'entities/Post/ui/Post/sections/Header/Header';
+import {Header} from './sections/Header/Header';
 
 interface Props {
   className?: string;

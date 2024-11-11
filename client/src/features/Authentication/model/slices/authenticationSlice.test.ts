@@ -1,6 +1,6 @@
 import {AuthenticationFields, AuthenticationSchema} from '../types/authenticationSchema';
 import {authenticationActions, authenticationReducer} from './authenticationSlice';
-import {postLogin} from 'features/Authentication/model/services/postLogin';
+import {postLogin} from '../services/postLogin';
 import {User} from 'entities/User';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 import {ServerBadRequestResponse} from 'shared/lib/types';

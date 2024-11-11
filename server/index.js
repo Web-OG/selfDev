@@ -17,13 +17,19 @@ const ONE_WEEK_IN_MILLISECONDS = 604800000;
 
 const app = express();
 const port = process.env.PORT || 8000;
+const isDev = process.env.NODE_ENV === 'development';
 
 const errorHandler = (err, req, res, next) => {
   res.status(500);
   res.json({error: err});
   next();
 };
-app.use(cors());
+app.use(cors(isDev
+  ? {
+    credentials: true,
+    origin: 'http://localhost:3000'
+  }
+  : undefined));
 app.use(express.json());
 app.use(logger('dev'));
 app.use(cookieParser());

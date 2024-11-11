@@ -7,11 +7,11 @@ import {
   useRef,
   useState
 } from 'react';
-import {Portal} from 'shared/ui/Portal/Portal';
+import {Portal} from '../Portal';
 import {useTheme} from 'shared/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import classNames from 'classnames';
-import {ButtonIcon} from 'shared/ui/Button';
+import {ButtonIcon} from '../Button';
 
 type ModalSize = 's' | 'm' | 'l'
 

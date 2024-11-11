@@ -4,10 +4,10 @@ import classNames from 'classnames';
 import {Button} from 'shared/ui/Button/Button/Button';
 import {LangSwitcher} from 'features/LangSwitcher';
 import {ThemeSwitcher} from 'features/ThemeSwitcher';
-import {getSidebarItems} from 'widgets/Sidebar/model/selectors/getSidebarItems';
+import {getSidebarItems} from '../model/selectors/getSidebarItems';
 import {useSelector} from 'react-redux';
 import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
-import {SideBarItem} from 'widgets/Sidebar/ui/SideBarItem/SideBarItem';
+import {SideBarItem} from './SideBarItem/SideBarItem';
 
 const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(true);

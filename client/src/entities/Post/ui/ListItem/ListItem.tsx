@@ -6,7 +6,7 @@ import {Button} from 'shared/ui/Button';
 import {useNavigate} from 'react-router-dom';
 import cls from './ListItem.module.scss';
 import {PostEntity, PostTextBlock, PostView} from '../../types/post';
-import {TextBlock} from 'entities/Post/ui/Post/blocks/Text/TextBlock';
+import {TextBlock} from '../Post/blocks/Text/TextBlock';
 import classNames from 'classnames';
 import EyeIcon from 'shared/assets/svgs/eye.svg';
 

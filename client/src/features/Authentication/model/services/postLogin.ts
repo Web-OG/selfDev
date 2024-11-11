@@ -1,8 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {User, userActions} from 'entities/User';
 import {ThunkConfig} from 'app/providers/StoreProvider';
-import {selectUsername} from 'features/Authentication/model/selectors/selectUsername';
-import {selectPassword} from 'features/Authentication/model/selectors/selectPassword';
+import {selectUsername} from '../selectors/selectUsername';
+import {selectPassword} from '../selectors/selectPassword';
 import {ServerBadRequestResponse} from 'shared/lib/types';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
 import {AuthenticationFields} from '../types/authenticationSchema';

@@ -1,5 +1,5 @@
 import {memo, ReactNode} from 'react';
-import {Loader} from 'shared/ui/Loader';
+import {Loader} from '../../Loader';
 import {Button, ButtonProps} from '../Button/Button';
 
 interface ButtonSubmitProps extends ButtonProps {

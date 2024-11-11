@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
-import cls from 'shared/ui/Input/Input.module.scss';
+import cls from '../Input.module.scss';
 import {InputValidationErrors} from 'shared/lib/services/InputValidationService';
 import {ProjectLanguages} from 'shared/lib/types';
-import {InputExternalErrorMassage} from 'shared/ui/Input/Input';
+import {InputExternalErrorMassage} from '../Input';
 
 interface Props {
   validationErrors: InputValidationErrors | null;

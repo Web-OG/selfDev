@@ -29,7 +29,9 @@ module.exports = {
   },
   'plugins': [
     '@typescript-eslint',
-    'react'
+    'react',
+    'react-hooks',
+    'web-og-path-checker'
   ],
   'rules': {
     'indent': [
@@ -50,6 +52,7 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
-    '@typescript-eslint/ban-ts-comment': 'off'
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'web-og-path-checker/fsd-path-check': 'warn',
   }
 };

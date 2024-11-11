@@ -1,7 +1,7 @@
 import {memo, useMemo} from 'react';
 import {Alert} from 'shared/ui/Alert/Alert';
-import {MultiLanguageMassage} from 'shared/lib/types';
-import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
+import {MultiLanguageMassage} from '../../types';
+import {getCurrentLanguage} from '../../utils/getCurrentLanguage';
 import {useTranslation} from 'react-i18next';
 
 interface Props {

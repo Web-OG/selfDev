@@ -3,8 +3,8 @@ import cls from './Input.module.scss';
 import classNames from 'classnames';
 import {HTMLInputProps, MultiLanguageMassage, ProjectLanguages} from 'shared/lib/types';
 import {InputValidationErrors, InputValidations} from 'shared/lib/services/InputValidationService';
-import {useInputErrors} from 'shared/ui/Input/lib/useInputErrors';
-import {useInputHandlers} from 'shared/ui/Input/lib/useInputHandlers';
+import {useInputErrors} from './lib/useInputErrors';
+import {useInputHandlers} from './lib/useInputHandlers';
 
 export type InputExternalErrorMassage = undefined | string | string[] | MultiLanguageMassage;
 

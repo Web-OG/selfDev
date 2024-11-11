@@ -1,4 +1,4 @@
-import {InputValidationService} from 'shared/lib/services/InputValidationService/index';
+import {InputValidationService} from './index';
 
 describe('InputValidationService.isEmail', () => {
   it('should return true for a valid email', () => {

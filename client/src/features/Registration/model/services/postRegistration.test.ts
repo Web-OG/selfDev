@@ -1,10 +1,10 @@
 import {postRegistration} from './postRegistration';
 import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
 import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
-import {selectUsername} from 'features/Registration/model/selectors/selectUsername';
+import {selectUsername} from '../selectors/selectUsername';
 import {StateSchema} from 'app/providers/StoreProvider';
-import {selectEmail} from 'features/Registration/model/selectors/selectEmail';
-import {selectPassword} from 'features/Registration/model/selectors/selectPassword';
+import {selectEmail} from '../selectors/selectEmail';
+import {selectPassword} from '../selectors/selectPassword';
 
 describe('postRegistration.test', () => {
   it('success postRegistration', async () => {
@@ -26,7 +26,7 @@ describe('postRegistration.test', () => {
     expect(selectPassword(thunk.getState())).toBe('123456');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.post).toHaveBeenCalledWith(
-      '/user/registration',
+      '/api/user/registration',
       {
         username: 'username',
         email: 'mail@example.com',

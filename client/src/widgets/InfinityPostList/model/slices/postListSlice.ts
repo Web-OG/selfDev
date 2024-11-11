@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import {StateSchema} from 'app/providers/StoreProvider';
 import {PostEntity, PostView} from 'entities/Post';
-import {getPostList} from 'widgets/InfinityPostList/model/services/getPostList/getPostList';
+import {getPostList} from '../services/getPostList/getPostList';
 import {PostListSchema, PostListWithPagination} from '../types/infinityPostListSchema';
 import {STORAGE_KEYS} from 'shared/lib/constants/storage';
 

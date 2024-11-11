@@ -1,4 +1,4 @@
-import {isPasswordsNotEquals} from 'shared/lib/utils/isPasswordsNotEquals';
+import {isPasswordsNotEquals} from './isPasswordsNotEquals';
 
 describe('isPasswordsNotEquals.test', () => {
   it('with parameters not fully passed', () => {

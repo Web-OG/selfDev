@@ -2,7 +2,7 @@ import {ReactNode, memo, ChangeEvent} from 'react';
 import cls from './Checkbox.module.scss';
 import {FontColor, FontSize, HTMLInputProps} from 'shared/lib/types';
 import classNames from 'classnames';
-import {Typography} from 'shared/ui/Typography';
+import {Typography} from '../Typography';
 
 type CheckboxHorizontalAlign = 'left' | 'right';
 type CheckboxVerticalAlign = 'start' | 'center' | 'end';

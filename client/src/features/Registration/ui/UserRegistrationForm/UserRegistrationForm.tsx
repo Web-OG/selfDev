@@ -26,7 +26,8 @@ const initialReducers: ReducersList = {
   userRegistration: userRegistrationReducer
 };
 
-const UserRegistrationForm = memo(({className}: Props) => {
+const UserRegistrationForm = memo((props: Props) => {
+  const {className = ''} = props;
   const [passwordRepeat, setPasswordRepeat] = useState('');
   const [isAgree, setIsAgree] = useState(false);
   const username = useSelector(selectUsername);

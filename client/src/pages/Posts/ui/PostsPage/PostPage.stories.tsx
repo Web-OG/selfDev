@@ -158,7 +158,7 @@ const TestData = {
 const successRequestMock = {
   msw: {
     handlers: [
-      http.get('/posts?limit=4&page=1', () => {
+      http.get('/api/posts?limit=4&page=1', () => {
         return HttpResponse.json(TestData);
       }),
     ],

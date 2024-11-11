@@ -1,5 +1,5 @@
 import {fireEvent, render} from '@testing-library/react';
-import {Checkbox} from 'shared/ui/Checkbox/Checkbox';
+import {Checkbox} from './Checkbox';
 
 describe('Checkbox', () => {
   it('Render default primary', () => {

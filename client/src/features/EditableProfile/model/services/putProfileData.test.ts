@@ -12,7 +12,7 @@ describe('putProfileData.test', () => {
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.put).toHaveBeenCalled();
-    expect(thunk.api.put).toHaveBeenCalledWith('/profile/123', initialState.profile.form);
+    expect(thunk.api.put).toHaveBeenCalledWith('/api/profile/123', initialState.profile.form);
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(initialState.profile.form);
   });
@@ -24,7 +24,7 @@ describe('putProfileData.test', () => {
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.put).toHaveBeenCalled();
-    expect(thunk.api.put).toHaveBeenCalledWith('/profile/123', initialState.profile.form);
+    expect(thunk.api.put).toHaveBeenCalledWith('/api/profile/123', initialState.profile.form);
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toEqual(defaultFormSendingErrorMsg);
   });

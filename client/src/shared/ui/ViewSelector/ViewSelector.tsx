@@ -1,7 +1,7 @@
 import {memo, useCallback} from 'react';
 import cls from './ViewSelector.module.scss';
 import classNames from 'classnames';
-import {Button} from 'shared/ui/Button';
+import {Button} from '../Button';
 import {SvgReactComponent} from 'shared/lib/types';
 
 export interface ViewType<T> {
