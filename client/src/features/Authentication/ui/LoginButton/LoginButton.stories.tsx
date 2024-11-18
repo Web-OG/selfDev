@@ -1,5 +1,4 @@
 import type {Meta, StoryObj} from '@storybook/react';
-
 import {LoginButton} from './LoginButton';
 import {SecondaryElementDecorator} from 'shared/config/storybook';
 
