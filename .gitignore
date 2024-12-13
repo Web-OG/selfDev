@@ -7,3 +7,4 @@ node_modules
 /client/.loki/report.html
 /client/.loki/report.json
 /client/.husky/pre-commit
+/client/reports
