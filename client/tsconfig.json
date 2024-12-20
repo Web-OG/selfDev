@@ -11,6 +11,7 @@
     "esModuleInterop": true,
     "baseUrl": "./src",
     "strict": true,
+    "isolatedModules": true,
     "paths": {
       "*": [
         "./*"

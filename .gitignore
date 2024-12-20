@@ -8,3 +8,4 @@ node_modules
 /client/.loki/report.json
 /client/.husky/pre-commit
 /client/reports
+/client/dependency-graph.svg
