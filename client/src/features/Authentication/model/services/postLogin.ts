@@ -26,7 +26,7 @@ export const postLogin = createAsyncThunk<
       return response.data;
     } catch (err: unknown) {
       if (extra.isAxiosError(err)) {
-        return rejectWithValue(err?.response?.data);
+        return rejectWithValue(err?.response?.data as ServerBadRequestResponse<keyof AuthenticationFields>);
       }
       return rejectWithValue(defaultFormSendingErrorMsg);
     }

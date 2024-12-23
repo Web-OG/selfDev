@@ -19,7 +19,7 @@ export const getPostCommentsById = createAsyncThunk<
       return response.data;
     } catch (err: unknown) {
       if (extra.isAxiosError(err)) {
-        return rejectWithValue(err?.response?.data);
+        return rejectWithValue(err?.response?.data as MultiLanguageMassage);
       }
       return rejectWithValue(defaultLoadingErrorMsg);
     }
