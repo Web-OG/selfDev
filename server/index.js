@@ -12,6 +12,7 @@ import UserRouter from './routers/userRouter/index.js';
 import PostRouter from './routers/postRouter/index.js';
 import ProfileRouter from './routers/profileRouter/index.js';
 import CommentRouter from './routers/commentRouter/index.js';
+import NotificationRouter from './routers/notificationRouter/index.js';
 
 const ONE_WEEK_IN_MILLISECONDS = 604800000;
 
@@ -52,6 +53,7 @@ app.use('/api/user', UserRouter);
 app.use('/api/posts', PostRouter);
 app.use('/api/profile', ProfileRouter);
 app.use('/api/comments', CommentRouter);
+app.use('/api/notifications', NotificationRouter);
 app.use(errorHandler);
 
 const startServer = async () => {

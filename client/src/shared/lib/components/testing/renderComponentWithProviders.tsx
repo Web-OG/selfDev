@@ -9,9 +9,11 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {userReducer} from 'entities/User';
 import {userRegistrationReducer} from 'features/Registration/model/slices/userRegistrationSlice';
 import {postListReducer} from 'widgets/InfinityPostList/model/slices/postListSlice';
+import {rtkApi} from '../../../api/rtkApi';
 
 const rootReducerForTests = combineReducers({
   user: userReducer,
+  [rtkApi.reducerPath]: rtkApi.reducer,
   postList: postListReducer,
   userRegistration: userRegistrationReducer
 });

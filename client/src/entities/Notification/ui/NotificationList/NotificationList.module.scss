@@ -1,0 +1,16 @@
+.NotificationList {
+  padding: 20px;
+  width: 450px;
+  background-color: var(--main-color);
+  border: var(--info-color-border);
+  border-radius: 8px;
+}
+
+.NotificationList > a,
+.NotificationList > div {
+  padding-bottom: 10px;
+
+  &:not(:last-child) {
+    border-bottom: var(--focus-color-border);
+  }
+}

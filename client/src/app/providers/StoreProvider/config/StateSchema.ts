@@ -13,9 +13,11 @@ import {ProfileSchema} from 'features/EditableProfile';
 import {PostListSchema} from 'widgets/InfinityPostList';
 import {PostDetailsSchema} from 'features/PostDetails';
 import {PostCommentsSchema} from 'features/PostComments';
+import {rtkApi} from 'shared/api/rtkApi';
 
 export interface StateSchema {
   user: UserSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
   // async
   profile?: ProfileSchema;
   authentication?: AuthenticationSchema;
