@@ -1,17 +1,10 @@
-import {
-  MutableRefObject,
-  ReactNode,
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState
-} from 'react';
+import {ReactNode} from 'react';
 import {Portal} from '../Portal';
 import {useTheme} from 'shared/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import classNames from 'classnames';
 import {ButtonIcon} from '../Button';
+import {useModal} from '../../lib/hooks/useModal';
 
 type ModalSize = 's' | 'm' | 'l'
 
@@ -25,8 +18,6 @@ export interface ModalProps {
   size?: ModalSize
 }
 
-const ANIMATION_DELAY = 300;
-
 const Modal = (props: ModalProps) => {
   const {
     className,
@@ -38,55 +29,18 @@ const Modal = (props: ModalProps) => {
     size = 'm'
   } = props;
 
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const {theme} = useTheme();
+  const {
+    closeHandler,
+    isClosing,
+    isMounted,
+    onContentClick,
+    onButtonClick
+  } = useModal({
+    onClose,
+    isOpen
+  });
 
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-
-    return () => {
-      setIsMounted(false);
-    };
-  }, [isOpen]);
-
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDown = useCallback((evt: KeyboardEvent) => {
-    if (evt.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
-
-  const onContentClick = (evt: MouseEvent) => {
-    evt.stopPropagation();
-  };
-
-  const onButtonClick = useCallback(() => {
-    closeHandler();
-  }, [closeHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, onKeyDown]);
 
   const mods = {
     [cls.opened]: isOpen,
