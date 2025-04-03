@@ -8,10 +8,11 @@ import classNames from 'classnames';
 
 interface NotificationListProps {
   className?: string;
+  isFullWidth?: boolean;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-  const {className} = props;
+  const {className, isFullWidth} = props;
   const {data, isLoading} = useNotifications(null, {
     pollingInterval: 100000,
   });
@@ -32,7 +33,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
   return (
     <Column gap="16"
-      rootClassName={classNames(cls.NotificationList, [className])}
+      rootClassName={classNames(cls.NotificationList, {[cls.fullWidth]: isFullWidth}, className)}
       fullWidth
     >
       {data?.map((item) => (

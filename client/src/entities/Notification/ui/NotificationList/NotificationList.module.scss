@@ -14,3 +14,9 @@
     border-bottom: var(--focus-color-border);
   }
 }
+
+.fullWidth {
+  width: 100%;
+  border: unset;
+  border-radius: unset;
+}

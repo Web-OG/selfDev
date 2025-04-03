@@ -10,7 +10,6 @@ import {Drawer} from '../../../../shared/ui/Drawer';
 
 export const NotificationButton = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
-
   const onOpenDrawer = useCallback(() => {
     setIsOpen(true);
   }, []);
@@ -38,7 +37,7 @@ export const NotificationButton = memo(() => {
       <MobileView>
         {trigger}
         <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <NotificationList/>
+          <NotificationList isFullWidth/>
         </Drawer>
       </MobileView>
     </div>
