@@ -6,5 +6,7 @@ export const resolversConfig = ({paths}: BuildOptions): Configuration['resolve']
   preferAbsolute: true,
   modules: [paths.src, 'node_modules'],
   mainFiles: ['index'],
-  alias: {}
+  alias: {
+    '@': paths.src,
+  },
 });
