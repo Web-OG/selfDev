@@ -1,4 +1,4 @@
-import {InfinityPostListWithViewModes} from 'widgets/InfinityPostList';
+import {InfinityPostListWithViewModes} from '@/widgets/InfinityPostList';
 
 const PostsPage = () => {
   return (

@@ -1,11 +1,11 @@
 import {useTranslation} from 'react-i18next';
-import {Input} from 'shared/ui/Input';
-import {Currency, CurrencySelect} from 'entities/Currency';
-import {CountrySelect, Country} from 'entities/Country';
+import {Input} from '@/shared/ui/Input';
+import {Currency, CurrencySelect} from '@/entities/Currency';
+import {CountrySelect, Country} from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
 import classNames from 'classnames';
-import {Avatar, DefaultAvatar} from 'shared/ui/Avatar';
-import {MappedServerBadRequestErrors} from 'shared/lib/types';
+import {Avatar, DefaultAvatar} from '@/shared/ui/Avatar';
+import {MappedServerBadRequestErrors} from '@/shared/lib/types';
 
 interface ProfileCardProps {
   className?: string;

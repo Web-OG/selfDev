@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Code} from 'shared/ui/Code/Code';
+import {Code} from '@/shared/ui/Code/Code';
 import cls from './CodeBlock.module.scss';
 import {PostCodeBlock} from '../../../../types/post';
 import classNames from 'classnames';

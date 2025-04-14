@@ -1,6 +1,6 @@
 import {cleanup, fireEvent, screen} from '@testing-library/react';
 import {ThemeSwitcher} from './ThemeSwitcher';
-import {renderComponentWithProviders} from 'shared/lib/components/testing/renderComponentWithProviders';
+import {renderComponentWithProviders} from '@/shared/lib/components/testing/renderComponentWithProviders';
 
 describe('ThemeSwitcher', () => {
   afterEach(() => cleanup());

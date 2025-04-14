@@ -3,8 +3,8 @@ import {
   InputValidationErrors,
   InputValidations,
   InputValidationService
-} from 'shared/lib/services/InputValidationService';
-import {ProjectLanguages} from 'shared/lib/types';
+} from '@/shared/lib/services/InputValidationService';
+import {ProjectLanguages} from '@/shared/lib/types';
 
 interface Props {
   onChange?: (value: string) => void;

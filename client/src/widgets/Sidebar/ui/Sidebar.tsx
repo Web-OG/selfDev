@@ -1,12 +1,12 @@
 import {memo, useMemo, useState} from 'react';
 import cls from './Sidebar.module.scss';
 import classNames from 'classnames';
-import {Button} from 'shared/ui/Button/Button/Button';
-import {LangSwitcher} from 'features/LangSwitcher';
-import {ThemeSwitcher} from 'features/ThemeSwitcher';
+import {Button} from '@/shared/ui/Button/Button/Button';
+import {LangSwitcher} from '@/features/LangSwitcher';
+import {ThemeSwitcher} from '@/features/ThemeSwitcher';
 import {getSidebarItems} from '../model/selectors/getSidebarItems';
 import {useSelector} from 'react-redux';
-import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
+import {getCurrentLanguage} from '@/shared/lib/utils/getCurrentLanguage';
 import {SideBarItem} from './SideBarItem/SideBarItem';
 
 const Sidebar = memo(() => {

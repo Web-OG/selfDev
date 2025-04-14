@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {AuthenticationSchema} from '../types/authenticationSchema';
+import {AuthenticationSchema} from '@/features/Authentication';
 import {postLogout} from '../services/postLogout';
 import {postLogin} from '../services/postLogin';
-import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
+import {mapServerBadRequestErrors} from '@/shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: AuthenticationSchema = {
   username: '',

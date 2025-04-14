@@ -1,9 +1,9 @@
 import cls from './Header.module.scss';
 import classNames from 'classnames';
-import {Logo} from 'shared/ui/Logo/Logo';
-import {UserMenu} from 'widgets/UserMenu';
-import {NotificationButton} from 'features/NotificationButton';
-import {Row} from 'shared/ui/Flex';
+import {Logo} from '@/shared/ui/Logo/Logo';
+import {UserMenu} from '@/widgets/UserMenu';
+import {NotificationButton} from '@/features/NotificationButton';
+import {Row} from '@/shared/ui/Flex';
 
 interface Props {
   authed?: boolean

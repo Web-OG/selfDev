@@ -1,8 +1,8 @@
 import {postRegistration} from './postRegistration';
-import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {TestAsyncThunk} from '@/shared/lib/components/testing/TestAsyncThunk';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 import {selectUsername} from '../selectors/selectUsername';
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 import {selectEmail} from '../selectors/selectEmail';
 import {selectPassword} from '../selectors/selectPassword';
 

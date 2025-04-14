@@ -1,7 +1,7 @@
 import cls from './IndexPage.module.scss';
 import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
-import {NewsPreview} from 'entities/News';
+import {NewsPreview} from '@/entities/News';
 
 const IndexPage = () => {
   const {t} = useTranslation('indexPage');

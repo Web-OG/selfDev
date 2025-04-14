@@ -1,4 +1,4 @@
-import {User} from 'entities/User';
+import {User} from '@/entities/User';
 
 export type PostBlockType = 'code' | 'image' | 'text'
 

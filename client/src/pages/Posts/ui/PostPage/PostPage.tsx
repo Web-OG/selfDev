@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 // import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 // import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 // import { AddCommentForm } from 'features/addCommentForm';
-import {Button} from 'shared/ui/Button';
+import {Button} from '@/shared/ui/Button';
 // import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 // import { addCommentForPost } from '../../model/services/addCommentForPost/addCommentForPost';
 // import {
@@ -13,7 +13,7 @@ import {Button} from 'shared/ui/Button';
 // } from '../../model/services/fetchCommentsByPostId/fetchCommentsByPostId';
 // import cls from './PostPage.module.scss';
 import classNames from 'classnames';
-import {PostWithComments} from 'widgets/PostWithComments';
+import {PostWithComments} from '@/widgets/PostWithComments';
 // import { PostDetailsCommentsReducer, getPostComments } from '../../model/slices/PostDetailsCommentsSlice';
 // import { getPostCommentsIsLoading } from '../../model/selectors/comments';
 

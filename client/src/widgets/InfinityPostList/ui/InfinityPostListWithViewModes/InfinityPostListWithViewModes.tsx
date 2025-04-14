@@ -3,9 +3,9 @@ import {useSelector} from 'react-redux';
 import {postListActions, postListReducer} from '../../model/slices/postListSlice';
 import cls from './InfinityPostList.module.scss';
 import {selectView} from '../../model/selectors';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
-import {PostView} from 'entities/Post/types/post';
-import {PostViewSelector} from 'features/PostViewSelector';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
+import {PostView} from '@/entities/Post/types/post';
+import {PostViewSelector} from '@/features/PostViewSelector';
 import {InfinityPostList} from '../InfinityPostList/InfinityPostList';
 import {initPostList} from '../../model/services/initPostList/initPostList';
 

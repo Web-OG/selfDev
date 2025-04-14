@@ -1,4 +1,4 @@
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 
 export const selectIsLoading = (state: StateSchema) => state.postList?.isLoading || false;
 export const selectError = (state: StateSchema) => state.postList?.error;

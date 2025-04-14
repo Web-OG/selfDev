@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Typography} from 'shared/ui/Typography';
+import {Typography} from '@/shared/ui/Typography';
 import cls from './NotificationItem.module.scss';
 import {Notification} from '../../model/types/notification';
 import classNames from 'classnames';

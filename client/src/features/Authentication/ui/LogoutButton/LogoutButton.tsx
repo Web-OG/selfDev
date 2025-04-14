@@ -1,7 +1,7 @@
 import {memo, useCallback} from 'react';
 import cls from './LogoutButton.module.scss';
-import Icon from 'shared/assets/svgs/logout.svg';
-import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';
+import Icon from '@/shared/assets/svgs/logout.svg';
+import {useAppDispatch} from '@/app/providers/StoreProvider/lib/useAppDispatch';
 import {postLogout} from '../../model/services/postLogout';
 
 const LogoutButton = memo(() => {

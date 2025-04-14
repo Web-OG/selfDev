@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {UserRegistrationSchema} from '../types/userRegistrationSchema';
+import {UserRegistrationSchema} from '@/features/Registration';
 import {postRegistration} from '../services/postRegistration';
-import {mapServerBadRequestErrors} from 'shared/lib/utils/mapServerBadRequestErrors';
+import {mapServerBadRequestErrors} from '@/shared/lib/utils/mapServerBadRequestErrors';
 
 const initialState: UserRegistrationSchema = {
   username: '',

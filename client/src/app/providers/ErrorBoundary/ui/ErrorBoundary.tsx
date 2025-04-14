@@ -1,5 +1,5 @@
 import {Component, ErrorInfo, ReactNode, Suspense} from 'react';
-import {RouteErrorPage} from 'pages/RouteError';
+import {RouteErrorPage} from '@/pages/RouteError';
 
 
 interface ErrorBoundaryProps {

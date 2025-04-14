@@ -1,4 +1,4 @@
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 import {selectAvatar} from './selectAvatar';
 
 describe('selectAvatar.test', () => {

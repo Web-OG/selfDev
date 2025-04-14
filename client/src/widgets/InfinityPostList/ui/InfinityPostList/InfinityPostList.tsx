@@ -1,11 +1,11 @@
 import {memo, MutableRefObject, useCallback, useRef} from 'react';
-import {List} from 'entities/Post';
+import {List} from '@/entities/Post';
 import {useSelector} from 'react-redux';
 import {getPosts} from '../../model/slices/postListSlice';
 import {selectHasMore, selectIsLoading, selectView} from '../../model/selectors';
-import {useAppDispatch} from 'app/providers/StoreProvider';
+import {useAppDispatch} from '@/app/providers/StoreProvider';
 import {getPostListNextPage} from '../../model/services/getPostListNextPage/getPostListNextPage';
-import {useInfiniteScroll} from 'shared/lib/hooks/useInfiniteScroll';
+import {useInfiniteScroll} from '@/shared/lib/hooks/useInfiniteScroll';
 import cls from '../InfinityPostListWithViewModes/InfinityPostList.module.scss';
 
 const InfinityPostList = memo(() => {

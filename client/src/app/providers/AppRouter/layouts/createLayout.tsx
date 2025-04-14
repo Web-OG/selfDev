@@ -1,6 +1,6 @@
 import {LayoutAuthorized} from './authorized';
 import {LayoutUnAuthorized} from './unAuthorized';
-import {RouteErrorPage} from 'pages/RouteError';
+import {RouteErrorPage} from '@/pages/RouteError';
 import {RouteObject} from 'react-router-dom';
 
 export const createLayout = ( childrenRoutes: RouteObject[], authed: boolean) => {

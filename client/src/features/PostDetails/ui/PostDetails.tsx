@@ -1,14 +1,14 @@
 import {memo, useEffect} from 'react';
-import {Post} from 'entities/Post';
+import {Post} from '@/entities/Post';
 import {useSelector} from 'react-redux';
 import {selectPost} from '../model/selectors/selectPost';
-import {Alert} from 'shared/ui/Alert/Alert';
+import {Alert} from '@/shared/ui/Alert/Alert';
 import {selectIsLoading} from '../model/selectors/selectIsLoading';
 import {selectError} from '../model/selectors/selectError';
 import {getPostById} from '../model/services/getPostById';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
 import {postDetailsReducer} from '../model/slice/postDetailsSlice';
-import {Skeleton} from 'shared/ui/Skeleton';
+import {Skeleton} from '@/shared/ui/Skeleton';
 
 const initialReducers: ReducersList = {
   postDetails: postDetailsReducer

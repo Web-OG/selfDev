@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {UserMenu} from './UserMenu';
-import {SecondaryElementDecorator} from 'shared/config/storybook';
+import {SecondaryElementDecorator} from '@/shared/config/storybook';
 
 const meta: Meta<typeof UserMenu> = {
   title: 'widgets/UserMenu',

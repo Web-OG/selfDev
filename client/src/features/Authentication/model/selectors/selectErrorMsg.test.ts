@@ -1,6 +1,6 @@
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 import {selectErrorMsg} from './selectErrorMsg';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 
 describe('selectErrorMsg.test', () => {
   it('should return error', () => {

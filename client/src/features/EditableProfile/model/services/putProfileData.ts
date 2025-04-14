@@ -1,10 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from 'app/providers/StoreProvider';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
 import {selectForm} from '../selectors/selectForm';
-import {ServerBadRequestResponse} from 'shared/lib/types';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {ServerBadRequestResponse} from '@/shared/lib/types';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 import axios from 'axios';
-import {Profile} from 'entities/Profile';
+import {Profile} from '@/entities/Profile';
 
 export const putProfileData = createAsyncThunk<
   Profile,

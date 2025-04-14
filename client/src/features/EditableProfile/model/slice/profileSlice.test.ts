@@ -1,9 +1,9 @@
 import {ProfileSchema} from '../types/profile';
 import {profileActions, profileReducer} from './profileSlice';
-import {defaultFormSendingErrorMsg, defaultLoadingErrorMsg} from 'shared/lib/messages';
-import {ServerBadRequestResponse} from 'shared/lib/types';
+import {defaultFormSendingErrorMsg, defaultLoadingErrorMsg} from '@/shared/lib/messages';
+import {ServerBadRequestResponse} from '@/shared/lib/types';
 import {putProfileData} from '../services/putProfileData';
-import {Profile} from 'entities/Profile';
+import {Profile} from '@/entities/Profile';
 import {getProfileData} from '../services/getProfileData';
 
 describe('profileSlice.test', () => {

@@ -1,12 +1,12 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from 'app/providers/StoreProvider';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
 import {selectUsername} from '../selectors/selectUsername';
 import {selectPassword} from '../selectors/selectPassword';
 import {selectEmail} from '../selectors/selectEmail';
-import {ServerBadRequestResponse, ServerSuccessesMassage} from 'shared/lib/types';
+import {ServerBadRequestResponse, ServerSuccessesMassage} from '@/shared/lib/types';
 import {UserRegistrationFields} from '../types/userRegistrationSchema';
 import axios from 'axios';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 
 export const postRegistration = createAsyncThunk<
   ServerSuccessesMassage,

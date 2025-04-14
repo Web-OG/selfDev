@@ -1,5 +1,5 @@
 import {EntityState} from '@reduxjs/toolkit';
-import {PostEntity, PostView} from 'entities/Post/types/post';
+import {PostEntity, PostView} from '@/entities/Post/types/post';
 
 export interface PostListWithPagination {
   count: number,

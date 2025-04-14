@@ -1,5 +1,5 @@
-import {LoadingAndSendingSliceFields} from 'shared/lib/types';
-import {Profile} from 'entities/Profile';
+import {LoadingAndSendingSliceFields} from '@/shared/lib/types';
+import {Profile} from '@/entities/Profile';
 
 export interface ProfileFields {
   data?: Profile;

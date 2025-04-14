@@ -1,8 +1,8 @@
 import {UserRegistrationFields, UserRegistrationSchema} from '../types/userRegistrationSchema';
 import {userRegistrationActions, userRegistrationReducer} from './userRegistrationSlice';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 import {postRegistration} from '../services/postRegistration';
-import {ServerBadRequestResponse} from 'shared/lib/types';
+import {ServerBadRequestResponse} from '@/shared/lib/types';
 
 describe('userRegistrationSlice.test', () => {
   it('test set username', () => {

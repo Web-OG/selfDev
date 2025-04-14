@@ -1,7 +1,7 @@
 import {memo} from 'react';
-import {Skeleton} from 'shared/ui/Skeleton';
+import {Skeleton} from '@/shared/ui/Skeleton';
 import cls from './ListItem.module.scss';
-import {PostView} from '../../types/post';
+import {PostView} from '@/entities/Post';
 import classNames from 'classnames';
 
 interface Props {

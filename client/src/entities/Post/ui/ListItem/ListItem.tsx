@@ -1,14 +1,14 @@
 import {useTranslation} from 'react-i18next';
 import {memo, useCallback} from 'react';
-import {Typography} from 'shared/ui/Typography';
-import {Avatar} from 'shared/ui/Avatar/Avatar';
-import {Button} from 'shared/ui/Button';
+import {Typography} from '@/shared/ui/Typography';
+import {Avatar} from '@/shared/ui/Avatar/Avatar';
+import {Button} from '@/shared/ui/Button';
 import {useNavigate} from 'react-router-dom';
 import cls from './ListItem.module.scss';
 import {PostEntity, PostTextBlock, PostView} from '../../types/post';
 import {TextBlock} from '../Post/blocks/Text/TextBlock';
 import classNames from 'classnames';
-import EyeIcon from 'shared/assets/svgs/eye.svg';
+import EyeIcon from '@/shared/assets/svgs/eye.svg';
 
 interface Props {
   className?: string;

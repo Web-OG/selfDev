@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {Theme, ThemeContext} from './ThemeContext';
-import {StorageDispatcher} from 'shared/lib/services/StorageService';
+import {StorageDispatcher} from '@/shared/lib/services/StorageService';
 
 export const useTheme = () => {
   const {theme, setTheme} = useContext(ThemeContext);

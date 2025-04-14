@@ -1,7 +1,7 @@
 import {useTranslation} from 'react-i18next';
 import {memo, useCallback} from 'react';
-import {Typography} from 'shared/ui/Typography';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {Typography} from '@/shared/ui/Typography';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
 import cls from './Post.module.scss';
 import {CodeBlock} from './blocks/Code/CodeBlock';
 import {PostEntity, PostBlock} from '../../types/post';

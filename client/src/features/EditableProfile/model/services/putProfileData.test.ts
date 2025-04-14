@@ -1,6 +1,6 @@
 import {putProfileData} from './putProfileData';
-import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {TestAsyncThunk} from '@/shared/lib/components/testing/TestAsyncThunk';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 
 const initialState = {profile: {form: {username: 'test', _id: '123'}}};
 

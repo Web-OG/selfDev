@@ -1,7 +1,7 @@
 import {memo, useEffect} from 'react';
-import {CommentList} from 'entities/Comment';
+import {CommentList} from '@/entities/Comment';
 import {useSelector} from 'react-redux';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
 import {selectComments} from '../model/selectors';
 import {getPostCommentsById} from '../model/services/getPostCommentsById';
 import {postCommentsReducer} from '../model/slices/postCommentsSlice';

@@ -1,6 +1,6 @@
 import cls from './RegistrationPage.module.scss';
 import {Link, Navigate, useParams} from 'react-router-dom';
-import {UserRegistrationForm} from 'features/Registration';
+import {UserRegistrationForm} from '@/features/Registration';
 import {useTranslation} from 'react-i18next';
 
 const RegistrationPage = () => {

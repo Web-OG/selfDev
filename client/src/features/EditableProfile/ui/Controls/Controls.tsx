@@ -1,11 +1,11 @@
-import {Typography} from 'shared/ui/Typography';
-import {Button, ButtonSubmit} from 'shared/ui/Button';
+import {Typography} from '@/shared/ui/Typography';
+import {Button, ButtonSubmit} from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 import {memo, useCallback, useMemo} from 'react';
-import {getUserAuthData} from 'entities/User';
+import {getUserAuthData} from '@/entities/User';
 import cls from './Controls.module.scss';
-import {useAppDispatch} from 'app/providers/StoreProvider';
+import {useAppDispatch} from '@/app/providers/StoreProvider';
 import classNames from 'classnames';
 import {profileActions} from '../../model/slice/profileSlice';
 import {putProfileData} from '../../model/services/putProfileData';

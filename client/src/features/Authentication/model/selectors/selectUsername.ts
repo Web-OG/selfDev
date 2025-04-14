@@ -1,3 +1,3 @@
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 
 export const selectUsername = (state: StateSchema) => state?.authentication?.username || '';

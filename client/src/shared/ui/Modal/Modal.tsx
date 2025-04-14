@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 import {Portal} from '../Portal';
-import {useTheme} from 'shared/providers/ThemeProvider';
+import {useTheme} from '@/shared/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import classNames from 'classnames';
 import {ButtonIcon} from '../Button';

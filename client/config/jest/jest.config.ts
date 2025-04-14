@@ -37,6 +37,12 @@ export default {
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>src/$1',
+  },
+  transform: {
+    '^.+\\.(ts|tsx)$': ['babel-jest', {
+      configFile: './babel.config.test.json'
+    }]
   },
   reporters: [
     'default',

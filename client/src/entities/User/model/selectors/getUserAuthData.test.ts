@@ -1,5 +1,5 @@
-import {getUserAuthData} from './getUserAuthData';
-import type {StateSchema} from 'app/providers/StoreProvider';
+import {getUserAuthData} from '@/entities/User';
+import type {StateSchema} from '@/app/providers/StoreProvider';
 
 describe('getUserAuthData.test', () => {
   const mockUser = {

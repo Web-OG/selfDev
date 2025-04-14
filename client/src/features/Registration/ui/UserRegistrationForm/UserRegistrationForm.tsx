@@ -1,22 +1,22 @@
 import {FormEvent, memo, useCallback, useMemo, useState} from 'react';
-import {Input} from 'shared/ui/Input';
-import {ButtonSubmit} from 'shared/ui/Button';
+import {Input} from '@/shared/ui/Input';
+import {ButtonSubmit} from '@/shared/ui/Button';
 import {useSelector} from 'react-redux';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
 import {useTranslation} from 'react-i18next';
 import {userRegistrationActions, userRegistrationReducer} from '../../model/slices/userRegistrationSlice';
 import {selectUsername} from '../../model/selectors/selectUsername';
 import {selectPassword} from '../../model/selectors/selectPassword';
 import {selectEmail} from '../../model/selectors/selectEmail';
-import {isPasswordsNotEquals} from 'shared/lib/utils/isPasswordsNotEquals';
-import {Checkbox} from 'shared/ui/Checkbox';
+import {isPasswordsNotEquals} from '@/shared/lib/utils/isPasswordsNotEquals';
+import {Checkbox} from '@/shared/ui/Checkbox';
 import {postRegistration} from '../../model/services/postRegistration';
 import {useNavigate} from 'react-router-dom';
 import {selectIsSending} from '../../model/selectors/selectIsSending';
 import {selectSendingErrorMsg} from '../../model/selectors/selectSendingErrorMsg';
 import {selectSendingErrorFields} from '../../model/selectors/selectSendingErrorFields';
 import cls from './UserRegistrationForm.module.scss';
-import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
+import {AlertSendingError} from '@/shared/lib/components/form/AlertSendingError';
 
 interface Props {
   className?: string

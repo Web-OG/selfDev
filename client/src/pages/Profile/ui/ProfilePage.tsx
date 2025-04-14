@@ -1,4 +1,4 @@
-import {EditableProfile} from 'features/EditableProfile';
+import {EditableProfile} from '@/features/EditableProfile';
 
 const ProfilePage = () => {
   return (

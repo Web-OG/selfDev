@@ -1,5 +1,5 @@
 import {Navigate, useLocation} from 'react-router-dom';
-import {PageLoader} from 'shared/ui/PageLoader/PageLoader';
+import {PageLoader} from '@/shared/ui/PageLoader/PageLoader';
 import {memo, ReactNode, Suspense} from 'react';
 
 interface RequireAuthProps {

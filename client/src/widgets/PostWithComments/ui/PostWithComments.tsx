@@ -2,9 +2,9 @@ import {memo} from 'react';
 import cls from './PostWithComments.module.scss';
 import {useParams} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
-import {PostDetails} from 'features/PostDetails';
-import {Typography} from 'shared/ui/Typography';
-import {PostComments} from 'features/PostComments';
+import {PostDetails} from '@/features/PostDetails';
+import {Typography} from '@/shared/ui/Typography';
+import {PostComments} from '@/features/PostComments';
 
 const PostWithComments = memo(() => {
   const {id} = useParams<{ id: string }>();

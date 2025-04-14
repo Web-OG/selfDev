@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {Logo} from './Logo';
-import {SecondaryElementDecorator} from 'shared/config/storybook';
+import {SecondaryElementDecorator} from '@/shared/config/storybook';
 
 const meta: Meta<typeof Logo> = {
   title: 'shared/Logo',

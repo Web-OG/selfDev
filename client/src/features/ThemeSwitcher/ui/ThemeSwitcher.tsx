@@ -2,7 +2,7 @@ import {Fragment, memo, useCallback, useState} from 'react';
 import cls from './ThemeSwitcher.module.scss';
 import {Switch} from '@headlessui/react';
 import classNames from 'classnames';
-import {useTheme} from 'shared/providers/ThemeProvider';
+import {useTheme} from '@/shared/providers/ThemeProvider';
 
 const ThemeSwitcher = memo(() => {
   const {theme, toggleTheme} = useTheme();

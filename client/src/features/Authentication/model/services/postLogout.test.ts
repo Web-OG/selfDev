@@ -1,7 +1,7 @@
-import {userActions} from 'entities/User';
+import {userActions} from '@/entities/User';
 import {postLogout} from './postLogout';
-import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {TestAsyncThunk} from '@/shared/lib/components/testing/TestAsyncThunk';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 
 describe('postLogout.test', () => {
   it('success postLogout', async () => {

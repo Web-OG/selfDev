@@ -1,5 +1,5 @@
 import {memo, ReactNode, Suspense} from 'react';
-import {PageLoader} from 'shared/ui/PageLoader/PageLoader';
+import {PageLoader} from '@/shared/ui/PageLoader/PageLoader';
 
 export interface RouteWithSuspenseProps {
   element: ReactNode

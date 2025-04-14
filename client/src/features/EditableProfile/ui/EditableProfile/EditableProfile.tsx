@@ -1,10 +1,10 @@
 import {memo, useCallback, useEffect} from 'react';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
 import {useSelector} from 'react-redux';
-import {ProfileCard} from 'entities/Profile';
+import {ProfileCard} from '@/entities/Profile';
 import {useParams} from 'react-router-dom';
-import {Currency} from 'entities/Currency';
-import {Country} from 'entities/Country';
+import {Currency} from '@/entities/Currency';
+import {Country} from '@/entities/Country';
 import {Controls} from '../../ui/Controls/Controls';
 import {profileActions, profileReducer} from '../../model/slice/profileSlice';
 import {selectForm} from '../../model/selectors/selectForm';
@@ -12,12 +12,12 @@ import {selectIsLoading} from '../../model/selectors/selectIsLoading';
 import {selectLoadingError} from '../../model/selectors/selectLoadingError';
 import {selectReadonly} from '../../model/selectors/selectReadonly';
 import {getProfileData} from '../../model/services/getProfileData';
-import {Alert} from 'shared/ui/Alert/Alert';
+import {Alert} from '@/shared/ui/Alert/Alert';
 import {selectAvatar} from '../../model/selectors/selectAvatar';
 import {selectSendingErrorMsg} from '../../model/selectors/selectSendingErrorMsg';
 import {selectSendingErrorFields} from '../../model/selectors/selectSendingErrorFields';
-import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
-import {Loader} from 'shared/ui/Loader';
+import {AlertSendingError} from '@/shared/lib/components/form/AlertSendingError';
+import {Loader} from '@/shared/ui/Loader';
 
 const initialReducers: ReducersList = {
   profile: profileReducer,

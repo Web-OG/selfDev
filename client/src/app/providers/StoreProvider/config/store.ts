@@ -1,9 +1,9 @@
 import {Action, configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
-import {userReducer} from 'entities/User';
-import {$api, isAxiosError} from 'shared/api/api';
+import {userReducer} from '@/entities/User';
+import {$api, isAxiosError} from '@/shared/api/api';
 import {StateSchema, ThunkExtraArg} from './StateSchema';
 import {createReducerManager} from './reducerManager';
-import {rtkApi} from '../../../../shared/api/rtkApi';
+import {rtkApi} from '@/shared/api/rtkApi';
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {

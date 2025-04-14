@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import AboutPage from './AboutPage';
-import {LayoutDecorator} from 'shared/config/storybook/decorators/LayoutDecorator';
-import {mockUserSlice} from 'shared/lib/mocks/slices';
+import {LayoutDecorator} from '@/shared/config/storybook/decorators/LayoutDecorator';
+import {mockUserSlice} from '@/shared/lib/mocks/slices';
 
 const meta: Meta<typeof AboutPage> = {
   title: 'pages/AboutPage',

@@ -1,4 +1,4 @@
-import {PostEntity} from 'entities/Post';
+import {PostEntity} from '@/entities/Post';
 
 export interface PostDetailsSchema {
   isLoading: boolean;

@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {getPostCommentsById} from '../services/getPostCommentsById';
-import {PostCommentsSchema} from '../types/postCommentsSchema';
-import {Comment} from 'entities/Comment';
+import {PostCommentsSchema} from '@/features/PostComments';
+import {Comment} from '@/entities/Comment';
 
 export const initialState: PostCommentsSchema = {
   isLoading: false,

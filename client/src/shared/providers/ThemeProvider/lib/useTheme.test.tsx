@@ -1,6 +1,6 @@
 import {act, renderHook} from '@testing-library/react';
 import {useTheme} from './useTheme';
-import {useHooksThemeContext} from 'shared/lib/components/testing/useHooksThemeContext';
+import {useHooksThemeContext} from '@/shared/lib/components/testing/useHooksThemeContext';
 
 describe('useTheme', () => {
   it('should return initial theme', () => {

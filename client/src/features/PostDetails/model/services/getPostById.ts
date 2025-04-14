@@ -1,6 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from 'app/providers/StoreProvider';
-import {PostEntity} from 'entities/Post';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
+import {PostEntity} from '@/entities/Post';
 
 export const getPostById = createAsyncThunk<
   PostEntity,

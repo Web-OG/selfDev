@@ -1,9 +1,9 @@
 import {memo} from 'react';
 import cls from './LoginOpportunities.module.scss';
 import {LoginOpportunity} from './LoginOpportunity';
-import AccessIcon from 'shared/assets/svgs/login_opp_access.svg';
-import ForumIcon from 'shared/assets/svgs/login_opp_forum.svg';
-import CourceIcon from 'shared/assets/svgs/login_opp_course.svg';
+import AccessIcon from '@/shared/assets/svgs/login_opp_access.svg';
+import ForumIcon from '@/shared/assets/svgs/login_opp_forum.svg';
+import CourceIcon from '@/shared/assets/svgs/login_opp_course.svg';
 import {useTranslation} from 'react-i18next';
 
 const LoginOpportunities = memo(() => {

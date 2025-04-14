@@ -1,10 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {User, userActions} from 'entities/User';
-import {ThunkConfig} from 'app/providers/StoreProvider';
-import {StorageDispatcher} from 'shared/lib/services/StorageService';
-import {ServerBadRequestResponse} from 'shared/lib/types';
+import {User, userActions} from '@/entities/User';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
+import {StorageDispatcher} from '@/shared/lib/services/StorageService';
+import {ServerBadRequestResponse} from '@/shared/lib/types';
 import axios from 'axios';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 import {AuthenticationFields} from '../types/authenticationSchema';
 
 export const postLogout = createAsyncThunk<

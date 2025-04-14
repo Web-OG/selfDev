@@ -3,11 +3,11 @@ import {
   createSlice,
   PayloadAction
 } from '@reduxjs/toolkit';
-import {StateSchema} from 'app/providers/StoreProvider';
-import {PostEntity, PostView} from 'entities/Post';
+import {StateSchema} from '@/app/providers/StoreProvider';
+import {PostEntity, PostView} from '@/entities/Post';
 import {getPostList} from '../services/getPostList/getPostList';
 import {PostListSchema, PostListWithPagination} from '../types/infinityPostListSchema';
-import {STORAGE_KEYS} from 'shared/lib/constants/storage';
+import {STORAGE_KEYS} from '@/shared/lib/constants/storage';
 
 const postsAdapter = createEntityAdapter<PostEntity, string>({
   selectId: (post) => post._id,

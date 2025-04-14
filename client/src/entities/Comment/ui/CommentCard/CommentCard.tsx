@@ -1,10 +1,10 @@
 import {memo} from 'react';
-import {Typography} from 'shared/ui/Typography';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {Typography} from '@/shared/ui/Typography';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
 import cls from './CommentCard.module.scss';
-import {Comment} from '../../model/types/comment';
+import {Comment} from '@/entities/Comment';
 import classNames from 'classnames';
-import {ProfileRoutes} from 'app/providers/AppRouter';
+import {ProfileRoutes} from '@/app/providers/AppRouter';
 
 interface CommentCardProps {
   className?: string;

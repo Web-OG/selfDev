@@ -1,6 +1,6 @@
 import {cleanup, fireEvent, screen} from '@testing-library/react';
 import {Sidebar} from './Sidebar';
-import {renderComponentWithProviders} from 'shared/lib/components/testing/renderComponentWithProviders';
+import {renderComponentWithProviders} from '@/shared/lib/components/testing/renderComponentWithProviders';
 
 describe('Sidebar', () => {
   let toggleBtn: HTMLElement;

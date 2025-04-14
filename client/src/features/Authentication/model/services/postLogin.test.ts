@@ -1,7 +1,7 @@
-import {userActions} from 'entities/User';
+import {userActions} from '@/entities/User';
 import {postLogin} from './postLogin';
-import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
+import {TestAsyncThunk} from '@/shared/lib/components/testing/TestAsyncThunk';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
 
 describe('postLogin.test', () => {
   it('success postLogin', async () => {

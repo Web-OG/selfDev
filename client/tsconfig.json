@@ -13,7 +13,9 @@
     "strict": true,
     "isolatedModules": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "ts-node": {

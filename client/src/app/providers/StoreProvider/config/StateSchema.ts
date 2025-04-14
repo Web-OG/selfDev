@@ -1,5 +1,5 @@
-import {UserSchema} from 'entities/User';
-import {AuthenticationSchema} from 'features/Authentication';
+import {UserSchema} from '@/entities/User';
+import {AuthenticationSchema} from '@/features/Authentication';
 import {AxiosError, AxiosInstance} from 'axios';
 import {
   Action,
@@ -8,12 +8,12 @@ import {
   ReducersMapObject,
   StateFromReducersMapObject
 } from '@reduxjs/toolkit';
-import {AuthorRegistrationSchema, UserRegistrationSchema} from 'features/Registration';
-import {ProfileSchema} from 'features/EditableProfile';
-import {PostListSchema} from 'widgets/InfinityPostList';
-import {PostDetailsSchema} from 'features/PostDetails';
-import {PostCommentsSchema} from 'features/PostComments';
-import {rtkApi} from 'shared/api/rtkApi';
+import {AuthorRegistrationSchema, UserRegistrationSchema} from '@/features/Registration';
+import {ProfileSchema} from '@/features/EditableProfile';
+import {PostListSchema} from '@/widgets/InfinityPostList';
+import {PostDetailsSchema} from '@/features/PostDetails';
+import {PostCommentsSchema} from '@/features/PostComments';
+import {rtkApi} from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   user: UserSchema;

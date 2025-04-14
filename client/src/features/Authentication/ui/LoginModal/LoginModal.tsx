@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Modal, ModalProps} from 'shared/ui/Modal/Modal';
+import {Modal, ModalProps} from '@/shared/ui/Modal/Modal';
 import {LazyLoginForm} from '../LoginForm/LoginForm.async';
 import {useTranslation} from 'react-i18next';
 

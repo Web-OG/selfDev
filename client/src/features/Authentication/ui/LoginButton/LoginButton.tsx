@@ -1,6 +1,6 @@
 import {memo, useCallback, useState} from 'react';
 import cls from './LoginButton.module.scss';
-import Icon from 'shared/assets/svgs/login.svg';
+import Icon from '@/shared/assets/svgs/login.svg';
 import {LoginModal} from '../LoginModal/LoginModal';
 
 const LoginButton = memo(() => {

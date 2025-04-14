@@ -1,11 +1,11 @@
 import {AppRoutes} from '../types/RouteTypes';
-import {AboutPage} from 'pages/About';
-import {PostsPage, PostPage} from 'pages/Posts';
-import {LoginPage} from 'pages/Login';
-import {IndexPage} from 'pages/Index';
-import {ChooseRegistrationTypePage, RegistrationPage} from 'pages/Registration';
-import {SuccessesRegistrationPage} from 'pages/SuccessesRegistration';
-import {ProfilePage} from 'pages/Profile';
+import {AboutPage} from '@/pages/About';
+import {PostsPage, PostPage} from '@/pages/Posts';
+import {LoginPage} from '@/pages/Login';
+import {IndexPage} from '@/pages/Index';
+import {ChooseRegistrationTypePage, RegistrationPage} from '@/pages/Registration';
+import {SuccessesRegistrationPage} from '@/pages/SuccessesRegistration';
+import {ProfilePage} from '@/pages/Profile';
 
 export const routes: AppRoutes = {
   '/': {

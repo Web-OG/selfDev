@@ -1,22 +1,22 @@
 import {FormEvent, memo, useCallback} from 'react';
 import cls from './LoginForm.module.scss';
 import classNames from 'classnames';
-import {Input} from 'shared/ui/Input';
-import {ButtonSubmit} from 'shared/ui/Button';
+import {Input} from '@/shared/ui/Input';
+import {ButtonSubmit} from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
 import {postLogin} from '../../model/services/postLogin';
-import {ReducersList, useAppDispatch, useReducerManager} from 'app/providers/StoreProvider';
+import {ReducersList, useAppDispatch, useReducerManager} from '@/app/providers/StoreProvider';
 import {authenticationActions, authenticationReducer} from '../../model/slices/authenticationSlice';
 import {useSelector} from 'react-redux';
 import {selectUsername} from '../../model/selectors/selectUsername';
 import {selectPassword} from '../../model/selectors/selectPassword';
-import {StorageDispatcher} from 'shared/lib/services/StorageService';
-import {RegistrationInvite} from 'features/Registration';
+import {StorageDispatcher} from '@/shared/lib/services/StorageService';
+import {RegistrationInvite} from '@/features/Registration';
 import {selectIsSending} from '../../model/selectors/selectIsSending';
 import {selectErrorMsg} from '../../model/selectors/selectErrorMsg';
-import {getCurrentLanguage} from 'shared/lib/utils/getCurrentLanguage';
+import {getCurrentLanguage} from '@/shared/lib/utils/getCurrentLanguage';
 import {selectErrorFields} from '../../model/selectors/selectErrorFields';
-import {AlertSendingError} from 'shared/lib/components/form/AlertSendingError';
+import {AlertSendingError} from '@/shared/lib/components/form/AlertSendingError';
 
 interface LoginFormProps {
   className?: string;

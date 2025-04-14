@@ -1,5 +1,5 @@
 import {memo, useMemo} from 'react';
-import {Alert} from 'shared/ui/Alert/Alert';
+import {Alert} from '@/shared/ui/Alert/Alert';
 import {MultiLanguageMassage} from '../../types';
 import {getCurrentLanguage} from '../../utils/getCurrentLanguage';
 import {useTranslation} from 'react-i18next';

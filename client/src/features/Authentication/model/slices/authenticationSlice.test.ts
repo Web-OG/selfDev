@@ -1,9 +1,9 @@
 import {AuthenticationFields, AuthenticationSchema} from '../types/authenticationSchema';
 import {authenticationActions, authenticationReducer} from './authenticationSlice';
 import {postLogin} from '../services/postLogin';
-import {User} from 'entities/User';
-import {defaultFormSendingErrorMsg} from 'shared/lib/messages';
-import {ServerBadRequestResponse} from 'shared/lib/types';
+import {User} from '@/entities/User';
+import {defaultFormSendingErrorMsg} from '@/shared/lib/messages';
+import {ServerBadRequestResponse} from '@/shared/lib/types';
 
 describe('authenticationSlice.test', () => {
   it('test set username', () => {

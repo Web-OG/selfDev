@@ -1,11 +1,11 @@
 import './App.scss';
 import {AppRouter} from './providers/AppRouter';
-import {useTheme} from 'shared/providers/ThemeProvider';
-import {userActions} from 'entities/User';
+import {useTheme} from '@/shared/providers/ThemeProvider';
+import {userActions} from '@/entities/User';
 import {Suspense, useEffect} from 'react';
-import {useAppDispatch} from 'app/providers/StoreProvider/lib/useAppDispatch';
-import {Loader} from 'shared/ui/Loader';
-import {StorageDispatcher} from 'shared/lib/services/StorageService';
+import {useAppDispatch} from '@/app/providers/StoreProvider/lib/useAppDispatch';
+import {Loader} from '@/shared/ui/Loader';
+import {StorageDispatcher} from '@/shared/lib/services/StorageService';
 
 const App = () => {
   const {theme} = useTheme();

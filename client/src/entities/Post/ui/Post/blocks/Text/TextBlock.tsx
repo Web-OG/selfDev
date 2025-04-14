@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Typography} from 'shared/ui/Typography';
+import {Typography} from '@/shared/ui/Typography';
 import cls from './TextBlock.module.scss';
 import {PostTextBlock} from '../../../../types/post';
 

@@ -1,4 +1,4 @@
-import {LoginForm, LoginOpportunities} from 'features/Authentication';
+import {LoginForm, LoginOpportunities} from '@/features/Authentication';
 import cls from './LoginPage.module.scss';
 import {useTranslation} from 'react-i18next';
 

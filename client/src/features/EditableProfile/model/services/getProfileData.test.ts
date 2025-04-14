@@ -1,6 +1,6 @@
 import {getProfileData} from './getProfileData';
-import {TestAsyncThunk} from 'shared/lib/components/testing/TestAsyncThunk';
-import {defaultLoadingErrorMsg} from 'shared/lib/messages';
+import {TestAsyncThunk} from '@/shared/lib/components/testing/TestAsyncThunk';
+import {defaultLoadingErrorMsg} from '@/shared/lib/messages';
 
 describe('getProfileData.test', () => {
   it('success getProfileData', async () => {

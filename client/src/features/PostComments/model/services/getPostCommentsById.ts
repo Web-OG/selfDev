@@ -1,8 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from 'app/providers/StoreProvider';
-import {Comment} from 'entities/Comment';
-import {MultiLanguageMassage} from 'shared/lib/types';
-import {defaultLoadingErrorMsg} from 'shared/lib/messages';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
+import {Comment} from '@/entities/Comment';
+import {MultiLanguageMassage} from '@/shared/lib/types';
+import {defaultLoadingErrorMsg} from '@/shared/lib/messages';
 
 export const getPostCommentsById = createAsyncThunk<
   Comment[],

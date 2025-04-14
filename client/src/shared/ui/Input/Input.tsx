@@ -1,8 +1,8 @@
 import {memo, ReactNode, useEffect, useRef, useState} from 'react';
 import cls from './Input.module.scss';
 import classNames from 'classnames';
-import {HTMLInputProps, MultiLanguageMassage, ProjectLanguages} from 'shared/lib/types';
-import {InputValidationErrors, InputValidations} from 'shared/lib/services/InputValidationService';
+import {HTMLInputProps, MultiLanguageMassage, ProjectLanguages} from '@/shared/lib/types';
+import {InputValidationErrors, InputValidations} from '@/shared/lib/services/InputValidationService';
 import {useInputErrors} from './lib/useInputErrors';
 import {useInputHandlers} from './lib/useInputHandlers';
 

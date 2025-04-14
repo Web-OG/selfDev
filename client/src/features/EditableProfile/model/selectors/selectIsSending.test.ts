@@ -1,4 +1,4 @@
-import {StateSchema} from 'app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 import {selectIsSending} from './selectIsSending';
 
 describe('selectIsSending.test', () => {

@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {getPostById} from '../services/getPostById';
-import {PostDetailsSchema} from '../types/postDetailsSchema';
-import {PostEntity} from 'entities/Post';
+import {PostDetailsSchema} from '@/features/PostDetails';
+import {PostEntity} from '@/entities/Post';
 
 const initialState: PostDetailsSchema = {
   isLoading: false,

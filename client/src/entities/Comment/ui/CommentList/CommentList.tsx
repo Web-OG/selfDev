@@ -1,9 +1,9 @@
 import {memo} from 'react';
-import {Typography} from 'shared/ui/Typography';
+import {Typography} from '@/shared/ui/Typography';
 import {useTranslation} from 'react-i18next';
 import cls from './CommentList.module.scss';
 import {CommentCard} from '../CommentCard/CommentCard';
-import {Comment} from '../../model/types/comment';
+import {Comment} from '@/entities/Comment';
 import classNames from 'classnames';
 
 interface CommentListProps {

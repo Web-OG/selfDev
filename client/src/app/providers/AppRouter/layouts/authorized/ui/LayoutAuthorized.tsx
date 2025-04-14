@@ -1,8 +1,8 @@
 import {Outlet, ScrollRestoration} from 'react-router-dom';
 import cls from '../../layout.module.scss';
-import {Header} from 'widgets/Header';
-import {Sidebar} from 'widgets/Sidebar';
-import {Footer} from 'widgets/Footer';
+import {Header} from '@/widgets/Header';
+import {Sidebar} from '@/widgets/Sidebar';
+import {Footer} from '@/widgets/Footer';
 
 const LayoutAuthorized = () => {
   return (

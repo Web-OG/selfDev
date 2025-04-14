@@ -1,6 +1,6 @@
 import {ReactNode, memo, ChangeEvent} from 'react';
 import cls from './Checkbox.module.scss';
-import {FontColor, FontSize, HTMLInputProps} from 'shared/lib/types';
+import {FontColor, FontSize, HTMLInputProps} from '@/shared/lib/types';
 import classNames from 'classnames';
 import {Typography} from '../Typography';
 

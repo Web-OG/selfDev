@@ -1,5 +1,5 @@
-import {getUserInitialized} from './getUserInitialized';
-import type {StateSchema} from 'app/providers/StoreProvider';
+import {getUserInitialized} from '@/entities/User';
+import type {StateSchema} from '@/app/providers/StoreProvider';
 
 describe('getUserInitialized.test', () => {
   it('should return value', () => {

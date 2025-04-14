@@ -1,14 +1,14 @@
 import {ReactNode} from 'react';
 import {render} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
-import i18nForTests from 'shared/config/i18n/i18nForTest';
+import i18nForTests from '@/shared/config/i18n/i18nForTest';
 import {MemoryRouter} from 'react-router-dom';
-import {StoreProvider} from 'app/providers/StoreProvider';
-import {Theme, ThemeProvider} from 'shared/providers/ThemeProvider';
+import {StoreProvider} from '@/app/providers/StoreProvider';
+import {Theme, ThemeProvider} from '@/shared/providers/ThemeProvider';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import {userReducer} from 'entities/User';
-import {userRegistrationReducer} from 'features/Registration/model/slices/userRegistrationSlice';
-import {postListReducer} from 'widgets/InfinityPostList/model/slices/postListSlice';
+import {userReducer} from '@/entities/User';
+import {userRegistrationReducer} from '@/features/Registration/model/slices/userRegistrationSlice';
+import {postListReducer} from '@/widgets/InfinityPostList/model/slices/postListSlice';
 import {rtkApi} from '../../../api/rtkApi';
 
 const rootReducerForTests = combineReducers({

@@ -1,10 +1,10 @@
 import {createSelector} from '@reduxjs/toolkit';
-import {getUserAuthData} from 'entities/User';
+import {getUserAuthData} from '@/entities/User';
 import {SidebarItemType} from '../types/sidebar';
-import AboutIcon from 'shared/assets/svgs/about.svg';
-import PostsIcon from 'shared/assets/svgs/posts.svg';
-import ProfileIcon from 'shared/assets/svgs/profile.svg';
-import MainIcon from 'shared/assets/svgs/home.svg';
+import AboutIcon from '@/shared/assets/svgs/about.svg';
+import PostsIcon from '@/shared/assets/svgs/posts.svg';
+import ProfileIcon from '@/shared/assets/svgs/profile.svg';
+import MainIcon from '@/shared/assets/svgs/home.svg';
 
 export const getSidebarItems = createSelector(
   getUserAuthData,

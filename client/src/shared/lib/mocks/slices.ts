@@ -1,4 +1,4 @@
-import {userRegistrationReducer} from 'features/Registration/model/slices/userRegistrationSlice';
+import {userRegistrationReducer} from '@/features/Registration/model/slices/userRegistrationSlice';
 
 export const mockUserSlice = {
   user: {

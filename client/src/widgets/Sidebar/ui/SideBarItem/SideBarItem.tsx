@@ -2,7 +2,7 @@ import {memo} from 'react';
 import cls from './SideBarItem.module.scss';
 import {SidebarItemType} from '../../model/types/sidebar';
 import {Link} from 'react-router-dom';
-import {ProjectLanguages} from 'shared/lib/types';
+import {ProjectLanguages} from '@/shared/lib/types';
 
 interface SideBarItemProps {
   item: SidebarItemType;

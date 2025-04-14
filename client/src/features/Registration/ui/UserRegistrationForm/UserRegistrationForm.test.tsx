@@ -4,13 +4,15 @@ import {UserRegistrationForm} from './UserRegistrationForm';
 import {
   renderComponentWithProviders,
   RootReducerType
-} from 'shared/lib/components/testing/renderComponentWithProviders';
-import {initialUserRegistrationSlice, mockUserSlice, postListSlice} from 'shared/lib/mocks/slices';
+} from '@/shared/lib/components/testing/renderComponentWithProviders';
+import {initialUserRegistrationSlice, mockUserSlice, postListSlice} from '@/shared/lib/mocks/slices';
 import {userRegistrationActions} from '../../model/slices/userRegistrationSlice';
+import {rtkQueryApiMock} from '@/shared/lib/components/testing/mocks';
 
 const initialState = {
   ...mockUserSlice,
   ...postListSlice,
+  api: rtkQueryApiMock,
   userRegistration: {
     ...initialUserRegistrationSlice
   },

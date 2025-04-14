@@ -1,4 +1,4 @@
-import {RegistrationVariant} from 'features/Registration';
+import {RegistrationVariant} from '@/features/Registration';
 
 const ChooseRegistrationTypePage = () => {
   return <RegistrationVariant/>;

@@ -1,7 +1,7 @@
 import {memo} from 'react';
 import cls from './UserMenu.module.scss';
-import {LoginButton, LogoutButton} from 'features/Authentication';
-import {LangSwitcher} from 'features/LangSwitcher';
+import {LoginButton, LogoutButton} from '@/features/Authentication';
+import {LangSwitcher} from '@/features/LangSwitcher';
 
 interface UserMenuProps {
   authed: boolean

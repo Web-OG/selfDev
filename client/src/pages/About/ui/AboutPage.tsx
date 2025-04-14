@@ -1,9 +1,9 @@
 import cls from './AboutPage.module.scss';
 import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
-import notebookSrc from 'shared/assets/images/notebook.jpeg';
-import authorsSrc from 'shared/assets/images/authors.jpg';
-import {Contact} from 'entities/User';
+import notebookSrc from '@/shared/assets/images/notebook.jpeg';
+import authorsSrc from '@/shared/assets/images/authors.jpg';
+import {Contact} from '@/entities/User';
 
 const AboutPage = () => {
   const {t} = useTranslation('aboutPage');

@@ -1,5 +1,5 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from 'app/providers/StoreProvider';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
 import {selectInited} from '../../selectors';
 import {getPostList} from '../getPostList/getPostList';
 import {postListActions} from '../../slices/postListSlice';

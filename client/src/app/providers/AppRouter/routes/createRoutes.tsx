@@ -1,6 +1,6 @@
 import {AppRoutes} from '../types/RouteTypes';
 import {RouteObject} from 'react-router-dom';
-import {ErrorElement} from 'widgets/ErrorElement';
+import {ErrorElement} from '@/widgets/ErrorElement';
 import {RouteWithSuspense} from './components/RouteWithSuspense';
 import {RequireAuthRoute} from './components/RequireAuthRoute';
 

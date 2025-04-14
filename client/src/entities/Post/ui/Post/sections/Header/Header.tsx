@@ -1,9 +1,9 @@
 import {memo} from 'react';
 import cls from '../../Post.module.scss';
-import {Typography} from 'shared/ui/Typography';
-import EyeIcon from 'shared/assets/svgs/eye.svg';
-import CalendarIcon from 'shared/assets/svgs/calendar.svg';
-import {PostEntity} from '../../../../types/post';
+import {Typography} from '@/shared/ui/Typography';
+import EyeIcon from '@/shared/assets/svgs/eye.svg';
+import CalendarIcon from '@/shared/assets/svgs/calendar.svg';
+import {PostEntity} from '@/entities/Post';
 
 interface HeaderProps {
   post: PostEntity;
